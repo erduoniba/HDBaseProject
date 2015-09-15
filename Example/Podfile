@@ -3,10 +3,12 @@ use_frameworks!
 
 target 'HDBaseProject_Example', :exclusive => true do
   pod "HDBaseProject", :path => "../"
+  
+  pod 'AFNetworking'
 end
 
 target 'HDBaseProject_Tests', :exclusive => true do
   pod "HDBaseProject", :path => "../"
 
-  pod 'FBSnapshotTestCase'
+  pod 'AFNetworking'
 end

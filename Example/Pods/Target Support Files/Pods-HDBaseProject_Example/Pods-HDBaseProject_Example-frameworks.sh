@@ -52,8 +52,10 @@ code_sign_if_enabled() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework 'Pods-HDBaseProject_Example/AFNetworking.framework'
   install_framework 'Pods-HDBaseProject_Example/HDBaseProject.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework 'Pods-HDBaseProject_Example/AFNetworking.framework'
   install_framework 'Pods-HDBaseProject_Example/HDBaseProject.framework'
 fi

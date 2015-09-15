@@ -36,9 +36,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		046B01081BA822AA00C00183 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "Pods/../build/Debug-iphoneos/AFNetworking.framework"; sourceTree = "<group>"; };
+		046B010A1BA822D200C00183 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "Pods/../build/Debug-iphoneos/AFNetworking.framework"; sourceTree = "<group>"; };
+		046B010C1BA822D900C00183 /* HDBaseProject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HDBaseProject.framework; path = "Pods/../build/Debug-iphoneos/HDBaseProject.framework"; sourceTree = "<group>"; };
+		046B010E1BA823D800C00183 /* HDBaseProject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HDBaseProject.framework; path = "Pods/../build/Debug-iphoneos/HDBaseProject.framework"; sourceTree = "<group>"; };
 		2730D3582BD9A871358F5584 /* Pods-HDBaseProject_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDBaseProject_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-HDBaseProject_Example/Pods-HDBaseProject_Example.release.xcconfig"; sourceTree = "<group>"; };
 		477216B3FB5818172A008BD1 /* Pods_HDBaseProject_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HDBaseProject_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6003F58A195388D20070C39A /* HDBaseProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = HDBaseProject.app; path = HDBaseProject_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6003F58A195388D20070C39A /* HDBaseProject_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HDBaseProject_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -51,7 +55,7 @@
 		6003F5A5195388D20070C39A /* HDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HDViewController.h; sourceTree = "<group>"; };
 		6003F5A6195388D20070C39A /* HDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HDViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		6003F5AE195388D20070C39A /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Tests.xctest; path = HDBaseProject_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6003F5AE195388D20070C39A /* HDBaseProject_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HDBaseProject_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -108,8 +112,8 @@
 		6003F58B195388D20070C39A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6003F58A195388D20070C39A /* HDBaseProject.app */,
-				6003F5AE195388D20070C39A /* Tests.xctest */,
+				6003F58A195388D20070C39A /* HDBaseProject_Example.app */,
+				6003F5AE195388D20070C39A /* HDBaseProject_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,6 +121,10 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				046B010E1BA823D800C00183 /* HDBaseProject.framework */,
+				046B010C1BA822D900C00183 /* HDBaseProject.framework */,
+				046B010A1BA822D200C00183 /* AFNetworking.framework */,
+				046B01081BA822AA00C00183 /* AFNetworking.framework */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
@@ -213,7 +221,7 @@
 			);
 			name = HDBaseProject_Example;
 			productName = HDBaseProject;
-			productReference = 6003F58A195388D20070C39A /* HDBaseProject.app */;
+			productReference = 6003F58A195388D20070C39A /* HDBaseProject_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6003F5AD195388D20070C39A /* HDBaseProject_Tests */ = {
@@ -234,7 +242,7 @@
 			);
 			name = HDBaseProject_Tests;
 			productName = HDBaseProjectTests;
-			productReference = 6003F5AE195388D20070C39A /* Tests.xctest */;
+			productReference = 6003F5AE195388D20070C39A /* HDBaseProject_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -512,9 +520,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HDBaseProject/HDBaseProject-Prefix.pch";
 				INFOPLIST_FILE = "HDBaseProject/HDBaseProject-Info.plist";
+				MACH_O_TYPE = mh_execute;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -527,9 +540,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HDBaseProject/HDBaseProject-Prefix.pch";
 				INFOPLIST_FILE = "HDBaseProject/HDBaseProject-Info.plist";
+				MACH_O_TYPE = mh_execute;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

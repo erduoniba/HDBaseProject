@@ -1,40 +1,21 @@
-#
-# Be sure to run `pod lib lint HDBaseProject.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
-  s.name             = "HDBaseProject"
-  s.version          = "0.1.0"
-  s.summary          = "A short description of HDBaseProject."
+s.name             = "HDBaseProject"
+s.version          = "1.0.0"
+s.summary          = "快速搭建项目"
+s.description      = "新建项目中常用的基础类，项目有一定量的时候，都是代码的复制和粘贴，但是在后台的粘贴中或许有好的代码更正，这个时候我们往往没有时间去维护以前的老代码，不经意间会出现代码不同步的问题"
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!  
-  s.description      = <<-DESC
-                       DESC
+s.homepage         = "https://github.com/erduoniba/HDBaseProject"
+s.license          = 'MIT'
+s.author           = { "Harry" => "328418417@qq.com" }
+s.source           = { :git => "https://github.com/erduoniba/HDBaseProject.git", :tag => "1.0.0" }
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/HDBaseProject"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
-  s.license          = 'MIT'
-  s.author           = { "Harry" => "328418417@qq.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/HDBaseProject.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+s.platform     = :ios, '7.0'
+s.requires_arc = true
 
-  s.platform     = :ios, '7.0'
-  s.requires_arc = true
+s.source_files = 'Pod/Classes/**/*'
+s.resource_bundles = {
+'HDBaseProject' => ['Pod/Assets/*.png']
+}
 
-  s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'HDBaseProject' => ['Pod/Assets/*.png']
-  }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+s.dependency 'AFNetworking'  #依赖关系，该项目所依赖的其他库，如果有多个需要填写多个s.dependency
 end
