@@ -1,0 +1,21 @@
+PODS:
+  - FBSnapshotTestCase (2.0.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.0.4)
+  - FBSnapshotTestCase/Core (2.0.4)
+  - FBSnapshotTestCase/SwiftSupport (2.0.4):
+    - FBSnapshotTestCase/Core
+  - HDBaseProject (0.1.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - HDBaseProject (from `../`)
+
+EXTERNAL SOURCES:
+  HDBaseProject:
+    :path: ../
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: d94cf34841c9e77390e29009e8e2713479d48753
+  HDBaseProject: 21b1efbe3a035917ee04d1171e41202129c59129
+
+COCOAPODS: 0.38.2
