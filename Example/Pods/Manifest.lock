@@ -20,7 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.6.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - HDBaseProject (1.0.0):
+  - HDBaseProject (1.0.1):
     - AFNetworking
 
 DEPENDENCIES:
@@ -33,6 +33,6 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
-  HDBaseProject: bd16c386bb858f23a179b3eec0e672bed0359e17
+  HDBaseProject: 9847f50714443b3cffea1d15fb2b09caccb03e69
 
 COCOAPODS: 0.38.2

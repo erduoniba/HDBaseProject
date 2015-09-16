@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		046B01181BA8371500C00183 /* Pods-HDBaseProject_Example.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2730D3582BD9A871358F5584 /* Pods-HDBaseProject_Example.release.xcconfig */; };
+		046B01191BA8371900C00183 /* Pods-HDBaseProject_Example.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 68E151F73B69DFCE9B0FD1C5 /* Pods-HDBaseProject_Example.debug.xcconfig */; };
+		046B01211BA8452700C00183 /* HDBaseProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046B01201BA8452700C00183 /* HDBaseProject.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -40,6 +43,9 @@
 		046B010A1BA822D200C00183 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "Pods/../build/Debug-iphoneos/AFNetworking.framework"; sourceTree = "<group>"; };
 		046B010C1BA822D900C00183 /* HDBaseProject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HDBaseProject.framework; path = "Pods/../build/Debug-iphoneos/HDBaseProject.framework"; sourceTree = "<group>"; };
 		046B010E1BA823D800C00183 /* HDBaseProject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HDBaseProject.framework; path = "Pods/../build/Debug-iphoneos/HDBaseProject.framework"; sourceTree = "<group>"; };
+		046B01101BA8331D00C00183 /* HDBaseProject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HDBaseProject.framework; path = "Pods/../build/Debug-iphoneos/HDBaseProject.framework"; sourceTree = "<group>"; };
+		046B011A1BA8439600C00183 /* HDBaseProject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HDBaseProject.framework; path = "Pods/../build/Debug-iphoneos/HDBaseProject.framework"; sourceTree = "<group>"; };
+		046B01201BA8452700C00183 /* HDBaseProject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HDBaseProject.framework; path = "Pods/../build/Debug-iphoneos/HDBaseProject.framework"; sourceTree = "<group>"; };
 		2730D3582BD9A871358F5584 /* Pods-HDBaseProject_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDBaseProject_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-HDBaseProject_Example/Pods-HDBaseProject_Example.release.xcconfig"; sourceTree = "<group>"; };
 		477216B3FB5818172A008BD1 /* Pods_HDBaseProject_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HDBaseProject_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58A195388D20070C39A /* HDBaseProject_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HDBaseProject_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +72,7 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		890E73E3928F2CB48A341B88 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		9D9A7C9233A11CE19DAE8508 /* Pods_HDBaseProject_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HDBaseProject_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6F22E846D7DBA0E8E54C4B5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7DC8FA1ACFA77E511CEC0A4 /* Pods-HDBaseProject_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDBaseProject_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HDBaseProject_Tests/Pods-HDBaseProject_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		B7A7E4C4E2E28A1B12B026F5 /* Pods-HDBaseProject_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDBaseProject_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HDBaseProject_Tests/Pods-HDBaseProject_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		D130B696D677A3043FB2BABE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -76,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046B01211BA8452700C00183 /* HDBaseProject.framework in Frameworks */,
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
@@ -121,6 +129,9 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				046B01201BA8452700C00183 /* HDBaseProject.framework */,
+				046B011A1BA8439600C00183 /* HDBaseProject.framework */,
+				046B01101BA8331D00C00183 /* HDBaseProject.framework */,
 				046B010E1BA823D800C00183 /* HDBaseProject.framework */,
 				046B010C1BA822D900C00183 /* HDBaseProject.framework */,
 				046B010A1BA822D200C00183 /* AFNetworking.framework */,
@@ -131,6 +142,7 @@
 				6003F5AF195388D20070C39A /* XCTest.framework */,
 				9D9A7C9233A11CE19DAE8508 /* Pods_HDBaseProject_Example.framework */,
 				477216B3FB5818172A008BD1 /* Pods_HDBaseProject_Tests.framework */,
+				A6F22E846D7DBA0E8E54C4B5 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -212,7 +224,6 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				3B9A6B3857E9D153E5BF4F11 /* Embed Pods Frameworks */,
 				FB327A98D6B23C4FE1B4CD82 /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -284,7 +295,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046B01191BA8371900C00183 /* Pods-HDBaseProject_Example.debug.xcconfig in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
+				046B01181BA8371500C00183 /* Pods-HDBaseProject_Example.release.xcconfig in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
@@ -329,21 +342,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		3B9A6B3857E9D153E5BF4F11 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HDBaseProject_Example/Pods-HDBaseProject_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BEE0325145946C298866B7B4 /* Check Pods Manifest.lock */ = {
@@ -527,6 +525,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HDBaseProject/HDBaseProject-Prefix.pch";
 				INFOPLIST_FILE = "HDBaseProject/HDBaseProject-Info.plist";
+				LIBRARY_SEARCH_PATHS = "-lPods";
 				MACH_O_TYPE = mh_execute;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -547,6 +546,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HDBaseProject/HDBaseProject-Prefix.pch";
 				INFOPLIST_FILE = "HDBaseProject/HDBaseProject-Info.plist";
+				LIBRARY_SEARCH_PATHS = "-lPods";
 				MACH_O_TYPE = mh_execute;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";

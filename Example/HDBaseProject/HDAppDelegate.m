@@ -8,13 +8,45 @@
 
 #import "HDAppDelegate.h"
 
+#import "HTTPRequest.h"
+
+//易源接口:为了验证用户身份，以及确保参数不被中间人篡改，需要传递调用者的数字签名。
+#define SHOWAPI_SIGN    @"983e97df16ff48cb984c8250024aa142"
+#define SHOWAPI_APPID   @"5095"
+
 @implementation HDAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    
+    NSString *time = [self getDateString:[NSDate date] withFormat:@"yyyyMMddHHmmss"];
+    
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setObject:SHOWAPI_SIGN     forKey:@"showapi_sign"];
+    [dic setObject:SHOWAPI_APPID    forKey:@"showapi_appid"];
+    [dic setObject:time             forKey:@"showapi_timestamp"];   //时间戳最好不要放在默认参数里面
+    [dic setObject:@(20)            forKey:@"num"];
+
+    HTTPRequest *rq = [HTTPRequest shareInstanceWithBaseDemail:@"https://route.showapi.com"];
+    [rq setDefaultParamters:dic];
+    
     return YES;
 }
+
+- (NSString *)getDateString:(NSDate *)date withFormat:(NSString*)format
+{
+    NSTimeZone *tzGMT = [NSTimeZone timeZoneWithName:@"GMT+8:00"];
+    [NSTimeZone setDefaultTimeZone:tzGMT];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeZone:tzGMT];
+    [dateFormatter setDateFormat:format];
+    
+    NSString *destDateString = [dateFormatter stringFromDate:date];
+    
+    return destDateString;
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

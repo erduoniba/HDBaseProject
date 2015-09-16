@@ -8,6 +8,8 @@
 
 #import "HDViewController.h"
 
+#import "HTTPManager.h"
+
 @interface HDViewController ()
 
 @end
@@ -18,6 +20,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    [HTTPManager getWeixinJingxuanPageIndex:1 success:^(id responseObject) {
+        
+    } failure:^(NSString *errorResult) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning
