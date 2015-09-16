@@ -8,25 +8,37 @@
 
 #import "HTTPRequest.h"
 
-@implementation HTTPRequest
+@implementation HTTPRequest{
+    NSDictionary *_defaultParamters;
+}
 
 + (instancetype)shareInstance
 {
+    return [self shareInstanceWithBaseDemail:@""];
+}
+
++ (instancetype)shareInstanceWithBaseDemail:(NSString *)baseDemail{
     static dispatch_once_t once;
     static HTTPRequest *instance = nil;
     dispatch_once(&once, ^{
-		instance = [[[self class] alloc] init];
+        instance = [[HTTPRequest alloc] initWithBaseURL:[NSURL URLWithString:baseDemail]];
     });
     return instance;
 }
 
-- (id)init{
-	self = [[HTTPRequest alloc] initWithBaseURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/",BaseDemain]]];
+- (id)initWithBaseURL:(nullable NSURL *)url{
+	self = [super initWithBaseURL:url];
 	if (self) {
 		[self loadCookies];
+        _defaultParamters = [NSDictionary dictionary];
 	}
 	return self;
 }
+
+- (void)setDefaultParamters:(NSDictionary *)defaultParamters{
+    _defaultParamters = [NSDictionary dictionaryWithDictionary:defaultParamters];
+}
+
 
 + (NSUInteger)getCacheData
 {
@@ -66,13 +78,7 @@
 	
 }
 - (void)loadCookies{
-	self.sessionCookies = [[NSUserDefaults standardUserDefaults] objectForKey: @"sessionCookies"];
-//	NSArray *cookies = [NSKeyedUnarchiver unarchiveObjectWithData:_sessionCookies];
-//	NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-//	
-//	for (NSHTTPCookie *cookie in cookies){
-//		[cookieStorage setCookie: cookie];
-//	}
+	self.sessionCookies = [[NSUserDefaults standardUserDefaults] objectForKey:@"sessionCookies"];
 }
 
 
@@ -98,7 +104,7 @@
     NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:parameters];
     dic = [self appendRoutineParameterTo:dic];
     
-    URLString = [NSString stringWithFormat:@"%@/%@", BaseDemain, URLString];
+    URLString = [NSString stringWithFormat:@"%@/%@", self.baseURL.absoluteString, URLString];
     
     NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"GET"
                                                                    URLString:URLString
@@ -267,6 +273,7 @@
 
 - (NSMutableDictionary *)appendRoutineParameterTo:(NSMutableDictionary *)dic
 {
+    [dic addEntriesFromDictionary:_defaultParamters];
     return dic;
 }
 
