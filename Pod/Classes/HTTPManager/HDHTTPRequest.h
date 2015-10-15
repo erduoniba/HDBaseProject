@@ -37,7 +37,7 @@
 #endif
 
 
-@interface HTTPRequest : AFHTTPRequestOperationManager
+@interface HDHTTPRequest : AFHTTPRequestOperationManager
 
 @property (nonatomic, strong) NSData *sessionCookies;
 

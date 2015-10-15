@@ -18,4 +18,5 @@ s.resource_bundles = {
 }
 
 s.dependency 'AFNetworking'  #依赖关系，该项目所依赖的其他库，如果有多个需要填写多个s.dependency
+s.dependency 'SDWebImage'    #依赖关系，该项目所依赖的其他库，如果有多个需要填写多个s.dependency
 end

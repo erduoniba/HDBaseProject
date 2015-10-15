@@ -8,6 +8,7 @@
 
 /******************************************************************************************************
  * 所有网络请求方法都在这里
+ * 这里只是一个DEMO
  ****************************************************************************************************/
 
 #import <Foundation/Foundation.h>
@@ -16,7 +17,7 @@
 typedef void(^ httpRequestSuccess)(id responseObject);
 typedef void(^ httpRequestFailure)(NSString *errorResult);
 
-@interface HTTPManager : NSObject
+@interface HDHTTPManager : NSObject
 
 //DEMO
 + (void)getWeixinJingxuanPageIndex:(NSInteger)pageIndex

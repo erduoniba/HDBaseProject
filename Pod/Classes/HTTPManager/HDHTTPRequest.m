@@ -6,9 +6,9 @@
 //  Copyright (c) 2013年 Harry. All rights reserved.
 //
 
-#import "HTTPRequest.h"
+#import "HDHTTPRequest.h"
 
-@implementation HTTPRequest{
+@implementation HDHTTPRequest{
     NSDictionary *_defaultParamters;
 }
 
@@ -19,9 +19,9 @@
 
 + (instancetype)shareInstanceWithBaseDemail:(NSString *)baseDemail{
     static dispatch_once_t once;
-    static HTTPRequest *instance = nil;
+    static HDHTTPRequest *instance = nil;
     dispatch_once(&once, ^{
-        instance = [[HTTPRequest alloc] initWithBaseURL:[NSURL URLWithString:baseDemail]];
+        instance = [[HDHTTPRequest alloc] initWithBaseURL:[NSURL URLWithString:baseDemail]];
     });
     return instance;
 }

@@ -6,16 +6,16 @@
 //  Copyright (c) 2015年 Harry. All rights reserved.
 //
 
-#import "HTTPManager.h"
+#import "HDHTTPManager.h"
 
-#import "HTTPRequest.h"
+#import "HDHTTPRequest.h"
 
-@implementation HTTPManager
+@implementation HDHTTPManager
 
 + (void)getWeixinJingxuanPageIndex:(NSInteger)pageIndex
                            success:(httpRequestSuccess)success
                            failure:(httpRequestFailure)failure{
-    [[HTTPRequest shareInstance] GETURLString:@"181-1" parameters:@{@"page" : @(pageIndex)} success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObj) {
+    [[HDHTTPRequest shareInstance] GETURLString:@"181-1" parameters:@{@"page" : @(pageIndex)} success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObj) {
         
         DLog(@"response : %@",operation.responseString);
         success(responseObj);

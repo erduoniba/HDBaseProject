@@ -8,7 +8,8 @@
 
 #import "HDAppDelegate.h"
 
-#import "HTTPRequest.h"
+#import "HDHTTPRequest.h"
+#import "HDBaseViewController.h"
 
 //易源接口:为了验证用户身份，以及确保参数不被中间人篡改，需要传递调用者的数字签名。
 #define SHOWAPI_SIGN    @"983e97df16ff48cb984c8250024aa142"
@@ -18,6 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [HDBaseViewController setBackgroundColor:[UIColor orangeColor]];
     
     NSString *time = [self getDateString:[NSDate date] withFormat:@"yyyyMMddHHmmss"];
     
@@ -27,7 +29,7 @@
     [dic setObject:time             forKey:@"showapi_timestamp"];   //时间戳最好不要放在默认参数里面
     [dic setObject:@(20)            forKey:@"num"];
 
-    HTTPRequest *rq = [HTTPRequest shareInstanceWithBaseDemail:@"https://route.showapi.com"];
+    HDHTTPRequest *rq = [HDHTTPRequest shareInstanceWithBaseDemail:@"https://route.showapi.com"];
     [rq setDefaultParamters:dic];
     
     return YES;

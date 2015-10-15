@@ -8,7 +8,9 @@
 
 #import "HDViewController.h"
 
-#import "HTTPManager.h"
+#import "HDHTTPManager.h"
+
+#import "HDViewViewController2.h"
 
 @interface HDViewController ()
 
@@ -21,11 +23,17 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    [HTTPManager getWeixinJingxuanPageIndex:1 success:^(id responseObject) {
+    [HDHTTPManager getWeixinJingxuanPageIndex:1 success:^(id responseObject) {
         
     } failure:^(NSString *errorResult) {
         
     }];
+    
+    self.title = @"asd";
+    self.view.backgroundColor = [UIColor grayColor];
+}
+- (IBAction)nextAction:(id)sender {
+    [self.navigationController pushViewController:[HDViewViewController2 new] animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
