@@ -22,10 +22,6 @@ s.subspec 'HDBaseViewControllers' do |ss|
 ss.source_files = 'Pod/Classes/HDBaseViewControllers/*.{h,m}'
 end
 
-s.subspec 'HDBaseViewControllers' do |ss|
-ss.source_files = 'Pod/Classes/HDBaseViewControllers/*.{h,m}'
-end
-
 s.subspec 'HDGlobalMethods' do |ss|
 ss.source_files = 'Pod/Classes/HDGlobalMethods/*.{h,m}'
 end
@@ -38,8 +34,8 @@ s.subspec 'ThirdPartyLibs' do |ss|
 ss.source_files = 'Pod/Classes/ThirdPartyLibs/*.{h,m}'
 end
 
-s.public_header_files = 'HDBaseProject/HDBaseProject.h'
-s.source_files = 'HDBaseProject/HDBaseProject.h'
+s.public_header_files = 'Pod/Classes/HDBaseProject.h'
+s.source_files = 'Pod/Classes/HDBaseProject.h'
 
 s.resource_bundles = {
 'HDBaseProject' => ['Pod/Assets/*.png']
