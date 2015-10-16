@@ -12,7 +12,35 @@ s.source           = { :git => "https://github.com/erduoniba/HDBaseProject.git",
 s.platform     = :ios, '7.0'
 s.requires_arc = true
 
-s.source_files = 'Pod/Classes/**/*'
+
+#别人pod该代码的时候，需要比较清晰的目录结构，代码如下：
+s.subspec 'Catogorys' do |ss|
+ss.source_files = 'Pod/Classes/Catogorys/*.{h,m}'
+end
+
+s.subspec 'HDBaseViewControllers' do |ss|
+ss.source_files = 'Pod/Classes/HDBaseViewControllers/*.{h,m}'
+end
+
+s.subspec 'HDBaseViewControllers' do |ss|
+ss.source_files = 'Pod/Classes/HDBaseViewControllers/*.{h,m}'
+end
+
+s.subspec 'HDGlobalMethods' do |ss|
+ss.source_files = 'Pod/Classes/HDGlobalMethods/*.{h,m}'
+end
+
+s.subspec 'HDHTTPManager' do |ss|
+ss.source_files = 'Pod/Classes/HDHTTPManager/*.{h,m}'
+end
+
+s.subspec 'ThirdPartyLibs' do |ss|
+ss.source_files = 'Pod/Classes/ThirdPartyLibs/*.{h,m}'
+end
+
+s.public_header_files = 'HDBaseProject/HDBaseProject.h'
+s.source_files = 'HDBaseProject/HDBaseProject.h'
+
 s.resource_bundles = {
 'HDBaseProject' => ['Pod/Assets/*.png']
 }
