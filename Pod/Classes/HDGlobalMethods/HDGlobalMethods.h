@@ -71,7 +71,7 @@
 + (BOOL) isImageTypeWithUrl:(NSString *)url;
 
 ///获取视频的第一帧的截图(本地地址)
-+(UIImage *)fFirstVideoFrame:(NSString *)path;
++ (void)fFirstVideoFrame:(NSString *)path;
 
 ///获取视频的第一帧的截图（网络地址）
 +(UIImage *)getImage:(NSString *)videoURL;

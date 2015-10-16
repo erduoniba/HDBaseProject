@@ -306,18 +306,24 @@ static NSBundle *gsBundle = nil;
     return image;
 }
 
-+(UIImage *)fFirstVideoFrame:(NSString *)path{
++ (void)fFirstVideoFrame:(NSString *)path{
+    
+    // 1. 添加播放状态的监听
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    // 2. 截屏完成通知
+    [nc addObserver:self selector:@selector(captureFinished:) name:MPMoviePlayerThumbnailImageRequestDidFinishNotification object:nil];
+    
     MPMoviePlayerController *mp = [[MPMoviePlayerController alloc]
                                    initWithContentURL:[NSURL fileURLWithPath:path]];
-    UIImage *img = [mp thumbnailImageAtTime:0.5
-                                 timeOption:MPMovieTimeOptionNearestKeyFrame];
+    [mp requestThumbnailImagesAtTimes:@[@(0.5)] timeOption:MPMovieTimeOptionNearestKeyFrame];
     [mp stop];
-    
-    if (!img) {
-        img = GET_IMAGE_NAME(@"movie");
-    }
-    
-    return img;
+}
+
+- (void)captureFinished:(NSNotification *)notification
+{
+    // 3. 通知得到图片,需要代理或者其他方式获取
+    UIImage *image = notification.userInfo[MPMoviePlayerThumbnailImageKey];
+    NSLog(@"%@", image);
 }
 
 +(UIImage *)getImage:(NSString *)videoURL{
