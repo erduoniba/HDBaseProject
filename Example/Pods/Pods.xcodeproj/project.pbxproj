@@ -610,22 +610,6 @@
 			name = UIKit;
 			sourceTree = "<group>";
 		};
-		2A57E55A2B5120AAA6E42F3CA80126D4 /* en.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				2C36D0AB7001A718620F1F430DF64FA1 /* ru.lproj */,
-				E9B626DE824E3C0F032A90F2CF709E18 /* uk.lproj */,
-			);
-			path = en.lproj;
-			sourceTree = "<group>";
-		};
-		2C36D0AB7001A718620F1F430DF64FA1 /* ru.lproj */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ru.lproj;
-			sourceTree = "<group>";
-		};
 		2FC0F68F484EF03E32159F616C87DFF0 /* Pods-HDBaseProject_Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -651,13 +635,6 @@
 				92D13E7FE196BF63C3FB6F5870BCA631 /* AFNetworkReachabilityManager.m */,
 			);
 			name = Reachability;
-			sourceTree = "<group>";
-		};
-		3B85907503964AD9C8A3FA26AD5648F7 /* pl.lproj */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = pl.lproj;
 			sourceTree = "<group>";
 		};
 		401D64DFCFF5BD49405CB9EADBC2F437 /* Frameworks */ = {
@@ -776,13 +753,6 @@
 			path = ThirdPartyLibs;
 			sourceTree = "<group>";
 		};
-		7D26D8FF4997B210E0A1C9B2D8D20A78 /* ja.lproj */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ja.lproj;
-			sourceTree = "<group>";
-		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
@@ -819,13 +789,6 @@
 				BD831B456AE01747F0B81359122481D1 /* AFURLSessionManager.m */,
 			);
 			name = NSURLSession;
-			sourceTree = "<group>";
-		};
-		849C31D749435636F72B121C6506DCC5 /* fr.lproj */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = fr.lproj;
 			sourceTree = "<group>";
 		};
 		8651B8B3BB1959395B222974788B5CC2 /* Security */ = {
@@ -889,13 +852,6 @@
 				6C3B5BB5FB577AF1520ECF996081F921 /* Classes */,
 			);
 			path = Pod;
-			sourceTree = "<group>";
-		};
-		9E9E59BA5F14E5771141E0789DF4DEC1 /* es.lproj */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = es.lproj;
 			sourceTree = "<group>";
 		};
 		A0CB4C196BF7806040DF2AF0BF91C47F /* Core */ = {
@@ -998,13 +954,6 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		C577E24C2E89586356E8F760EB183DCA /* ko.lproj */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ko.lproj;
-			sourceTree = "<group>";
-		};
 		C9B12F7E4589727D9C673695CDBE3C29 /* TOWebViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1016,14 +965,6 @@
 				3791BEE1B8E563A0075823CDE380A45C /* TOWebViewController.m */,
 				1D241A59F5B026894D37D3EC1DF8C63F /* UIImage+TOWebViewControllerIcons.h */,
 				3F67BA216A18CBA900D538118C0F0BB0 /* UIImage+TOWebViewControllerIcons.m */,
-				D49203AEFE82DD7FD56EDFE8D1EA1F2D /* de.lproj */,
-				2A57E55A2B5120AAA6E42F3CA80126D4 /* en.lproj */,
-				9E9E59BA5F14E5771141E0789DF4DEC1 /* es.lproj */,
-				849C31D749435636F72B121C6506DCC5 /* fr.lproj */,
-				7D26D8FF4997B210E0A1C9B2D8D20A78 /* ja.lproj */,
-				C577E24C2E89586356E8F760EB183DCA /* ko.lproj */,
-				3B85907503964AD9C8A3FA26AD5648F7 /* pl.lproj */,
-				DFFEC3F5221B073BC2EBF32441382BB7 /* zh-Hans.lproj */,
 				F8E44451B9B57E383C988D91BCE6FEDA /* zh-Hant.lproj */,
 			);
 			path = TOWebViewController;
@@ -1043,13 +984,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D49203AEFE82DD7FD56EDFE8D1EA1F2D /* de.lproj */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = de.lproj;
-			sourceTree = "<group>";
-		};
 		D961C2184BFCC9491D9374630F7C77D5 /* Pods-HDBaseProject_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -1066,20 +1000,6 @@
 			);
 			name = "Pods-HDBaseProject_Tests";
 			path = "Target Support Files/Pods-HDBaseProject_Tests";
-			sourceTree = "<group>";
-		};
-		DFFEC3F5221B073BC2EBF32441382BB7 /* zh-Hans.lproj */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "zh-Hans.lproj";
-			sourceTree = "<group>";
-		};
-		E9B626DE824E3C0F032A90F2CF709E18 /* uk.lproj */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = uk.lproj;
 			sourceTree = "<group>";
 		};
 		EFC4D55B31614998C93CE8981A8C794F /* Targets Support Files */ = {
@@ -1750,7 +1670,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
+				MACH_O_TYPE = mh_dylib;
 				MODULEMAP_FILE = "Target Support Files/AFNetworking/AFNetworking.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = AFNetworking;
@@ -1778,7 +1698,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
+				MACH_O_TYPE = mh_dylib;
 				MODULEMAP_FILE = "Target Support Files/MJRefresh/MJRefresh.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = MJRefresh;
@@ -2013,7 +1933,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
+				MACH_O_TYPE = mh_dylib;
 				MODULEMAP_FILE = "Target Support Files/AFNetworking/AFNetworking.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = AFNetworking;
@@ -2071,7 +1991,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
+				MACH_O_TYPE = mh_dylib;
 				MODULEMAP_FILE = "Target Support Files/MJRefresh/MJRefresh.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = MJRefresh;
