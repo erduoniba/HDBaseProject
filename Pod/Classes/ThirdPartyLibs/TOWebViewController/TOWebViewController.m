@@ -1652,7 +1652,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
         NSString *key = @"bounds";
         CABasicAnimation *anim = [[self.webView.scrollView.layer animationForKey:key] mutableCopy];
         if (anim == nil) { //anim may be nil if the zoomScale wasn't sufficiently different to warrant an animation
-            [self animationDidStop:nil finished:YES];
+            [self animationDidStop:[CAAnimation new] finished:YES];
             return;
         }
         
@@ -1662,7 +1662,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     }
     else {
         [self.webView.scrollView setZoomScale:translatedScale animated:NO];
-        [self animationDidStop:nil finished:YES];
+        [self animationDidStop:[CAAnimation new] finished:YES];
     }
 }
 

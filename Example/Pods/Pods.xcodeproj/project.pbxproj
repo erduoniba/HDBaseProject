@@ -1810,6 +1810,7 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+				WARNING_CFLAGS = "-Wno-deprecated-declarations";
 			};
 			name = Debug;
 		};
@@ -1944,6 +1945,7 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+				WARNING_CFLAGS = "-Wno-deprecated-declarations";
 			};
 			name = Release;
 		};
