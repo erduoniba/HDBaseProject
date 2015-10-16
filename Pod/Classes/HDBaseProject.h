@@ -7,10 +7,15 @@
 //
 
 #ifndef HDBaseProject_h
-    #define HDBaseProject_h
+#define HDBaseProject_h
 
-    #import "HDHTTPRequest.h"
-    #import "HDHTTPManager.h"
-    #import "HDBaseViewController.h"
+#import "HDHTTPRequest.h"
+#import "HDHTTPManager.h"
+#import "HDBaseViewController.h"
+#import "HDBaseUITableViewController.h"
+#import "HDBaseUIWebViewController.h"
+
+#import "HDGlobalVariable.h"
+#import "HDGlobalMethods.h"
 
 #endif /* HDBaseProject_h */

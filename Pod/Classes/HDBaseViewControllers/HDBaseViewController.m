@@ -8,6 +8,11 @@
 
 #import "HDBaseViewController.h"
 
+#import "HDBaseUIWebViewController.h"
+
+#import "HDGlobalMethods.h"
+
+
 @interface HDBaseViewController ()
 
 @end
@@ -15,9 +20,14 @@
 @implementation HDBaseViewController
 
 static UIColor *backgroundColor;
+static NSString *backImageName;
 
 + (void)setBackgroundColor:(UIColor *)color{
     backgroundColor = color;
+}
+
++ (void)setBackImageName:(NSString *)imageName{
+    backImageName = imageName;
 }
 
 - (void)viewDidLoad {
@@ -62,11 +72,14 @@ static UIColor *backgroundColor;
 }
 
 
+
+
+
 #pragma mark - 左右自定义按钮
 - (UIBarButtonItem *)createBarBackButtonItem:(id)target
                                     selector:(SEL)action
 {
-    UIImage * img = [UIImage imageNamed:@"back"];
+    UIImage * img = [UIImage imageNamed:backImageName];
     
     UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, img.size.width+10, img.size.height)];
     

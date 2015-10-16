@@ -31,6 +31,10 @@
 + (CGSize)getSizeWithString:(NSString *)string font:(UIFont *)font constrainedToSize:(CGSize)size;
 
 
+//获取bundle资源
++ (NSBundle *)resourceBundle:(NSString *)bundleName;
++ (UIImage *)imageNamed:(NSString *)name;
+
 
 /**
  *  md5加密

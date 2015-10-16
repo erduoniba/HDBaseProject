@@ -36,6 +36,13 @@
 + (void)setBackgroundColor:(UIColor *)color;
 
 /**
+ *  设置基类的返回的图片，在项目didFinishLaunchingWithOptions中设置
+ *
+ *  @param backImageName 返回的图片
+ */
++ (void)setBackImageName:(NSString *)backImageName;
+
+/**
  *  广义级别的通知,当我们需要和另一个VC进行交互时候,可以执行此协议相关的方法!
  */
 @property (nonatomic,assign)id<HarryViewControllerDelegate> vcDelegate;

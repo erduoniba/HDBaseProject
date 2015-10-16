@@ -1,0 +1,1 @@
+../../../../../Pod/Classes/HDGlobalMethods/HDGlobalVariable.h

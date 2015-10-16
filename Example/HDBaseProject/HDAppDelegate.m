@@ -19,7 +19,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [HDBaseViewController setBackgroundColor:[UIColor orangeColor]];
+    [HDBaseViewController setBackgroundColor:[UIColor whiteColor]];
+    [HDBaseViewController setBackImageName:@"back"];
     
     NSString *time = [self getDateString:[NSDate date] withFormat:@"yyyyMMddHHmmss"];
     

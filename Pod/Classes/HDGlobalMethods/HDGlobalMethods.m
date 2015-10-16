@@ -119,6 +119,48 @@
 
 
 
+static NSBundle *gsBundle = nil;
++ (NSBundle *)resourceBundle:(NSString *)bundleName{
+    if (!gsBundle)
+    {
+        NSString *path = [[NSBundle mainBundle] pathForResource:bundleName
+                                                         ofType:@"bundle"];
+        gsBundle = [NSBundle bundleWithPath: path];
+    }
+    
+    return gsBundle;
+}
++ (UIImage *)imageNamed:(NSString *)name{
+    UIImage * img;
+    if ([[[UIDevice currentDevice] systemVersion] compare:@"8.0"] != NSOrderedAscending)
+    {
+        img = [UIImage imageNamed:name inBundle:[self resourceBundle:@"Resources"] compatibleWithTraitCollection:nil];
+    }
+    else
+    {
+        CGFloat scale_screen = [UIScreen mainScreen].scale;
+        if (scale_screen >= 2)
+        {
+            if ([name rangeOfString:@"."].length >0)
+            {
+                
+            }
+            else
+            {
+                name = [name stringByAppendingString:@".png"];
+            }
+        }
+        img = [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%@", [[self resourceBundle:@"Resources"] bundlePath],name]];
+    }
+    
+    if (!img) {
+        img = [UIImage imageNamed:name];
+    }
+    
+    return img;
+}
+
+
 /**
  *  md5加密
  *

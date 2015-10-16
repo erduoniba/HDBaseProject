@@ -6,8 +6,8 @@
 //  Copyright © 2015年 Harry. All rights reserved.
 //
 
-#import "HDBaseViewController.h"
+#import "HDBaseUITableViewController.h"
 
-@interface HDViewViewController2 : HDBaseViewController
+@interface HDViewViewController2 : HDBaseUITableViewController
 
 @end
