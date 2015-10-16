@@ -273,6 +273,7 @@
 		01A1F2E7FEB37EF511A4DC1043750F00 /* Pods-HDBaseProject_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-HDBaseProject_Example.modulemap"; sourceTree = "<group>"; };
 		02FE3ACD034A2FCD70E5F6E61DB6B133 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m"; sourceTree = "<group>"; };
 		03B4E571A83C7139215C766DF64FCFC5 /* SDWebImageDecoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDecoder.m; path = SDWebImage/SDWebImageDecoder.m; sourceTree = "<group>"; };
+		04DBBCA11BD0DC4200B25004 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = TOWebViewControllerLocalizable.strings; sourceTree = "<group>"; };
 		065352E6AEDDBF7E5A7A30AFEC26570D /* SDWebImageManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageManager.h; path = SDWebImage/SDWebImageManager.h; sourceTree = "<group>"; };
 		08133688A9F01CB372F61A49A736C640 /* MJRefreshNormalHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshNormalHeader.h; path = MJRefresh/Custom/Header/MJRefreshNormalHeader.h; sourceTree = "<group>"; };
 		08BD5FA70E0E6505A093535C0E0138FD /* UIView+MJExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+MJExtension.m"; path = "MJRefresh/UIView+MJExtension.m"; sourceTree = "<group>"; };
@@ -542,6 +543,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04DBBC9F1BD0DC4100B25004 /* zh-Hans.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				04DBBCA01BD0DC4100B25004 /* TOWebViewControllerLocalizable.strings */,
+			);
+			path = "zh-Hans.lproj";
+			sourceTree = "<group>";
+		};
 		06FA225730A881858936C35427B2D264 /* HTTPManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -955,6 +964,7 @@
 		C9B12F7E4589727D9C673695CDBE3C29 /* TOWebViewController */ = {
 			isa = PBXGroup;
 			children = (
+				04DBBC9F1BD0DC4100B25004 /* zh-Hans.lproj */,
 				3CEC3067D428C7AAFC6CD80C3C0FD2D4 /* TOActivityChrome.h */,
 				A600A789AE0CCADE9AD1C646FEF81A8A /* TOActivityChrome.m */,
 				0AE4E5B165F550F8BF549AFE67180342 /* TOActivitySafari.h */,
@@ -1294,6 +1304,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hans",
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
 			productRefGroup = CCA510CFBEA2D207524CDA0D73C3B561 /* Products */;
@@ -1536,6 +1547,17 @@
 			targetProxy = 22763E4F8EFFC924F60423DA4F5E330B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		04DBBCA01BD0DC4100B25004 /* TOWebViewControllerLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04DBBCA11BD0DC4200B25004 /* zh-Hans */,
+			);
+			name = TOWebViewControllerLocalizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		006BD0CAF4D89B60C526DE2876B10BC9 /* Release */ = {
