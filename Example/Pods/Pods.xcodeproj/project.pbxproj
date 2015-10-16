@@ -61,7 +61,6 @@
 		5C378985137E7E731520C75BA555B363 /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = F9152801A69E0C9D55CD4EB089D31297 /* UIImage+Tint.m */; };
 		5C7EBC89A77DE52A1629EE7DC686AD0C /* UIColor+RGBValues.h in Headers */ = {isa = PBXBuildFile; fileRef = F86CDCB194D047F1D776BEA98FCB823B /* UIColor+RGBValues.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5E2784A3B9C7733A87F29FF89961C6C8 /* SDWebImage-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 50D5153F825E59E39BBF9940B1F3058F /* SDWebImage-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5F8BC67E6DA8B9A1169866EFC6CFB6B9 /* TOWebViewControllerLocalizable.strings in Sources */ = {isa = PBXBuildFile; fileRef = A9BAFDDD3FC06DB8B4E27DCF2A36D5E5 /* TOWebViewControllerLocalizable.strings */; };
 		61F921A56667AC11F87FBC7531982BD9 /* UIScrollView+MJExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D2EAE321613942C149B1233076B445E /* UIScrollView+MJExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		62B64829B3FA4602EEB73771C65D18B9 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = A77AECEEDA07C8470D367C7375EEBBA3 /* UIRefreshControl+AFNetworking.m */; };
 		6300E4E2AA7B880EE8FD119D67F999DC /* UIImage+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = FB51DC7AFFD453D39512F949CE9B6CB3 /* UIImage+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -408,7 +407,6 @@
 		A7A8B570C4C9C3FF181AC5E3741DDC36 /* UIScrollView+MJRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+MJRefresh.h"; path = "MJRefresh/UIScrollView+MJRefresh.h"; sourceTree = "<group>"; };
 		A94BDA597E1ADA29938165998A47AD09 /* NSData+ImageContentType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+ImageContentType.m"; path = "SDWebImage/NSData+ImageContentType.m"; sourceTree = "<group>"; };
 		A9A79BDFA8D6FCA3451ACB4EA754E9D1 /* MJRefresh.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MJRefresh.modulemap; sourceTree = "<group>"; };
-		A9BAFDDD3FC06DB8B4E27DCF2A36D5E5 /* TOWebViewControllerLocalizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; path = TOWebViewControllerLocalizable.strings; sourceTree = "<group>"; };
 		AB2878C7B6FCFCF3FBA3D0A1716A19F6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
 		AC9C3498B40210B7AD11A75EB9870604 /* SDWebImagePrefetcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImagePrefetcher.h; path = SDWebImage/SDWebImagePrefetcher.h; sourceTree = "<group>"; };
 		AF4AC8FE21C01A522E6081F787113829 /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImagePrefetcher.m; path = SDWebImage/SDWebImagePrefetcher.m; sourceTree = "<group>"; };
@@ -965,7 +963,6 @@
 				3791BEE1B8E563A0075823CDE380A45C /* TOWebViewController.m */,
 				1D241A59F5B026894D37D3EC1DF8C63F /* UIImage+TOWebViewControllerIcons.h */,
 				3F67BA216A18CBA900D538118C0F0BB0 /* UIImage+TOWebViewControllerIcons.m */,
-				F8E44451B9B57E383C988D91BCE6FEDA /* zh-Hant.lproj */,
 			);
 			path = TOWebViewController;
 			sourceTree = "<group>";
@@ -1009,14 +1006,6 @@
 				D961C2184BFCC9491D9374630F7C77D5 /* Pods-HDBaseProject_Tests */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		F8E44451B9B57E383C988D91BCE6FEDA /* zh-Hant.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				A9BAFDDD3FC06DB8B4E27DCF2A36D5E5 /* TOWebViewControllerLocalizable.strings */,
-			);
-			path = "zh-Hant.lproj";
 			sourceTree = "<group>";
 		};
 		FB34F4A36451D3299C758C38A7FE632E /* HDBaseProject */ = {
@@ -1364,17 +1353,6 @@
 				20140BC10070CE1CB2BD3F1DE74362CA /* TOActivityChrome.m in Sources */,
 				7BE58C9EB38ECB7FAF427D1138F8E14A /* TOActivitySafari.m in Sources */,
 				F9DF26369779F3E4B96CCADAD078F606 /* TOWebViewController.m in Sources */,
-				5F8BC67E6DA8B9A1169866EFC6CFB6B9 /* TOWebViewControllerLocalizable.strings in Sources */,
-				5F8BC67E6DA8B9A1169866EFC6CFB6B9 /* TOWebViewControllerLocalizable.strings in Sources */,
-				5F8BC67E6DA8B9A1169866EFC6CFB6B9 /* TOWebViewControllerLocalizable.strings in Sources */,
-				5F8BC67E6DA8B9A1169866EFC6CFB6B9 /* TOWebViewControllerLocalizable.strings in Sources */,
-				5F8BC67E6DA8B9A1169866EFC6CFB6B9 /* TOWebViewControllerLocalizable.strings in Sources */,
-				5F8BC67E6DA8B9A1169866EFC6CFB6B9 /* TOWebViewControllerLocalizable.strings in Sources */,
-				5F8BC67E6DA8B9A1169866EFC6CFB6B9 /* TOWebViewControllerLocalizable.strings in Sources */,
-				5F8BC67E6DA8B9A1169866EFC6CFB6B9 /* TOWebViewControllerLocalizable.strings in Sources */,
-				5F8BC67E6DA8B9A1169866EFC6CFB6B9 /* TOWebViewControllerLocalizable.strings in Sources */,
-				5F8BC67E6DA8B9A1169866EFC6CFB6B9 /* TOWebViewControllerLocalizable.strings in Sources */,
-				5F8BC67E6DA8B9A1169866EFC6CFB6B9 /* TOWebViewControllerLocalizable.strings in Sources */,
 				B8F1761C7DD22C1663C3E781C045A517 /* UIColor+RGBValues.m in Sources */,
 				2280C5EB55C499D39DBC262F4B2EE18E /* UIImage+Add.m in Sources */,
 				98D45CCA74331EAD8212520A5142479F /* UIImage+Crop.m in Sources */,
