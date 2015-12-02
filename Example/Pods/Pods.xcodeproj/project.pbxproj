@@ -99,6 +99,10 @@
 		91838473483586AEE79A3CE5A8A0F760 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EB8F84003EAC8D25AAA335FB4891742 /* SDImageCache.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		918925E758B9CF1EB782014504385933 /* SDWebImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A5E11473DD802A45E5F8554929B8738 /* SDWebImageDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9531D255DFCEAD5AEBB69526351CDF10 /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 992625925D1C9BA1A0BA2261E561937B /* SDWebImageDownloader.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		95E59DBA1BD3543F0088FC72 /* HDHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0403074E1BD106E70049BB83 /* HDHTTPManager.m */; };
+		95E59DBB1BD3543F0088FC72 /* HDHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 040307501BD106E70049BB83 /* HDHTTPRequest.m */; };
+		95E59DBE1BD354B80088FC72 /* HDHTTPManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0403074D1BD106E70049BB83 /* HDHTTPManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95E59DBF1BD354B80088FC72 /* HDHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 0403074F1BD106E70049BB83 /* HDHTTPRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9680BB16A40BB297C0957DA888F94943 /* MJRefresh-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4E643D6D3BD89C32EE183ACF1C92A7 /* MJRefresh-dummy.m */; };
 		968A9ABCD411D0972F4171A2DDD216A9 /* MJRefreshAutoNormalFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FCC990AAE26C013B33283DF908BDD70 /* MJRefreshAutoNormalFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		98D45CCA74331EAD8212520A5142479F /* UIImage+Crop.m in Sources */ = {isa = PBXBuildFile; fileRef = A29EB09D9E278F6D6B0C73605653C1CA /* UIImage+Crop.m */; };
@@ -1074,6 +1078,8 @@
 				2543D1B9689DBBC4A1D9CA0EA9FBE569 /* TOActivitySafari.h in Headers */,
 				66E0711297533E717AFCB2077FC8F9D8 /* TOWebViewController.h in Headers */,
 				5C7EBC89A77DE52A1629EE7DC686AD0C /* UIColor+RGBValues.h in Headers */,
+				95E59DBE1BD354B80088FC72 /* HDHTTPManager.h in Headers */,
+				95E59DBF1BD354B80088FC72 /* HDHTTPRequest.h in Headers */,
 				278C8F0E799E29425CAB3342F57FF205 /* UIImage+Add.h in Headers */,
 				DAED571B32DC225509CA85D7135FBF5F /* UIImage+Crop.h in Headers */,
 				68C32262A4D4F258C08C16B907599681 /* UIImage+TOWebViewControllerIcons.h in Headers */,
@@ -1342,6 +1348,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95E59DBA1BD3543F0088FC72 /* HDHTTPManager.m in Sources */,
+				95E59DBB1BD3543F0088FC72 /* HDHTTPRequest.m in Sources */,
 				BFF389BFD2D36DB64093FA4D686FEEA9 /* HDBaseProject-dummy.m in Sources */,
 				55775B54599E9BC8C4C5FB4D50A46C01 /* HDBaseUITableViewCell.m in Sources */,
 				3D1CF8BD62C05A8DFCD86385FB9B3270 /* HDBaseUITableViewController.m in Sources */,

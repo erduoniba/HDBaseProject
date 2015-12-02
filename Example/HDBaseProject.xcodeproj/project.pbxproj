@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		046B01211BA8452700C00183 /* HDBaseProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046B01201BA8452700C00183 /* HDBaseProject.framework */; };
 		049ABAB91BCF7E040010D821 /* HDViewViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 049ABAB81BCF7E040010D821 /* HDViewViewController2.m */; settings = {ASSET_TAGS = (); }; };
 		049ABAF11BCF9E3D0010D821 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 049ABAEF1BCF9E3D0010D821 /* back@2x.png */; settings = {ASSET_TAGS = (); }; };
 		049ABAF21BCF9E3D0010D821 /* back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 049ABAF01BCF9E3D0010D821 /* back@3x.png */; settings = {ASSET_TAGS = (); }; };
@@ -28,6 +27,7 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		78109B73A368DAD065431DA8 /* Pods_HDBaseProject_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9A7C9233A11CE19DAE8508 /* Pods_HDBaseProject_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		95E59DBD1BD354820088FC72 /* HDBaseProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E59DBC1BD354820088FC72 /* HDBaseProject.framework */; };
 		9E360BCF6E9B81B591596CD8 /* Pods_HDBaseProject_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477216B3FB5818172A008BD1 /* Pods_HDBaseProject_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -80,6 +80,7 @@
 		68E151F73B69DFCE9B0FD1C5 /* Pods-HDBaseProject_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDBaseProject_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HDBaseProject_Example/Pods-HDBaseProject_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		890E73E3928F2CB48A341B88 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		95E59DBC1BD354820088FC72 /* HDBaseProject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HDBaseProject.framework; path = "Pods/../build/Debug-iphoneos/HDBaseProject.framework"; sourceTree = "<group>"; };
 		9D9A7C9233A11CE19DAE8508 /* Pods_HDBaseProject_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HDBaseProject_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6F22E846D7DBA0E8E54C4B5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7DC8FA1ACFA77E511CEC0A4 /* Pods-HDBaseProject_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDBaseProject_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HDBaseProject_Tests/Pods-HDBaseProject_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -92,7 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				046B01211BA8452700C00183 /* HDBaseProject.framework in Frameworks */,
+				95E59DBD1BD354820088FC72 /* HDBaseProject.framework in Frameworks */,
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
@@ -138,6 +139,7 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95E59DBC1BD354820088FC72 /* HDBaseProject.framework */,
 				046B01201BA8452700C00183 /* HDBaseProject.framework */,
 				046B011A1BA8439600C00183 /* HDBaseProject.framework */,
 				046B01101BA8331D00C00183 /* HDBaseProject.framework */,
@@ -537,7 +539,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HDBaseProject/HDBaseProject-Prefix.pch";
 				INFOPLIST_FILE = "HDBaseProject/HDBaseProject-Info.plist";
@@ -557,7 +562,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HDBaseProject/HDBaseProject-Prefix.pch";
 				INFOPLIST_FILE = "HDBaseProject/HDBaseProject-Info.plist";

@@ -40,7 +40,7 @@ static NSString *backImageName;
     [super viewDidLoad];
     _showCloseBtn = YES;
     NSArray *array=self.navigationController.viewControllers;
-    if(array!=nil){
+    if(array.count > 1){
         [self setNavigationItemBack];
     }
 }
@@ -78,8 +78,7 @@ static NSString *backImageName;
 }
 
 -(void)onLeftBtnPress:(id)sender{
-    if ([self.webView canGoBack])
-    {
+    if ([self.webView canGoBack]){
         [self.webView goBack];
         if (_showCloseBtn) {
             [self setNavigationItemBackAndClose];
@@ -88,12 +87,11 @@ static NSString *backImageName;
             [self setNavigationItemBack];
         }
     }
-    else
-    {
-        
+    else{
         if (self.navigationController.viewControllers.count == 1) {
             [self dismissViewControllerAnimated:YES completion:Nil];
-        }else{
+        }
+        else{
             [self.navigationController popViewControllerAnimated:YES];
         }
     }
