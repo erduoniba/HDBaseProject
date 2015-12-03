@@ -16,7 +16,6 @@
     "ios": "7.0"
   },
   "requires_arc": true,
-  "source_files": "Pod/Classes/**/*",
   "resource_bundles": {
     "HDBaseProject": [
       "Pod/Assets/*.png"
@@ -36,28 +35,28 @@
   "subspecs": [
     {
       "name": "HDBaseViewControllers",
-      "source_files": "Pod/Classes/HDBaseViewControllers/**/*",
-      "public_header_files": "Pod/Classes/HDBaseViewControllers/**/*.h"
+      "source_files": "Pod/Classes/HDBaseViewControllers/*",
+      "public_header_files": "Pod/Classes/HDBaseViewControllers/*.h"
     },
     {
       "name": "Catogorys",
-      "source_files": "Pod/Classes/Catogorys/**/*",
-      "public_header_files": "Pod/Classes/Catogorys/**/*.h"
+      "source_files": "Pod/Classes/Catogorys/*",
+      "public_header_files": "Pod/Classes/Catogorys/*.h"
     },
     {
       "name": "HDGlobalMethods",
-      "source_files": "Pod/Classes/HDGlobalMethods/**/*",
-      "public_header_files": "Pod/Classes/HDGlobalMethods/**/*.h"
+      "source_files": "Pod/Classes/HDGlobalMethods/*",
+      "public_header_files": "Pod/Classes/HDGlobalMethods/*.h"
     },
     {
       "name": "HDHTTPManager",
-      "source_files": "Pod/Classes/HDHTTPManager/**/*",
-      "public_header_files": "Pod/Classes/HDHTTPManager/**/*.h"
+      "source_files": "Pod/Classes/HDHTTPManager/*",
+      "public_header_files": "Pod/Classes/HDHTTPManager/*.h"
     },
     {
       "name": "ThirdPartyLibs",
-      "source_files": "Pod/Classes/ThirdPartyLibs/**/*",
-      "public_header_files": "Pod/Classes/ThirdPartyLibs/**/*.h"
+      "source_files": "Pod/Classes/ThirdPartyLibs/*",
+      "public_header_files": "Pod/Classes/ThirdPartyLibs/*.h"
     }
   ]
 }
