@@ -19,28 +19,28 @@ s.requires_arc = true
 
 #按照不同的模块对文件目录进行整理
 s.subspec 'HDBaseViewControllers' do |vc|
-vc.source_files = 'Pod/Classes/HDBaseViewControllers/**/*'
-vc.public_header_files = 'Pod/Classes/HDBaseViewControllers/**/*.h'
+vc.source_files = 'Pod/Classes/HDBaseViewControllers/*'
+vc.public_header_files = 'Pod/Classes/HDBaseViewControllers/*.h'
 end
 
 s.subspec 'Catogorys' do |catogory|
-catogory.source_files = 'Pod/Classes/Catogorys/**/*'
-catogory.public_header_files = 'Pod/Classes/Catogorys/**/*.h'
+catogory.source_files = 'Pod/Classes/Catogorys/*'
+catogory.public_header_files = 'Pod/Classes/Catogorys/*.h'
 end
 
 s.subspec 'HDGlobalMethods' do |model|
-model.source_files = 'Pod/Classes/HDGlobalMethods/**/*'
-model.public_header_files = 'Pod/Classes/HDGlobalMethods/**/*.h'
+model.source_files = 'Pod/Classes/HDGlobalMethods/*'
+model.public_header_files = 'Pod/Classes/HDGlobalMethods/*.h'
 end
 
 s.subspec 'HDHTTPManager' do |http|
-http.source_files = 'Pod/Classes/HDHTTPManager/**/*'
-http.public_header_files = 'Pod/Classes/HDHTTPManager/**/*.h'
+http.source_files = 'Pod/Classes/HDHTTPManager/*'
+http.public_header_files = 'Pod/Classes/HDHTTPManager/*.h'
 end
 
 s.subspec 'ThirdPartyLibs' do |lib|
-lib.source_files = 'Pod/Classes/ThirdPartyLibs/**/*'
-lib.public_header_files = 'Pod/Classes/ThirdPartyLibs/**/*.h'
+lib.source_files = 'Pod/Classes/ThirdPartyLibs/*'
+lib.public_header_files = 'Pod/Classes/ThirdPartyLibs/*.h'
 end
 
 #s.source_files = 'Pod/Classes/**/*'
