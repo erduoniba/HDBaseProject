@@ -18,17 +18,17 @@ s.resource_bundles = {
 }
 
 #按照不同的模块对文件目录进行整理
+s.subspec 'Catogorys' do |catogory|
+catogory.source_files = 'Pod/Classes/Catogorys/*'
+catogory.public_header_files = 'Pod/Classes/Catogorys/*.h'
+end
+
 s.subspec 'HDBaseViewControllers' do |vc|
 vc.source_files = 'Pod/Classes/HDBaseViewControllers/*'
 vc.public_header_files = 'Pod/Classes/HDBaseViewControllers/*.h'
 vc.dependency 'Pod/Classes/HDGlobalMethods/HDGlobalMethods'
 vc.dependency 'Pod/Classes/Catogorys/UITableView+Extension'
-vc.dependency 'Pod/Classes/ThirdPartyLibs/TOWebViewController/TOWebViewController'
-end
-
-s.subspec 'Catogorys' do |catogory|
-catogory.source_files = 'Pod/Classes/Catogorys/*'
-catogory.public_header_files = 'Pod/Classes/Catogorys/*.h'
+vc.dependency 'Pod/Classes/ThirdPartyLibs/TOWebViewController/TOWebViewController/*'
 end
 
 s.subspec 'HDGlobalMethods' do |method|
