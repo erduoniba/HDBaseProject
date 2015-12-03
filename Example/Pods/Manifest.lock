@@ -20,32 +20,36 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - HDBaseProject (1.1.0):
+  - HDBaseProject (1.1.1):
     - AFNetworking
-    - HDBaseProject/Catogorys (= 1.1.0)
-    - HDBaseProject/HDBaseViewControllers (= 1.1.0)
-    - HDBaseProject/HDGlobalMethods (= 1.1.0)
-    - HDBaseProject/HDHTTPManager (= 1.1.0)
-    - HDBaseProject/ThirdPartyLibs (= 1.1.0)
+    - HDBaseProject/Catogorys (= 1.1.1)
+    - HDBaseProject/HDBaseViewControllers (= 1.1.1)
+    - HDBaseProject/HDGlobalMethods (= 1.1.1)
+    - HDBaseProject/HDHTTPManager (= 1.1.1)
+    - HDBaseProject/ThirdPartyLibs (= 1.1.1)
     - MJRefresh
     - SDWebImage
-  - HDBaseProject/Catogorys (1.1.0):
-    - AFNetworking
-    - MJRefresh
-    - SDWebImage
-  - HDBaseProject/HDBaseViewControllers (1.1.0):
+  - HDBaseProject/Catogorys (1.1.1):
     - AFNetworking
     - MJRefresh
     - SDWebImage
-  - HDBaseProject/HDGlobalMethods (1.1.0):
+  - HDBaseProject/HDBaseViewControllers (1.1.1):
+    - AFNetworking
+    - HDBaseProject/Catogorys
+    - HDBaseProject/HDGlobalMethods
+    - HDBaseProject/ThirdPartyLibs
+    - MJRefresh
+    - SDWebImage
+  - HDBaseProject/HDGlobalMethods (1.1.1):
+    - AFNetworking
+    - HDBaseProject/Catogorys
+    - MJRefresh
+    - SDWebImage
+  - HDBaseProject/HDHTTPManager (1.1.1):
     - AFNetworking
     - MJRefresh
     - SDWebImage
-  - HDBaseProject/HDHTTPManager (1.1.0):
-    - AFNetworking
-    - MJRefresh
-    - SDWebImage
-  - HDBaseProject/ThirdPartyLibs (1.1.0):
+  - HDBaseProject/ThirdPartyLibs (1.1.1):
     - AFNetworking
     - MJRefresh
     - SDWebImage
@@ -63,7 +67,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
-  HDBaseProject: c33e427b2dae971c7d9821e9c2cf66acedeb3bd2
+  HDBaseProject: 59b7b96763f7bae14c71b24e02a655dbe460ec49
   MJRefresh: f3e1228ec3d38c7ba5208d58032631a52f39f495
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
 
