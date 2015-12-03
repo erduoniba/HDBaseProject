@@ -1,16 +1,16 @@
 //
-//  CustomCache.m
-//  FreeBrokers
+//  HDCustomCache.m
+//  Pod
 //
-//  Created by guoning on 14-7-28.
-//  Copyright (c) 2014年 guoning. All rights reserved.
+//  Created by Harry on 14-7-28.
+//  Copyright (c) 2014年 Harry. All rights reserved.
 //
 
-#import "NHFDDCustomCache.h"
+#import "HDCustomCache.h"
 
 static NSMutableDictionary *cacheData;
 
-@implementation NHFDDCustomCache
+@implementation HDCustomCache
 
 + (void)saveCache:(NSString *)keyword byDictionary:(NSDictionary *)dictionary
 {

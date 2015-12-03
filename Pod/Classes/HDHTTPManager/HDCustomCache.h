@@ -1,14 +1,14 @@
 //
-//  CustomCache.h
-//  FreeBrokers
+//  HDCustomCache.h
+//  Pods
 //
-//  Created by guoning on 14-7-28.
-//  Copyright (c) 2014年 guoning. All rights reserved.
+//  Created by Harry on 14-7-28.
+//  Copyright (c) 2014年 Harry. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface NHFDDCustomCache : NSObject
+@interface HDCustomCache : NSObject
 
 + (void)saveCache:(NSString *)keyword byDictionary:(NSDictionary *)dictionary;
 + (void)saveCache:(NSString *)keyword byObject:(NSObject *)object;
