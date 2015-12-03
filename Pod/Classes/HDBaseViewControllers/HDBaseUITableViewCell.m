@@ -7,8 +7,6 @@
 //
 
 #import "HDBaseUITableViewCell.h"
-#import "UIView+Helpers.h"
-#import "UIImage+Add.h"
 
 @implementation HDBaseUITableViewCell
 

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
 		040307B21BD1157D0049BB83 /* HDBaseProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040307B11BD1157D0049BB83 /* HDBaseProject.framework */; };
 		040307BB1BD11C2F0049BB83 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040307BA1BD11C2F0049BB83 /* AVFoundation.framework */; };
 		040307BC1BD11C420049BB83 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040307B51BD1167B0049BB83 /* MediaPlayer.framework */; };
@@ -16,12 +15,11 @@
 		040307C11BD11C840049BB83 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040307C01BD11C840049BB83 /* Twitter.framework */; };
 		040307C31BD11D600049BB83 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040307C21BD11D600049BB83 /* CoreLocation.framework */; };
 		040307C51BD11D9E0049BB83 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040307C41BD11D9E0049BB83 /* CoreMedia.framework */; };
-
-		049ABAB91BCF7E040010D821 /* HDViewViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 049ABAB81BCF7E040010D821 /* HDViewViewController2.m */; settings = {ASSET_TAGS = (); }; };
-		049ABAF11BCF9E3D0010D821 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 049ABAEF1BCF9E3D0010D821 /* back@2x.png */; settings = {ASSET_TAGS = (); }; };
-		049ABAF21BCF9E3D0010D821 /* back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 049ABAF01BCF9E3D0010D821 /* back@3x.png */; settings = {ASSET_TAGS = (); }; };
-		04DBBC9C1BD0C1B100B25004 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DBBC9B1BD0C1AD00B25004 /* arrow@2x.png */; settings = {ASSET_TAGS = (); }; };
-		04DBBC9E1BD0C36700B25004 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DBBC9D1BD0C36700B25004 /* Launch Screen.storyboard */; settings = {ASSET_TAGS = (); }; };
+		049ABAB91BCF7E040010D821 /* HDViewViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 049ABAB81BCF7E040010D821 /* HDViewViewController2.m */; };
+		049ABAF11BCF9E3D0010D821 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 049ABAEF1BCF9E3D0010D821 /* back@2x.png */; };
+		049ABAF21BCF9E3D0010D821 /* back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 049ABAF01BCF9E3D0010D821 /* back@3x.png */; };
+		04DBBC9C1BD0C1B100B25004 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DBBC9B1BD0C1AD00B25004 /* arrow@2x.png */; };
+		04DBBC9E1BD0C36700B25004 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DBBC9D1BD0C36700B25004 /* Launch Screen.storyboard */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -35,10 +33,10 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		78109B73A368DAD065431DA8 /* Pods_HDBaseProject_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9A7C9233A11CE19DAE8508 /* Pods_HDBaseProject_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		78109B73A368DAD065431DA8 /* Pods_HDBaseProject_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9A7C9233A11CE19DAE8508 /* Pods_HDBaseProject_Example.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		95E59DBD1BD354820088FC72 /* HDBaseProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E59DBC1BD354820088FC72 /* HDBaseProject.framework */; };
-		9E360BCF6E9B81B591596CD8 /* Pods_HDBaseProject_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477216B3FB5818172A008BD1 /* Pods_HDBaseProject_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		9E360BCF6E9B81B591596CD8 /* Pods_HDBaseProject_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477216B3FB5818172A008BD1 /* Pods_HDBaseProject_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,12 +109,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
 				040307C51BD11D9E0049BB83 /* CoreMedia.framework in Frameworks */,
 				040307C31BD11D600049BB83 /* CoreLocation.framework in Frameworks */,
-
 				95E59DBD1BD354820088FC72 /* HDBaseProject.framework in Frameworks */,
-
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				040307C11BD11C840049BB83 /* Twitter.framework in Frameworks */,
 				040307BF1BD11C770049BB83 /* MessageUI.framework in Frameworks */,
@@ -168,7 +163,6 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-
 				040307C41BD11D9E0049BB83 /* CoreMedia.framework */,
 				040307C21BD11D600049BB83 /* CoreLocation.framework */,
 				040307C01BD11C840049BB83 /* Twitter.framework */,
@@ -177,9 +171,7 @@
 				040307B81BD117210049BB83 /* MapKit.framework */,
 				040307B51BD1167B0049BB83 /* MediaPlayer.framework */,
 				040307B11BD1157D0049BB83 /* HDBaseProject.framework */,
-
 				95E59DBC1BD354820088FC72 /* HDBaseProject.framework */,
-
 				046B01201BA8452700C00183 /* HDBaseProject.framework */,
 				046B011A1BA8439600C00183 /* HDBaseProject.framework */,
 				046B01101BA8331D00C00183 /* HDBaseProject.framework */,
@@ -282,6 +274,7 @@
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
 				FB327A98D6B23C4FE1B4CD82 /* Copy Pods Resources */,
+				BAE0EEE4C7356C643DF5D4E4 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -401,6 +394,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BAE0EEE4C7356C643DF5D4E4 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HDBaseProject_Example/Pods-HDBaseProject_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BEE0325145946C298866B7B4 /* Check Pods Manifest.lock */ = {

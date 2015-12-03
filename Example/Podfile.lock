@@ -1,30 +1,55 @@
 PODS:
-  - AFNetworking (2.6.1):
-    - AFNetworking/NSURLConnection (= 2.6.1)
-    - AFNetworking/NSURLSession (= 2.6.1)
-    - AFNetworking/Reachability (= 2.6.1)
-    - AFNetworking/Security (= 2.6.1)
-    - AFNetworking/Serialization (= 2.6.1)
-    - AFNetworking/UIKit (= 2.6.1)
-  - AFNetworking/NSURLConnection (2.6.1):
+  - AFNetworking (2.6.3):
+    - AFNetworking/NSURLConnection (= 2.6.3)
+    - AFNetworking/NSURLSession (= 2.6.3)
+    - AFNetworking/Reachability (= 2.6.3)
+    - AFNetworking/Security (= 2.6.3)
+    - AFNetworking/Serialization (= 2.6.3)
+    - AFNetworking/UIKit (= 2.6.3)
+  - AFNetworking/NSURLConnection (2.6.3):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.6.1):
+  - AFNetworking/NSURLSession (2.6.3):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.6.1)
-  - AFNetworking/Security (2.6.1)
-  - AFNetworking/Serialization (2.6.1)
-  - AFNetworking/UIKit (2.6.1):
+  - AFNetworking/Reachability (2.6.3)
+  - AFNetworking/Security (2.6.3)
+  - AFNetworking/Serialization (2.6.3)
+  - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - HDBaseProject (1.0.3):
+  - HDBaseProject (1.1.0):
+    - AFNetworking
+    - HDBaseProject/Catogorys (= 1.1.0)
+    - HDBaseProject/HDBaseViewControllers (= 1.1.0)
+    - HDBaseProject/HDGlobalMethods (= 1.1.0)
+    - HDBaseProject/HDHTTPManager (= 1.1.0)
+    - HDBaseProject/ThirdPartyLibs (= 1.1.0)
+    - MJRefresh
+    - SDWebImage
+  - HDBaseProject/Catogorys (1.1.0):
     - AFNetworking
     - MJRefresh
     - SDWebImage
-  - MJRefresh (2.4.12)
+  - HDBaseProject/HDBaseViewControllers (1.1.0):
+    - AFNetworking
+    - MJRefresh
+    - SDWebImage
+  - HDBaseProject/HDGlobalMethods (1.1.0):
+    - AFNetworking
+    - MJRefresh
+    - SDWebImage
+  - HDBaseProject/HDHTTPManager (1.1.0):
+    - AFNetworking
+    - MJRefresh
+    - SDWebImage
+  - HDBaseProject/ThirdPartyLibs (1.1.0):
+    - AFNetworking
+    - MJRefresh
+    - SDWebImage
+  - MJRefresh (3.0.7)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
@@ -37,9 +62,9 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  AFNetworking: 8e4e60500beb8bec644cf575beee72990a76d399
-  HDBaseProject: 50c1700d276ba1ef7d972f0bd560d420851839b2
-  MJRefresh: ca8e9589895977df32d379d46e6b8a5450b3ff44
+  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  HDBaseProject: 48546be3b4858bba33f2f21d4b62fb593acbdb84
+  MJRefresh: f3e1228ec3d38c7ba5208d58032631a52f39f495
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0

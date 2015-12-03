@@ -43,7 +43,7 @@ lib.source_files = 'Pod/Classes/ThirdPartyLibs/**/*'
 lib.public_header_files = 'Pod/Classes/ThirdPartyLibs/**/*.h'
 end
 
-s.source_files = 'Pod/Classes/**/*'
+#s.source_files = 'Pod/Classes/**/*'
 s.resource_bundles = {
 'HDBaseProject' => ['Pod/Assets/*.png']
 }
