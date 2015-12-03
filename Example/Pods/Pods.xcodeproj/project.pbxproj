@@ -114,6 +114,10 @@
 		91838473483586AEE79A3CE5A8A0F760 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EB8F84003EAC8D25AAA335FB4891742 /* SDImageCache.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		918925E758B9CF1EB782014504385933 /* SDWebImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A5E11473DD802A45E5F8554929B8738 /* SDWebImageDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9531D255DFCEAD5AEBB69526351CDF10 /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 992625925D1C9BA1A0BA2261E561937B /* SDWebImageDownloader.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		95E59DBA1BD3543F0088FC72 /* HDHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0403074E1BD106E70049BB83 /* HDHTTPManager.m */; };
+		95E59DBB1BD3543F0088FC72 /* HDHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 040307501BD106E70049BB83 /* HDHTTPRequest.m */; };
+		95E59DBE1BD354B80088FC72 /* HDHTTPManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0403074D1BD106E70049BB83 /* HDHTTPManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95E59DBF1BD354B80088FC72 /* HDHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 0403074F1BD106E70049BB83 /* HDHTTPRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9680BB16A40BB297C0957DA888F94943 /* MJRefresh-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4E643D6D3BD89C32EE183ACF1C92A7 /* MJRefresh-dummy.m */; };
 		968A9ABCD411D0972F4171A2DDD216A9 /* MJRefreshAutoNormalFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FCC990AAE26C013B33283DF908BDD70 /* MJRefreshAutoNormalFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9ABF6E5060EE323CDAFCB2862BC54D06 /* MJRefreshNormalHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 08133688A9F01CB372F61A49A736C640 /* MJRefreshNormalHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1076,6 +1080,7 @@
 				040307961BD110080049BB83 /* UIView+Helpers.h in Headers */,
 				040307901BD110080049BB83 /* UIImage+Tint.h in Headers */,
 				C264753D3D9DDA5424A96BB31E40F42B /* HDBaseProject-umbrella.h in Headers */,
+
 				040307A41BD110080049BB83 /* HDHTTPManager.h in Headers */,
 				04E861261BD239E1006B3D31 /* NHFDDCustomCache.h in Headers */,
 				040307921BD110080049BB83 /* UIImageView+VideoFirstImage.h in Headers */,
@@ -1094,6 +1099,28 @@
 				0403079D1BD110080049BB83 /* HDBaseUIWebViewController.h in Headers */,
 				040307991BD110080049BB83 /* HDBaseUITableViewCell.h in Headers */,
 				040307A81BD110080049BB83 /* TOActivityChrome.h in Headers */,
+
+				11873F904BEBFABFA3E606E87A4F3743 /* HDBaseProject.h in Headers */,
+				336A1F6D94CDF5A9873379F1E1354BEC /* HDBaseUITableViewCell.h in Headers */,
+				B5D317509B64DD974A51428B4BCDF8FA /* HDBaseUITableViewController.h in Headers */,
+				EDDBBB24E9C6E4231F8B158A3BEDAA56 /* HDBaseUIWebViewController.h in Headers */,
+				FD2ACE3FD6FCF8B0BC640C666B8662B7 /* HDBaseViewController.h in Headers */,
+				B8EBE88ED83C15BD15FE5AE35F055F76 /* HDGlobalMethods.h in Headers */,
+				4549D5E15F9563EBB0645C695AA88DA4 /* HDGlobalVariable.h in Headers */,
+				D42C0CE24DEB57946FC2E7C14A2FF6E2 /* TOActivityChrome.h in Headers */,
+				2543D1B9689DBBC4A1D9CA0EA9FBE569 /* TOActivitySafari.h in Headers */,
+				66E0711297533E717AFCB2077FC8F9D8 /* TOWebViewController.h in Headers */,
+				5C7EBC89A77DE52A1629EE7DC686AD0C /* UIColor+RGBValues.h in Headers */,
+				95E59DBE1BD354B80088FC72 /* HDHTTPManager.h in Headers */,
+				95E59DBF1BD354B80088FC72 /* HDHTTPRequest.h in Headers */,
+				278C8F0E799E29425CAB3342F57FF205 /* UIImage+Add.h in Headers */,
+				DAED571B32DC225509CA85D7135FBF5F /* UIImage+Crop.h in Headers */,
+				68C32262A4D4F258C08C16B907599681 /* UIImage+TOWebViewControllerIcons.h in Headers */,
+				6F53651E8021CAC8FD848A80530679D3 /* UIImage+Tint.h in Headers */,
+				D8ADEF2A5A2E3BD8650947EACFE71136 /* UIImageView+VideoFirstImage.h in Headers */,
+				AA780EFEAD7D13CE822D692FA228813D /* UITableView+Extension.h in Headers */,
+				48085EDA2C15647850F076B4BDFC5828 /* UIView+Helpers.h in Headers */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1356,7 +1383,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
 				04E861271BD239E1006B3D31 /* NHFDDCustomCache.m in Sources */,
+
+				95E59DBA1BD3543F0088FC72 /* HDHTTPManager.m in Sources */,
+				95E59DBB1BD3543F0088FC72 /* HDHTTPRequest.m in Sources */,
+
 				BFF389BFD2D36DB64093FA4D686FEEA9 /* HDBaseProject-dummy.m in Sources */,
 				0403078D1BD110080049BB83 /* UIImage+Add.m in Sources */,
 				040307A01BD110080049BB83 /* HDBaseViewController.m in Sources */,
