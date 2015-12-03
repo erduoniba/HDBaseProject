@@ -36,7 +36,6 @@ end
 s.subspec 'HDHTTPManager' do |http|
 http.source_files = 'Pod/Classes/HDHTTPManager/**/*'
 http.public_header_files = 'Pod/Classes/HDHTTPManager/**/*.h'
-http.dependency 'AFNetworking/AFNetworking'
 end
 
 s.subspec 'ThirdPartyLibs' do |lib|
