@@ -26,8 +26,8 @@ end
 s.subspec 'HDBaseViewControllers' do |vc|
 vc.source_files = 'Pod/Classes/HDBaseViewControllers/*'
 vc.public_header_files = 'Pod/Classes/HDBaseViewControllers/*.h'
-vc.dependency 'Pod/Classes/HDGlobalMethods/HDGlobalMethods'
-vc.dependency 'Pod/Classes/Catogorys/UITableView+Extension'
+vc.dependency 'Pod/Classes/HDGlobalMethods/*'
+vc.dependency 'Pod/Classes/Catogorys/*'
 vc.dependency 'Pod/Classes/ThirdPartyLibs/TOWebViewController/TOWebViewController/*'
 end
 
