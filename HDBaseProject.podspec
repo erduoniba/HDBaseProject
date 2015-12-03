@@ -26,11 +26,17 @@ end
 s.subspec 'HDBaseViewControllers' do |vc|
 vc.source_files = 'Pod/Classes/HDBaseViewControllers/*'
 vc.public_header_files = 'Pod/Classes/HDBaseViewControllers/*.h'
+vc.ios.dependency 'HDBaseProject/HDGlobalMethods'
+vc.ios.dependency 'HDBaseProject/ThirdPartyLibs'
+vc.ios.dependency 'HDBaseProject/Catogorys'
+#vc.dependency 'HDBaseProject/Catogorys'  错误
+#vc.ios.dependency 'Pod/Classes/Catogorys' 错误
 end
 
 s.subspec 'HDGlobalMethods' do |method|
 method.source_files = 'Pod/Classes/HDGlobalMethods/*'
 method.public_header_files = 'Pod/Classes/HDGlobalMethods/*.h'
+method.ios.dependency 'HDBaseProject/Catogorys'
 end
 
 s.subspec 'HDHTTPManager' do |http|

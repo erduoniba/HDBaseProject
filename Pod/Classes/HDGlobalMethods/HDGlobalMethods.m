@@ -10,6 +10,7 @@
 
 #import "HDGlobalVariable.h"
 
+#import "UIColor+RGBValues.h"
 #import <CommonCrypto/CommonDigest.h>
 
 #import <MediaPlayer/MediaPlayer.h>
@@ -52,39 +53,9 @@
     bt.frame = frame;
     [bt setTitle:title forState:UIControlStateNormal];
     [bt setTitleColor:textColor forState:UIControlStateNormal];
-    [bt setTitleColor:[self harry_colorByDarkeningColorWithValue:0.12 withColor:textColor] forState:UIControlStateHighlighted];
+    [bt setTitleColor:[textColor harry_colorByDarkeningColorWithValue:0.12] forState:UIControlStateHighlighted];
     [bt.titleLabel setFont:font];
     return bt;
-}
-
-+ (UIColor *)harry_colorByDarkeningColorWithValue:(CGFloat)value withColor:(UIColor *)color{
-    NSUInteger totalComponents = CGColorGetNumberOfComponents(color.CGColor);
-    BOOL isGreyscale = (totalComponents == 2) ? YES : NO;
-    
-    CGFloat *oldComponents = (CGFloat *)CGColorGetComponents(color.CGColor);
-    CGFloat newComponents[4];
-    
-    if (isGreyscale) {
-        newComponents[0] = oldComponents[0] - value < 0.0f ? 0.0f : oldComponents[0] - value;
-        newComponents[1] = oldComponents[0] - value < 0.0f ? 0.0f : oldComponents[0] - value;
-        newComponents[2] = oldComponents[0] - value < 0.0f ? 0.0f : oldComponents[0] - value;
-        newComponents[3] = oldComponents[1];
-    }
-    else {
-        newComponents[0] = oldComponents[0] - value < 0.0f ? 0.0f : oldComponents[0] - value;
-        newComponents[1] = oldComponents[1] - value < 0.0f ? 0.0f : oldComponents[1] - value;
-        newComponents[2] = oldComponents[2] - value < 0.0f ? 0.0f : oldComponents[2] - value;
-        newComponents[3] = oldComponents[3];
-    }
-    
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    CGColorRef newColor = CGColorCreate(colorSpace, newComponents);
-    CGColorSpaceRelease(colorSpace);
-    
-    UIColor *retColor = [UIColor colorWithCGColor:newColor];
-    CGColorRelease(newColor);
-    
-    return retColor;
 }
 
 +(UIButton *)createBackButton:(UIImage *)image1 hilight:(UIImage *)image2 {
