@@ -28,6 +28,7 @@ static NSString *backImageName;
 
 + (void)setBackImageName:(NSString *)imageName{
     backImageName = imageName;
+    [HDBaseUIWebViewController setBackImageName:imageName];
 }
 
 - (void)viewDidLoad {
