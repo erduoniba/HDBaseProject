@@ -34,7 +34,6 @@ end
 s.subspec 'HDGlobalMethods' do |method|
 method.source_files = 'Pod/Classes/HDGlobalMethods/*'
 method.public_header_files = 'Pod/Classes/HDGlobalMethods/*.h'
-method.dependency 'Pod/Classes/Catogorys/UIColor+RGBValues'
 end
 
 s.subspec 'HDHTTPManager' do |http|
