@@ -17,6 +17,10 @@
 #import "HDCustomCache.h"
 #import "HDHTTPManager.h"
 #import "HDHTTPRequest.h"
+#import "TOActivityChrome.h"
+#import "TOActivitySafari.h"
+#import "TOWebViewController.h"
+#import "UIImage+TOWebViewControllerIcons.h"
 
 FOUNDATION_EXPORT double HDBaseProjectVersionNumber;
 FOUNDATION_EXPORT const unsigned char HDBaseProjectVersionString[];

@@ -101,12 +101,12 @@
 -(void)addRefreshView{
     __weak typeof(self) weakSelf = self;
     // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
-    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [weakSelf refresh];
     }];
     
     // 马上进入刷新状态
-    [self.tableView.header beginRefreshing];
+    [self.tableView.mj_header beginRefreshing];
 }
 
 -(void)addLoadMoreView{
@@ -119,7 +119,7 @@
     [footer setTitle:@"" forState:MJRefreshStateIdle];
     
     // 设置footer
-    self.tableView.footer = footer;
+    self.tableView.mj_footer = footer;
 }
 
 /**
@@ -128,14 +128,14 @@
 -(void)refreshEnd{
     
     // 拿到当前的下拉刷新控件，结束刷新状态
-    [self.tableView.header endRefreshing];
+    [self.tableView.mj_header endRefreshing];
     
     // 拿到当前的上拉刷新控件，结束刷新状态
-    [self.tableView.footer endRefreshing];
+    [self.tableView.mj_footer endRefreshing];
     
     if (![self hasMore]) {
         // 拿到当前的上拉刷新控件，变为没有更多数据的状态
-        [self.tableView.footer endRefreshingWithNoMoreData];
+        [self.tableView.mj_footer endRefreshingWithNoMoreData];
     }
     
 	[self.tableView reloadData];

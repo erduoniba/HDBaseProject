@@ -12,15 +12,18 @@ s.source           = { :git => "https://github.com/erduoniba/HDBaseProject.git",
 s.platform     = :ios, '7.0'
 s.requires_arc = true
 
-
-
-
-#别人pod该代码的时候，需要比较清晰的目录结构，代码如下：
+#s.source_files = 'Pod/Classes/**/*'
+s.resource_bundles = {
+'HDBaseProject' => ['Pod/Assets/*.png']
+}
 
 #按照不同的模块对文件目录进行整理
 s.subspec 'HDBaseViewControllers' do |vc|
 vc.source_files = 'Pod/Classes/HDBaseViewControllers/*'
 vc.public_header_files = 'Pod/Classes/HDBaseViewControllers/*.h'
+vc.dependency 'Pod/Classes/HDGlobalMethods/HDGlobalMethods'
+vc.dependency 'Pod/Classes/Catogorys/UITableView+Extension'
+vc.dependency 'Pod/Classes/ThirdPartyLibs/TOWebViewController/TOWebViewController'
 end
 
 s.subspec 'Catogorys' do |catogory|
@@ -28,9 +31,10 @@ catogory.source_files = 'Pod/Classes/Catogorys/*'
 catogory.public_header_files = 'Pod/Classes/Catogorys/*.h'
 end
 
-s.subspec 'HDGlobalMethods' do |model|
-model.source_files = 'Pod/Classes/HDGlobalMethods/*'
-model.public_header_files = 'Pod/Classes/HDGlobalMethods/*.h'
+s.subspec 'HDGlobalMethods' do |method|
+method.source_files = 'Pod/Classes/HDGlobalMethods/*'
+method.public_header_files = 'Pod/Classes/HDGlobalMethods/*.h'
+method.dependency 'Pod/Classes/Catogorys/UIColor+RGBValues'
 end
 
 s.subspec 'HDHTTPManager' do |http|
@@ -39,14 +43,9 @@ http.public_header_files = 'Pod/Classes/HDHTTPManager/*.h'
 end
 
 s.subspec 'ThirdPartyLibs' do |lib|
-lib.source_files = 'Pod/Classes/ThirdPartyLibs/*'
-lib.public_header_files = 'Pod/Classes/ThirdPartyLibs/*.h'
+lib.source_files = 'Pod/Classes/ThirdPartyLibs/**/*'
+lib.public_header_files = 'Pod/Classes/ThirdPartyLibs/**/*.h'
 end
-
-#s.source_files = 'Pod/Classes/**/*'
-s.resource_bundles = {
-'HDBaseProject' => ['Pod/Assets/*.png']
-}
 
 s.dependency 'AFNetworking'  #依赖关系，该项目所依赖的其他库，如果有多个需要填写多个s.dependency
 s.dependency 'SDWebImage'    #依赖关系，该项目所依赖的其他库，如果有多个需要填写多个s.dependency

@@ -55,8 +55,8 @@
     },
     {
       "name": "ThirdPartyLibs",
-      "source_files": "Pod/Classes/ThirdPartyLibs/*",
-      "public_header_files": "Pod/Classes/ThirdPartyLibs/*.h"
+      "source_files": "Pod/Classes/ThirdPartyLibs/**/*",
+      "public_header_files": "Pod/Classes/ThirdPartyLibs/**/*.h"
     }
   ]
 }
