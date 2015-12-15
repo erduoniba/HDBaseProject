@@ -13,7 +13,7 @@
 #import "HDGlobalMethods.h"
 
 
-@interface HDBaseViewController ()
+@interface HDBaseViewController () <UIGestureRecognizerDelegate>
 
 @end
 
@@ -40,6 +40,7 @@ static NSString *backImageName;
     }
     
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+    self.navigationController.interactivePopGestureRecognizer.delegate = self;
 	
     NSArray *viewControllers = self.navigationController.viewControllers;
     //不是根VC自动加上返回
@@ -72,8 +73,15 @@ static NSString *backImageName;
     return appDelegate;
 }
 
-
-
+- (BOOL )gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
+    if (self.navigationController.viewControllers.count == 1){
+        //关闭主界面的右滑返回
+        return NO;
+    }
+    else{
+        return YES;
+    }
+}
 
 
 #pragma mark - 左右自定义按钮
@@ -122,6 +130,17 @@ static NSString *backImageName;
                                        target:nil action:nil];
     negativeSpacer.width = -10;
     self.navigationItem.leftBarButtonItems = @[negativeSpacer, backItem];
+}
+
+- (void)showLeftItemWithTitle:(NSString *)title selector:(SEL) selector{
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.titleLabel.font = [UIFont systemFontOfSize:16];
+    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [btn setTitle:title forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(leftAction) forControlEvents:UIControlEventTouchUpInside];
+    [btn setFrame:CGRectMake(0, 0, 60, 32)];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    self.navigationItem.leftBarButtonItem = item;
 }
 
 -(void) showRightItemWithTitle:(NSString *) title selector:(SEL) selector
@@ -198,6 +217,10 @@ static NSString *backImageName;
     fixItem.width = -20.0f;
     
     self.navigationItem.rightBarButtonItems = @[fixItem,rightItem];
+    
+}
+
+- (void)leftAction{
     
 }
 
