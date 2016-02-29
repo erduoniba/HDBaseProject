@@ -13,7 +13,7 @@
 
 @interface HDBaseUITableViewCell : UITableViewCell
 
-@property (nonatomic, copy) void (^ handleCellAction)(Class *className, id anything);
+@property (nonatomic, copy) void (^ handleCellAction)(Class className, id anything);
 
 - (void)setData:(id)data;
 
