@@ -68,6 +68,8 @@
 - (void)showBackBtn;
 - (void)hideBackBtn;
 
+- (void)showLeftItemWithTitle:(NSString *)title selector:(SEL) selector;
+
 - (void)showRightItemWithTitle:(NSString *)title selector:(SEL) selector;
 - (void)showRightItemWithTitle:(NSString *)title titleColor:(UIColor *)titleColor highlightTitleColor:(UIColor *)highlightColor selector:(SEL)selector;
 
@@ -76,9 +78,13 @@
 - (void)showRightItemFixedOffsetWithTitle:(NSString *)itemTitle titleColor:(UIColor *)titleColor highlightTitleColor:(UIColor *)highlightColor itemSize:(CGSize)itemSize selector:(SEL)selector;
 
 /**
- *  自定义返回按钮事件
+ *  自定义返回按钮事件,showBackBtn的事件
  */
 - (void)gotoBack;
 
+/**
+ *  自定义返回按钮事件, showLeftItemWithTitle: selector 的事件
+ */
+- (void)leftAction;
 
 @end

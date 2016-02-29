@@ -25,7 +25,6 @@
  ************************************************************************************************************/
 
 #import <AFNetworking/AFNetworking.h>
-#import <AFNetworking/AFHTTPRequestOperationManager.h>
 
 #define DefineTimeout       20.0
 #define PAGESIZE           @"20"
