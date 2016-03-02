@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		005F922CAD538F72EB23C15919212EA2 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A09B3BFF9BCE56008D8B8D04103E691 /* MJRefreshAutoFooter.m */; };
+		048FD2E11C869177007D4074 /* UILabel+HarryExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 048FD2DF1C869177007D4074 /* UILabel+HarryExtension.h */; };
+		048FD2E21C869177007D4074 /* UILabel+HarryExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 048FD2E01C869177007D4074 /* UILabel+HarryExtension.m */; };
 		06542328B0D8070305242714D07F5EF2 /* MJRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 02901139231CBFE8D80B2779581EC3FA /* MJRefreshFooter.m */; };
 		072AD97E3B557C471C0DEEDE343DBBFB /* MJRefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = F934532F71A38E06319448C9C6CD8028 /* MJRefreshGifHeader.m */; };
 		07441534C7AB08AE3CAC34987C1B7187 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E11C6797A4D97B375C253E4DC07A6A /* UIScrollView+MJExtension.m */; };
@@ -277,6 +279,8 @@
 		0384F60DC43C16DDF40191CBF2858268 /* UIButton+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+WebCache.h"; path = "SDWebImage/UIButton+WebCache.h"; sourceTree = "<group>"; };
 		040CC7D880C128897AD312EB14A27B42 /* AFURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
 		040E119E6E669091D16182B86CBDB87C /* UITableView+Extension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Extension.m"; sourceTree = "<group>"; };
+		048FD2DF1C869177007D4074 /* UILabel+HarryExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+HarryExtension.h"; sourceTree = "<group>"; };
+		048FD2E01C869177007D4074 /* UILabel+HarryExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+HarryExtension.m"; sourceTree = "<group>"; };
 		04B789F97B3733D2873A7538F5B99A76 /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIKit+AFNetworking.h"; path = "UIKit+AFNetworking/UIKit+AFNetworking.h"; sourceTree = "<group>"; };
 		04E10E61F61F840E0BFE95879A6888ED /* MJRefreshNormalHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshNormalHeader.m; path = MJRefresh/Custom/Header/MJRefreshNormalHeader.m; sourceTree = "<group>"; };
 		074C46AE820B128E5EFC9DCD7DF2DB4F /* HDBaseUITableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HDBaseUITableViewCell.m; sourceTree = "<group>"; };
@@ -690,6 +694,8 @@
 		4B2741C925C5B294F705F624E2544FA0 /* Catogorys */ = {
 			isa = PBXGroup;
 			children = (
+				048FD2DF1C869177007D4074 /* UILabel+HarryExtension.h */,
+				048FD2E01C869177007D4074 /* UILabel+HarryExtension.m */,
 				91B23051B596AEEB29CF32924CB0C275 /* NSObject+Custom.h */,
 				15256C6AB89E5175A7AA44AFAEEF023F /* NSObject+Custom.m */,
 				BCE90AD89D5A6533D8AFC1589A622250 /* UIColor+RGBValues.h */,
@@ -1191,6 +1197,7 @@
 				3A0EC90B3309F2980CD938BF411F26B6 /* HDBaseViewController.h in Headers */,
 				46AA0D07CCB8CCB38F38D8F301203DA8 /* HDCustomCache.h in Headers */,
 				D38FCFB7F44A837C5A35CF1200362214 /* HDGlobalMethods.h in Headers */,
+				048FD2E11C869177007D4074 /* UILabel+HarryExtension.h in Headers */,
 				CECA66B60C3F4553F4018EFBDFC5715B /* HDGlobalVariable.h in Headers */,
 				14465FBC2B476C2BF8F0B80798152218 /* HDHTTPManager.h in Headers */,
 				0D0CB745EBAC7BB9E11C442DD5CEF25F /* HDHTTPRequest.h in Headers */,
@@ -1584,6 +1591,7 @@
 				1D29EE5F24655733AE834F9B3323A1BA /* HDGlobalMethods.m in Sources */,
 				FFCDC2783DAFE8EFB62F14EBDA759AA3 /* HDHTTPManager.m in Sources */,
 				11395D00FA526FED3A3079327C218CAC /* HDHTTPRequest.m in Sources */,
+				048FD2E21C869177007D4074 /* UILabel+HarryExtension.m in Sources */,
 				8250392AF30A2B22A341D4AA77E4B061 /* NSObject+Custom.m in Sources */,
 				C6B7B7A4B120640AFA3B897DE8557851 /* TOActivityChrome.m in Sources */,
 				B98E0A457710706F0410AFE72D0AAD0B /* TOActivitySafari.m in Sources */,
