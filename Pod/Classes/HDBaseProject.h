@@ -10,7 +10,6 @@
 #define HDBaseProject_h
 
 #import "HDHTTPSessionRequest.h"
-#import "HDHTTPManager.h"
 #import "HDBaseViewController.h"
 #import "HDBaseUITableViewController.h"
 #import "HDBaseUIWebViewController.h"

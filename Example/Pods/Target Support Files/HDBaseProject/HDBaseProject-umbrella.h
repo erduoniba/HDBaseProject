@@ -19,7 +19,6 @@
 #import "HDGlobalMethods.h"
 #import "HDGlobalVariable.h"
 #import "HDCustomCache.h"
-#import "HDHTTPManager.h"
 #import "HDHTTPSessionRequest.h"
 #import "TOActivityChrome.h"
 #import "TOActivitySafari.h"
