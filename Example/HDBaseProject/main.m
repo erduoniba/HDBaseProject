@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Harry. All rights reserved.
 //
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 #import "HDAppDelegate.h"
 
 int main(int argc, char * argv[])
