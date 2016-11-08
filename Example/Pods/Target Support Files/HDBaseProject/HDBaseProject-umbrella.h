@@ -20,7 +20,7 @@
 #import "HDGlobalVariable.h"
 #import "HDCustomCache.h"
 #import "HDHTTPManager.h"
-#import "HDHTTPRequest.h"
+#import "HDHTTPSessionRequest.h"
 #import "TOActivityChrome.h"
 #import "TOActivitySafari.h"
 #import "TOWebViewController.h"

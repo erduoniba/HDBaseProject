@@ -9,7 +9,7 @@
 #ifndef HDBaseProject_h
 #define HDBaseProject_h
 
-#import "HDHTTPRequest.h"
+#import "HDHTTPSessionRequest.h"
 #import "HDHTTPManager.h"
 #import "HDBaseViewController.h"
 #import "HDBaseUITableViewController.h"

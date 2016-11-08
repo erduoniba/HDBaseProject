@@ -15,9 +15,9 @@ s.requires_arc = true
 #s.source_files = 'Pod/Classes/**/*'
 s.public_header_files = 'Pod/Classes/HDBaseProject.h'
 s.source_files = 'Pod/Classes/HDBaseProject.h'
-s.resource_bundles = {
-'HDBaseProject' => ['Pod/Assets/*.png']
-}
+#s.resource_bundles = {
+#'HDBaseProject' => ['Pod/Assets/*.png']
+#}
 
 #按照不同的模块对文件目录进行整理
 s.subspec 'Catogorys' do |catogory|
