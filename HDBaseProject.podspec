@@ -10,6 +10,8 @@ s.author           = { "Harry" => "328418417@qq.com" }
 s.source           = { :git => "https://github.com/erduoniba/HDBaseProject.git", :tag => "1.1.6" }
 
 s.platform     = :ios, '8.0'
+s.platform     = :watchOS
+
 s.requires_arc = true
 
 #s.source_files = 'Pod/Classes/**/*'
