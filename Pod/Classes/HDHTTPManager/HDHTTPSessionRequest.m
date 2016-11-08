@@ -75,7 +75,7 @@
 }
 
 #pragma mark - 实例化
-- (HDHTTPSessionRequest *)requestManager{
+- (AFHTTPSessionManager *)requestManager{
     if (!_requestManager) {
         _requestManager = [AFHTTPSessionManager manager] ;
         AFSecurityPolicy *securityPolicy = [AFSecurityPolicy defaultPolicy];
