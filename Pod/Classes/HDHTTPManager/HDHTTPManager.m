@@ -8,21 +8,22 @@
 
 #import "HDHTTPManager.h"
 
-#import "HDHTTPRequest.h"
+#import "HDHTTPSessionRequest.h"
 
 @implementation HDHTTPManager
 
 + (void)getWeixinJingxuanPageIndex:(NSInteger)pageIndex
                            success:(httpRequestSuccess)success
                            failure:(httpRequestFailure)failure{
-    [[HDHTTPRequest shareInstance] GETURLString:@"181-1" parameters:@{@"page" : @(pageIndex)} success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObj) {
-        
-        DLog(@"response : %@",operation.responseString);
-        success(responseObj);
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        failure(error.description);
-    }];
+    [[HDHTTPSessionRequest shareInstance] post:@"181-1"
+                                     paramters:@{@"page" : @(pageIndex)}
+                                 configHandler:nil
+                                       success:^(NSURLSessionDataTask *httpbase, id responseObject) {
+                                           success(responseObject);
+                                       }
+                                       failure:^(NSURLSessionDataTask *httpbase, NSError *error) {
+                                           
+                                       }];
 }
 
 @end

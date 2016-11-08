@@ -8,7 +8,7 @@
 
 #import "HDAppDelegate.h"
 
-#import "HDHTTPRequest.h"
+#import "HDHTTPSessionRequest.h"
 #import "HDBaseViewController.h"
 
 //易源接口:为了验证用户身份，以及确保参数不被中间人篡改，需要传递调用者的数字签名。
@@ -30,7 +30,9 @@
     [dic setObject:time             forKey:@"showapi_timestamp"];   //时间戳最好不要放在默认参数里面
     [dic setObject:@(20)            forKey:@"num"];
 
-    HDHTTPRequest *rq = [HDHTTPRequest shareInstanceWithBaseDemail:@"https://route.showapi.com"];
+//    https://route.showapi.com
+    HDHTTPSessionRequest *rq = [HDHTTPSessionRequest shareInstance];
+    rq.configuration.baseURL = @"https://route.showapi.com";
     [rq setDefaultParamters:dic];
     
     return YES;

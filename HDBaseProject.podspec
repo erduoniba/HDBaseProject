@@ -9,7 +9,7 @@ s.license          = 'MIT'
 s.author           = { "Harry" => "328418417@qq.com" }
 s.source           = { :git => "https://github.com/erduoniba/HDBaseProject.git", :tag => "1.1.5" }
 
-s.platform     = :ios, '7.0'
+s.platform     = :ios, '8.0'
 s.requires_arc = true
 
 #s.source_files = 'Pod/Classes/**/*'
@@ -51,7 +51,7 @@ lib.source_files = 'Pod/Classes/ThirdPartyLibs/**/*'
 lib.public_header_files = 'Pod/Classes/ThirdPartyLibs/**/*.h'
 end
 
-s.dependency 'AFNetworking', '~> 2.6.3'   #依赖关系，该项目所依赖的其他库，如果有多个需要填写多个s.dependency
+s.dependency 'AFNetworking' 		    #依赖关系，该项目所依赖的其他库，如果有多个需要填写多个s.dependency
 s.dependency 'SDWebImage'               #依赖关系，该项目所依赖的其他库，如果有多个需要填写多个s.dependency
 s.dependency 'MJRefresh'                #依赖关系，该项目所依赖的其他库，如果有多个需要填写多个s.dependency
 end

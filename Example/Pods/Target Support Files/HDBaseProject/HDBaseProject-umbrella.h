@@ -1,4 +1,6 @@
+#ifdef __OBJC__
 #import <UIKit/UIKit.h>
+#endif
 
 #import "HDBaseProject.h"
 #import "NSObject+Custom.h"
@@ -7,6 +9,7 @@
 #import "UIImage+Crop.h"
 #import "UIImage+Tint.h"
 #import "UIImageView+VideoFirstImage.h"
+#import "UILabel+HarryExtension.h"
 #import "UITableView+Extension.h"
 #import "UIView+Helpers.h"
 #import "HDBaseUITableViewCell.h"

@@ -284,7 +284,9 @@
     //子类实现
 }
 
-
+- (void)closeMoreRefreshView{
+    [self.tableView.mj_footer endRefreshingWithNoMoreData];
+}
 
 
 #pragma mark - 键盘弹出检测

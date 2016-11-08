@@ -54,8 +54,11 @@
             }
         }
         
-        
         [self refreshEnd];
+        
+        if (self.dataArr.count > 14) {
+            [self closeMoreRefreshView];
+        }
     });
 }
 

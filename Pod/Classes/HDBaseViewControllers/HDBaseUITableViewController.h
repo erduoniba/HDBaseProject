@@ -34,9 +34,11 @@
 -(void)addLoadMoreView;
 
 
-//手动调用刷新追加方法
+// 手动调用刷新追加方法
 - (void)refresh;
-- (void)loadMore;
+
+// 当没有更多数据的时候，需要隐藏加载更多的界面
+- (void)closeMoreRefreshView;
 
 
 /**
@@ -46,7 +48,6 @@
 
 /**
  *  是否有更多
- *
  */
 -(BOOL)hasMore;
 
