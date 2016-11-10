@@ -42,10 +42,11 @@ method.public_header_files = 'Pod/Classes/HDGlobalMethods/*.h'
 method.ios.dependency 'HDBaseProject/Catogorys'
 end
 
-#s.subspec 'HDHTTPManager' do |http|
-#http.source_files = 'Pod/Classes/HDHTTPManager/*'
-#http.public_header_files = 'Pod/Classes/HDHTTPManager/*.h'
-#end
+s.subspec 'HDHTTPRequest' do |http|
+http.source_files = 'Pod/Classes/HDHTTPRequest/*'
+http.public_header_files = 'Pod/Classes/HDHTTPRequest/*.h'
+#http.ios.dependency 'HDBaseProject/HDHTTPRequest'
+end
 
 s.subspec 'ThirdPartyLibs' do |lib|
 lib.source_files = 'Pod/Classes/ThirdPartyLibs/**/*'
