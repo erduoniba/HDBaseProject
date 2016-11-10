@@ -33,6 +33,9 @@
 -(void)addRefreshViewIdleArrowImages:(NSArray <UIImage *>*)idleArrowImages pullingArrowArrowImages:(NSArray <UIImage *>*)pullingArrowImages;
 -(void)addLoadMoreView;
 
+//主动调用下拉刷新方法
+- (void)beginRefreshing;
+
 
 // 手动调用刷新追加方法
 - (void)refresh;

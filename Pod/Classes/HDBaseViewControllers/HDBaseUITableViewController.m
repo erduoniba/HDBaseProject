@@ -148,6 +148,10 @@
 }
 
 
+- (void)beginRefreshing{
+	[self.tableView.mj_header beginRefreshing];
+}
+
 /**
  *  刷新结束 关闭动画
  */
