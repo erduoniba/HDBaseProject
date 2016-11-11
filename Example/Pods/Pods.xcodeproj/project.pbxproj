@@ -147,6 +147,8 @@
 		D9ABD4BC1DD4508900BB204B /* HDCustomCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D9ABD4B81DD4508900BB204B /* HDCustomCache.m */; };
 		D9ABD4BD1DD4508900BB204B /* HDHTTPSessionRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D9ABD4B91DD4508900BB204B /* HDHTTPSessionRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D9ABD4BE1DD4508900BB204B /* HDHTTPSessionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D9ABD4BA1DD4508900BB204B /* HDHTTPSessionRequest.m */; };
+		D9ABD4CA1DD570F700BB204B /* HDBaseCellViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = D9ABD4C81DD570F700BB204B /* HDBaseCellViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D9ABD4CB1DD570F700BB204B /* HDBaseCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D9ABD4C91DD570F700BB204B /* HDBaseCellViewModel.m */; };
 		D9F44B64A5CC6290FB29EE81166823E0 /* MJRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 69010CCFC7575ED59E1030317794AAFF /* MJRefreshHeader.m */; };
 		D9F71BD77F1271BB6F9EA4AEBB6B2D08 /* TOWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AAE65AC0B63DAAEF8ECB390275403D /* TOWebViewController.m */; };
 		DBC1617405F5F35933BE73D2FD79474C /* UILabel+HarryExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4637E6B1E66C72F1C8D6B9F92B69C282 /* UILabel+HarryExtension.m */; };
@@ -441,6 +443,8 @@
 		D9ABD4B81DD4508900BB204B /* HDCustomCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDCustomCache.m; sourceTree = "<group>"; };
 		D9ABD4B91DD4508900BB204B /* HDHTTPSessionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDHTTPSessionRequest.h; sourceTree = "<group>"; };
 		D9ABD4BA1DD4508900BB204B /* HDHTTPSessionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDHTTPSessionRequest.m; sourceTree = "<group>"; };
+		D9ABD4C81DD570F700BB204B /* HDBaseCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDBaseCellViewModel.h; sourceTree = "<group>"; };
+		D9ABD4C91DD570F700BB204B /* HDBaseCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDBaseCellViewModel.m; sourceTree = "<group>"; };
 		DACD9E7A67AC8A28F74C1D0A0E7FE513 /* NSObject+Custom.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSObject+Custom.h"; sourceTree = "<group>"; };
 		DD7CF6A7594104A2FA016D067459B493 /* TOActivitySafari.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TOActivitySafari.m; sourceTree = "<group>"; };
 		DDFC5D25690097E16E8B9DD6CBFC68B5 /* Pods-HDBaseProject_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HDBaseProject_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -766,6 +770,8 @@
 				92B914A000393324CF89B1C3EA56617E /* HDBaseUIWebViewController.m */,
 				CBCB66AD118636B4E66902EF17B4716B /* HDBaseViewController.h */,
 				D9803BB02EB2C44FB9B4DF5F48293EE5 /* HDBaseViewController.m */,
+				D9ABD4C81DD570F700BB204B /* HDBaseCellViewModel.h */,
+				D9ABD4C91DD570F700BB204B /* HDBaseCellViewModel.m */,
 			);
 			path = HDBaseViewControllers;
 			sourceTree = "<group>";
@@ -1189,6 +1195,7 @@
 				668B30E68FC64E93763FE961C625F323 /* UIImage+Add.h in Headers */,
 				D351A06B2E9BD69E3576F1D33A95DA48 /* UIImage+Crop.h in Headers */,
 				C910F06F74BF666DD7F01DFB996B1BE0 /* UIImage+Tint.h in Headers */,
+				D9ABD4CA1DD570F700BB204B /* HDBaseCellViewModel.h in Headers */,
 				4C119B22A55790C5D4F0BFDA7BD53494 /* UIImage+TOWebViewControllerIcons.h in Headers */,
 				F4F98A24B679772E4B7AAB78CB061F3A /* UIImageView+VideoFirstImage.h in Headers */,
 				AA3006DD5DD190181C7E679363587B1A /* UILabel+HarryExtension.h in Headers */,
@@ -1548,6 +1555,7 @@
 				DBC1617405F5F35933BE73D2FD79474C /* UILabel+HarryExtension.m in Sources */,
 				C2EAF1A2197A8CA8DF1B0DE82601E410 /* UITableView+Extension.m in Sources */,
 				75ACDD07FC16EA75624CBAA700317352 /* UIView+Helpers.m in Sources */,
+				D9ABD4CB1DD570F700BB204B /* HDBaseCellViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
