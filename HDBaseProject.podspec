@@ -32,6 +32,7 @@ vc.public_header_files = 'Pod/Classes/HDBaseViewControllers/*.h'
 vc.ios.dependency 'HDBaseProject/HDGlobalMethods'
 vc.ios.dependency 'HDBaseProject/ThirdPartyLibs'
 vc.ios.dependency 'HDBaseProject/Catogorys'
+vc.ios.dependency 'HDBaseProject/HDHTTPRequest'
 #vc.dependency 'HDBaseProject/Catogorys'  错误
 #vc.ios.dependency 'Pod/Classes/Catogorys' 错误
 end
