@@ -1,5 +1,13 @@
 #ifdef __OBJC__
 #import <UIKit/UIKit.h>
+#else
+#ifndef FOUNDATION_EXPORT
+#if defined(__cplusplus)
+#define FOUNDATION_EXPORT extern "C"
+#else
+#define FOUNDATION_EXPORT extern
+#endif
+#endif
 #endif
 
 #import "HDBaseProject.h"
@@ -12,6 +20,7 @@
 #import "UILabel+HarryExtension.h"
 #import "UITableView+Extension.h"
 #import "UIView+Helpers.h"
+#import "HDBaseCellViewModel.h"
 #import "HDBaseUITableViewCell.h"
 #import "HDBaseUITableViewController.h"
 #import "HDBaseUIWebViewController.h"

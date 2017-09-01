@@ -12,8 +12,8 @@
 #import "HDBaseViewController.h"
 
 //易源接口:为了验证用户身份，以及确保参数不被中间人篡改，需要传递调用者的数字签名。
-#define SHOWAPI_SIGN    @"983e97df16ff48cb984c8250024aa142"
-#define SHOWAPI_APPID   @"5095"
+#define SHOWAPI_SIGN    @"698d51a19d8a121ce581499d7b701668"
+#define SHOWAPI_APPID   @"100"
 
 @implementation HDAppDelegate
 

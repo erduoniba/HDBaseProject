@@ -6,38 +6,33 @@
 	<dict>
 		<key>AFNetworking.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
-		</dict>
-		<key>HDBaseProject-HDBaseProject.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>HDBaseProject.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>0</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>MJRefresh.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-HDBaseProject_Example.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>5</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-HDBaseProject_Tests.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>6</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>SDWebImage.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>7</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -47,12 +42,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5D3CD435C32FE7FC8AB4649BCEE8F109</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6B028B4D2B21C0F15AED557FEA821B8D</key>
+		<key>207404CA5DC0882A5AC506E8D4258801</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,12 +52,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AFEAD377E81764B699FA3E5640465D36</key>
+		<key>7E376424F7132FFEAA1C477C8A8FB2D2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C1057D00A06301EF5B455F94F6F18552</key>
+		<key>A41585CF7F2962878CA189C76683C943</key>
 		<dict>
 			<key>primary</key>
 			<true/>

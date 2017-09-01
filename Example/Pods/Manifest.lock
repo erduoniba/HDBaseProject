@@ -14,43 +14,44 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - HDBaseProject (1.1.5):
+  - HDBaseProject (1.1.8):
     - AFNetworking
-    - HDBaseProject/Catogorys (= 1.1.5)
-    - HDBaseProject/HDBaseViewControllers (= 1.1.5)
-    - HDBaseProject/HDGlobalMethods (= 1.1.5)
-    - HDBaseProject/HDHTTPManager (= 1.1.5)
-    - HDBaseProject/ThirdPartyLibs (= 1.1.5)
+    - HDBaseProject/Catogorys (= 1.1.8)
+    - HDBaseProject/HDBaseViewControllers (= 1.1.8)
+    - HDBaseProject/HDGlobalMethods (= 1.1.8)
+    - HDBaseProject/HDHTTPRequest (= 1.1.8)
+    - HDBaseProject/ThirdPartyLibs (= 1.1.8)
     - MJRefresh
     - SDWebImage
-  - HDBaseProject/Catogorys (1.1.5):
+  - HDBaseProject/Catogorys (1.1.8):
     - AFNetworking
     - MJRefresh
     - SDWebImage
-  - HDBaseProject/HDBaseViewControllers (1.1.5):
+  - HDBaseProject/HDBaseViewControllers (1.1.8):
     - AFNetworking
     - HDBaseProject/Catogorys
     - HDBaseProject/HDGlobalMethods
+    - HDBaseProject/HDHTTPRequest
     - HDBaseProject/ThirdPartyLibs
     - MJRefresh
     - SDWebImage
-  - HDBaseProject/HDGlobalMethods (1.1.5):
+  - HDBaseProject/HDGlobalMethods (1.1.8):
     - AFNetworking
     - HDBaseProject/Catogorys
     - MJRefresh
     - SDWebImage
-  - HDBaseProject/HDHTTPManager (1.1.5):
+  - HDBaseProject/HDHTTPRequest (1.1.8):
     - AFNetworking
     - MJRefresh
     - SDWebImage
-  - HDBaseProject/ThirdPartyLibs (1.1.5):
+  - HDBaseProject/ThirdPartyLibs (1.1.8):
     - AFNetworking
     - MJRefresh
     - SDWebImage
   - MJRefresh (3.1.12)
-  - SDWebImage (3.8.2):
-    - SDWebImage/Core (= 3.8.2)
-  - SDWebImage/Core (3.8.2)
+  - SDWebImage (4.1.0):
+    - SDWebImage/Core (= 4.1.0)
+  - SDWebImage/Core (4.1.0)
 
 DEPENDENCIES:
   - HDBaseProject (from `../`)
@@ -61,10 +62,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  HDBaseProject: f199a701d388e28ebb13dd471ecf64af5153407e
+  HDBaseProject: a30b978d98ff92b42275223cbff906f0ea709d4a
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
-  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
 
-PODFILE CHECKSUM: 5454e453b93aa75602713ab5476d9cae7e5ba23c
+PODFILE CHECKSUM: 81d544c2adc40cadf17c0cec89764cf79d15d7fe
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.3.1
