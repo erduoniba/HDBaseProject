@@ -38,6 +38,9 @@
 		95E59DBD1BD354820088FC72 /* HDBaseProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E59DBC1BD354820088FC72 /* HDBaseProject.framework */; };
 		C97B939969CB401EAE7B88D4 /* Pods_HDBaseProject_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F925636AFC0075361FBFB07B /* Pods_HDBaseProject_Tests.framework */; };
 		D918BE271DD1D84400CEE966 /* .swift-version in Resources */ = {isa = PBXBuildFile; fileRef = D918BE261DD1D84400CEE966 /* .swift-version */; };
+		D97203A51FCD5C6200681FFF /* mu.caf in Resources */ = {isa = PBXBuildFile; fileRef = D97203A41FCD5C6100681FFF /* mu.caf */; };
+		D97203C01FCEC58A00681FFF /* l2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D97203BF1FCEC58A00681FFF /* l2.jpg */; };
+		D97203C81FCFF81D00681FFF /* service_order@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D97203C71FCFF81C00681FFF /* service_order@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +105,9 @@
 		A734E62992BCB6B06581A292 /* Pods-HDBaseProject_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDBaseProject_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HDBaseProject_Tests/Pods-HDBaseProject_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		D130B696D677A3043FB2BABE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		D918BE261DD1D84400CEE966 /* .swift-version */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ".swift-version"; path = "../.swift-version"; sourceTree = "<group>"; };
+		D97203A41FCD5C6100681FFF /* mu.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = mu.caf; sourceTree = "<group>"; };
+		D97203BF1FCEC58A00681FFF /* l2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = l2.jpg; sourceTree = "<group>"; };
+		D97203C71FCFF81C00681FFF /* service_order@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "service_order@2x.png"; sourceTree = "<group>"; };
 		F925636AFC0075361FBFB07B /* Pods_HDBaseProject_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HDBaseProject_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -201,8 +207,11 @@
 				049ABAB71BCF7E040010D821 /* HDViewViewController2.h */,
 				049ABAB81BCF7E040010D821 /* HDViewViewController2.m */,
 				049ABAEF1BCF9E3D0010D821 /* back@2x.png */,
+				D97203A41FCD5C6100681FFF /* mu.caf */,
 				049ABAF01BCF9E3D0010D821 /* back@3x.png */,
 				04DBBC9B1BD0C1AD00B25004 /* arrow@2x.png */,
+				D97203C71FCFF81C00681FFF /* service_order@2x.png */,
+				D97203BF1FCEC58A00681FFF /* l2.jpg */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				04DBBC9D1BD0C36700B25004 /* Launch Screen.storyboard */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -318,7 +327,7 @@
 				ORGANIZATIONNAME = Harry;
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
-						DevelopmentTeam = RAD48JXJA8;
+						DevelopmentTeam = B9FH944VTE;
 						ProvisioningStyle = Manual;
 					};
 					6003F5AD195388D20070C39A = {
@@ -355,8 +364,11 @@
 				04DBBC9C1BD0C1B100B25004 /* arrow@2x.png in Resources */,
 				049ABAF11BCF9E3D0010D821 /* back@2x.png in Resources */,
 				D918BE271DD1D84400CEE966 /* .swift-version in Resources */,
+				D97203C01FCEC58A00681FFF /* l2.jpg in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				D97203A51FCD5C6200681FFF /* mu.caf in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				D97203C81FCFF81D00681FFF /* service_order@2x.png in Resources */,
 				04DBBC9E1BD0C36700B25004 /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -628,8 +640,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = RAD48JXJA8;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = B9FH944VTE;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HDBaseProject/HDBaseProject-Prefix.pch";
@@ -641,8 +653,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "91e06419-8bea-4535-a090-66b7f6bdda48";
-				PROVISIONING_PROFILE_SPECIFIER = "XC Ad Hoc: *";
+				PROVISIONING_PROFILE = "d96e7a87-72df-4670-b8aa-4a1558bd705b";
+				PROVISIONING_PROFILE_SPECIFIER = wildcard_dev;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;

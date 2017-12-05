@@ -10,6 +10,7 @@
 
 #import "HDHTTPSessionRequest.h"
 #import "HDBaseViewController.h"
+#import "NSString+HDExtension.h"
 
 //易源接口:为了验证用户身份，以及确保参数不被中间人篡改，需要传递调用者的数字签名。
 #define SHOWAPI_SIGN    @"698d51a19d8a121ce581499d7b701668"
@@ -34,7 +35,18 @@
     HDHTTPSessionRequest *rq = [HDHTTPSessionRequest shareInstance];
     rq.configuration.baseURL = @"https://route.showapi.com";
     [rq setDefaultParamters:dic];
-    
+
+    NSString *originUrl = @"http://www.example.com?name=勇神战五渣";
+    NSString *urlencode = [originUrl hd_urlEncode];
+    NSString *urldencode = [urlencode hd_urlDecode];
+    NSString *utf8encode = [originUrl hd_utf8Encode];
+    NSString *utf8decode = [originUrl hd_utf8Decode];
+
+    NSString *base64String = [originUrl hd_base64Encode];
+    NSString *originString = [base64String hd_base64Decode];
+
+    NSLog(@"\n originUrl:%@\n urlencode:%@\n urldencode:%@\n utf8encode:%@\n utf8decode:%@\n base64String:%@\n originString:%@", originUrl, urlencode, urldencode, utf8encode, utf8decode, base64String, originString);
+
     return YES;
 }
 

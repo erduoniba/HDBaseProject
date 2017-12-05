@@ -10,7 +10,7 @@
 
 #import "HDGlobalVariable.h"
 
-#import "UIColor+RGBValues.h"
+#import "UIColor+HDExtension.h"
 #import <CommonCrypto/CommonDigest.h>
 
 #import <MediaPlayer/MediaPlayer.h>
@@ -53,7 +53,7 @@
     bt.frame = frame;
     [bt setTitle:title forState:UIControlStateNormal];
     [bt setTitleColor:textColor forState:UIControlStateNormal];
-    [bt setTitleColor:[textColor harry_colorByDarkeningColorWithValue:0.12] forState:UIControlStateHighlighted];
+    [bt setTitleColor:[textColor hd_colorByDarkeningColorWithValue:0.12] forState:UIControlStateHighlighted];
     [bt.titleLabel setFont:font];
     return bt;
 }

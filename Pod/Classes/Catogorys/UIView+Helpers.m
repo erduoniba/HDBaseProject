@@ -8,9 +8,8 @@
 #import <QuartzCore/QuartzCore.h>
 
 #define nameOfVar(x) [NSString stringWithFormat:@"%s", #x]
-const NSTimeInterval UIAViewAnimationDefaultDuraton = 0.2;
 
-static inline CGRect CGRectRound(CGRect rect) {return CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height); }
+static inline CGRect CGRectRound(CGRect rect) {return CGRectMake((NSInteger)rect.origin.x, (NSInteger)rect.origin.y, (NSInteger)rect.size.width, (NSInteger)rect.size.height); }
 static NSString * const UIVIEW_HELPERS_FRAME_KVO_KEY = @"frame";
 
 @implementation UIView (Helpers)
@@ -192,7 +191,7 @@ static NSString * const UIVIEW_HELPERS_FRAME_KVO_KEY = @"frame";
 
 - (void)rightAlignForView:(UIView *)view
 {
-    [self rightAlignForView:view offset:0];
+    [self rightAlignForSuperViewOffset:0];
 }
 
 - (void)topAlignForView:(UIView *)view
@@ -279,28 +278,6 @@ static NSString * const UIVIEW_HELPERS_FRAME_KVO_KEY = @"frame";
 #pragma mark -
 #pragma mark Convenience Getters
 
-
-- (CGFloat)frameMaxX
-{
-    return CGRectGetMaxX(self.frame);
-}
--(void)setFrameMaxX:(CGFloat)maxX {
-    if (maxX > self.frameOriginX) {
-        CGFloat width = maxX - self.frameOriginX;
-        self.frameSizeWidth = width;
-    }
-}
-- (CGFloat)frameMaxY
-{
-    return CGRectGetMaxY(self.frame);
-}
--(void)setFrameMaxY:(CGFloat)maxY {
-    if (maxY > self.frameOriginY) {
-        CGFloat height = maxY - self.frameOriginY;
-        self.frameSizeHeight = height;
-    }
-}
-
 - (CGPoint)frameOrigin
 {
     return [self frame].origin;
@@ -313,7 +290,7 @@ static NSString * const UIVIEW_HELPERS_FRAME_KVO_KEY = @"frame";
 
 - (CGFloat)frameOriginX
 {
-    return CGRectGetMinX(self.frame);
+    return [self frame].origin.x;
 }
 
 - (CGFloat)frameOriginY
@@ -331,8 +308,6 @@ static NSString * const UIVIEW_HELPERS_FRAME_KVO_KEY = @"frame";
     return [self frame].size.height;
 }
 
-
-
 #pragma mark -
 #pragma mark Frame Adjustments
 
@@ -349,48 +324,22 @@ static NSString * const UIVIEW_HELPERS_FRAME_KVO_KEY = @"frame";
 
 - (void)setFrameOriginY:(CGFloat)y
 {
-    [self setFrame:CGRectMake(CGRectGetMinX([self frame]), y, CGRectGetWidth([self frame]), CGRectGetHeight([self frame]))];
+    [self setFrame:CGRectRound(CGRectMake(CGRectGetMinX([self frame]), y, CGRectGetWidth([self frame]), CGRectGetHeight([self frame])))];
 }
 
 - (void)setFrameOriginX:(CGFloat)x
 {
-    [self setFrame:CGRectMake(x, CGRectGetMinY([self frame]), CGRectGetWidth([self frame]), CGRectGetHeight([self frame]))];
+    [self setFrame:CGRectRound(CGRectMake(x, CGRectGetMinY([self frame]), CGRectGetWidth([self frame]), CGRectGetHeight([self frame])))];
 }
 
 - (void)setFrameSizeWidth:(CGFloat)width
 {
-    [self setFrame:CGRectMake(CGRectGetMinX([self frame]), CGRectGetMinY([self frame]), width, CGRectGetHeight([self frame]))];
+    [self setFrame:CGRectRound(CGRectMake(CGRectGetMinX([self frame]), CGRectGetMinY([self frame]), width, CGRectGetHeight([self frame])))];
 }
 
 - (void)setFrameSizeHeight:(CGFloat)height
 {
-    [self setFrame:CGRectMake(CGRectGetMinX([self frame]), CGRectGetMinY([self frame]), CGRectGetWidth([self frame]), height)];
-}
-
-
-
--(void)setFrameCenter:(CGPoint)center {
-    self.center = center;
-}
-
--(CGPoint)frameCenter {
-    return self.center ;
-}
-
--(void)setFrameCenterX:(CGFloat)centerx {
-    self.center = CGPointMake(centerx, self.center.y);
-}
-
--(CGFloat)frameCenterX {
-    return self.center.x ;
-}
-
--(void)setFrameCenterY:(CGFloat)centery {
-    self.center = CGPointMake(self.center.x,centery );
-}
-
--(CGFloat)frameCenterY {
-    return self.center.y ;
+    [self setFrame:CGRectRound(CGRectMake(CGRectGetMinX([self frame]), CGRectGetMinY([self frame]), CGRectGetWidth([self frame]), height))];
 }
 
 #pragma mark -
@@ -552,7 +501,7 @@ static inline UIImage* createRoundedCornerMask(CGRect rect, CGFloat radius_tl, C
                                     8,
                                     rect.size.width * scaleFactor * 4,
                                     colorSpace,
-                                    (CGBitmapInfo)kCGImageAlphaPremultipliedLast );
+                                    kCGImageAlphaPremultipliedLast );
     
     CGColorSpaceRelease(colorSpace);
     
@@ -591,56 +540,6 @@ static inline UIImage* createRoundedCornerMask(CGRect rect, CGFloat radius_tl, C
     
     return mask;
 }
-
-#pragma mark - Snapshotting
-
-- (UIImageView *)createSnapshot
-{
-    UIGraphicsBeginImageContextWithOptions([self bounds].size, YES, 0);
-    
-    CGContextTranslateCTM(UIGraphicsGetCurrentContext(), -[self bounds].origin.x, -[self bounds].origin.y);
-    
-    [[self layer] renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    UIImageView *snapshot = [[UIImageView alloc] initWithImage:image];
-    [snapshot setFrame:[self frame]];
-    
-    return snapshot;
-}
-
-- (UIImage *)snapshotImage
-{
-    UIGraphicsBeginImageContextWithOptions([self bounds].size, YES, 0);
-    
-    CGContextTranslateCTM(UIGraphicsGetCurrentContext(), -[self bounds].origin.x, -[self bounds].origin.y);
-    
-    [[self layer] renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return image;
-}
-
-/*- (UIView *)snapshotImageView
-{
-    UIView *snapshot;
-    
-    if ([self respondsToSelector:@selector(snapshotView)])
-    {
-        snapshot = [self performSelector:@selector(snapshotView)];
-    }
-    
-    else
-    {
-        UIImage *image = [self snapshotImage];
-        snapshot = [[UIImageView alloc] initWithImage:image];
-        [snapshot setFrame:[self bounds]];
-    }
-    
-    return snapshot;
-}*/
 
 #pragma mark - Debugging
 
@@ -923,219 +822,4 @@ static inline UIImage* createRoundedCornerMask(CGRect rect, CGFloat radius_tl, C
     }
 }
 
-
-
-- (UITableView *)fdd_superTableView
-{
-    if ([self isKindOfClass:[UITableView class]]) {
-        return (UITableView *)self;
-    }
-    if (self.superview) {
-        UITableView * tableView= [self.superview fdd_superTableView];
-        if (tableView != nil) {
-            return tableView;
-        }
-    }
-    return nil;
-}
-
-
-
-- (UITableViewCell*)fdd_superTableCell
-{
-    if ([self isKindOfClass:[UITableViewCell class]]) {
-        return (UITableViewCell *)self;
-    }
-    if (self.superview) {
-        UITableViewCell  * tableViewCell = [self.superview fdd_superTableCell];
-        if (tableViewCell != nil) {
-            return tableViewCell;
-        }
-    }
-    return nil;
-}
-
-
-- (UIView *)fdd_findFirstResponder
-{
-    if (self.isFirstResponder) {
-        return self;
-    }
-    for (UIView *subView in self.subviews) {
-        UIView *firstResponder = [subView fdd_findFirstResponder];
-        if (firstResponder != nil) {
-            return firstResponder;
-        }
-    }
-    return nil;
-}
-
-
-#pragma mark - Shortcuts for subviews
-
-- (UIView *)descendantOrSelfWithClass:(Class)cls {
-    if ([self isKindOfClass:cls])
-        return self;
-    
-    for (UIView * child in self.subviews) {
-        UIView *it = [child descendantOrSelfWithClass:cls];
-        if (it != nil) {
-            return it;
-        }
-    }
-    
-    return nil;
-}
-
-- (UIView*)ancestorOrSelfWithClass:(Class)cls {
-    if ([self isKindOfClass:cls]) {
-        return self;
-        
-    } else if (self.superview) {
-        return [self.superview ancestorOrSelfWithClass:cls];
-        
-    } else {
-        return nil;
-    }
-}
-
-- (void)removeAllSubviews {
-    [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-}
-
-
-#pragma mark - Rounded corners
-
-- (void)addBezierPathRoundedCornersWithRadius:(CGFloat)inRadius {
-    CAShapeLayer * shapeLayer = [CAShapeLayer layer];
-    //Setting the background color of the masking shape layer to clear color is key
-    //otherwise it would mask everything
-    shapeLayer.backgroundColor = [UIColor clearColor].CGColor;
-    shapeLayer.path = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:inRadius].CGPath;
-    
-    
-    
-    self.layer.masksToBounds = YES;
-    self.layer.mask = shapeLayer;
-    shapeLayer.frame = self.layer.bounds;
-}
-
-- (void)setRoundedCorners:(UIRectCorner)corners radius:(CGFloat)radius {
-    CGRect rect = self.bounds;
-    
-    // Create the path
-    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:rect
-                                                   byRoundingCorners:corners
-                                                         cornerRadii:CGSizeMake(radius, radius)];
-    
-    // Create the shape layer and set its path
-    CAShapeLayer *maskLayer = [CAShapeLayer layer];
-    maskLayer.frame = rect;
-    maskLayer.path = maskPath.CGPath;
-    
-    // Set the newly created shape layer as the mask for the view's layer
-    self.layer.mask = maskLayer;
-}
-
-- (void)setRoundedCornersWithRadius:(CGFloat)radius {
-    [self addBezierPathRoundedCornersWithRadius:radius];
-}
-
-
-
 @end
-
-
-@implementation UIView (CALayer)
-
-- (UIColor *)borderColor {
-    return [UIColor colorWithCGColor:self.layer.borderColor];
-}
-
-- (void)setBorderColor:(UIColor *)borderColor {
-    self.layer.borderColor = borderColor.CGColor;
-}
-
-- (CGFloat)borderWidth {
-    return self.layer.borderWidth;
-}
-
-- (void)setBorderWidth:(CGFloat)borderWidth {
-    self.layer.borderWidth = borderWidth;
-}
-
-- (CGFloat)cornerRadius {
-    return self.layer.cornerRadius;
-}
-
-- (void)setCornerRadius:(CGFloat)cornerRadius {
-    self.layer.cornerRadius = cornerRadius;
-}
-
-- (float)shadowAlpha {
-    return self.layer.shadowOpacity;
-}
-
-- (void)setShadowAlpha:(float)shadowAlpha {
-    self.layer.shadowOpacity = shadowAlpha;
-}
-
-- (UIColor *)shadowColor {
-    return [UIColor colorWithCGColor:self.layer.shadowColor];
-}
-
-- (void)setShadowColor:(UIColor *)shadowColor {
-    self.layer.shadowColor = shadowColor.CGColor;
-}
-
-- (CGSize)shadowOffset {
-    return self.layer.shadowOffset;
-}
-
-- (void)setShadowOffset:(CGSize)shadowOffset {
-    self.layer.shadowOffset = shadowOffset;
-}
-
-- (CGFloat)shadowRadius {
-    return self.layer.shadowRadius;
-}
-
-- (void)setShadowRadius:(CGFloat)shadowRadius {
-    self.layer.shadowRadius = shadowRadius;
-}
-
-
-@end
-
-
-@implementation UIView (Animation)
-
-- (void)setHidden:(BOOL)hidden animated:(BOOL)animated {
-    if (!animated || self.hidden == hidden) {
-        self.hidden = hidden;
-        return;
-    }
-    
-    CGFloat backupAlpha = self.alpha;
-    CGFloat endAlpha;
-    
-    if (hidden) {
-        endAlpha = .0;
-    } else {
-        self.alpha = .0;
-        endAlpha = backupAlpha;
-        self.hidden = NO;
-    }
-    
-    [[self class] animateWithDuration:UIAViewAnimationDefaultDuraton animations:^(void) {
-        self.alpha = endAlpha;
-    } completion:^(BOOL finished) {
-        if (hidden) {
-            self.alpha = backupAlpha;
-            self.hidden = YES; // value compatibility - this delayed action may be cause of unknown strange behavior.
-        }
-    }];
-}
-
-@end
-

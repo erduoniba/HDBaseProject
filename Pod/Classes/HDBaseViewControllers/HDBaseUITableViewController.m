@@ -11,6 +11,7 @@
 #import "HDBaseUITableViewCell.h"
 #import "MJRefresh.h"
 #import "UIView+Helpers.h"
+#import "UIView+HDExtension.h"
 
 #define kPageSize        20
 
@@ -297,8 +298,8 @@
 
 - (void)keyboardWillShow:(NSNotification *)notification
 {
-    UIView * firstResponderView = [self.tableView fdd_findFirstResponder];
-    UITableViewCell * cell = [firstResponderView fdd_superTableCell];
+    UIView * firstResponderView = [self.tableView hd_findFirstResponder];
+    UITableViewCell * cell = [firstResponderView hd_superTableCell];
     if (cell){
         NSDictionary *keyboardInfo = [notification userInfo];
         CGRect keyboardFrame = [self.tableView.window convertRect:[keyboardInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue] toView:self.tableView.superview];
@@ -322,8 +323,8 @@
 
 - (void)keyboardWillHide:(NSNotification *)notification
 {
-    UIView * firstResponderView = [self.tableView fdd_findFirstResponder];
-    UITableViewCell * cell = [firstResponderView fdd_superTableCell];
+    UIView * firstResponderView = [self.tableView hd_findFirstResponder];
+    UITableViewCell * cell = [firstResponderView hd_superTableCell];
     if (cell){
         NSDictionary *keyboardInfo = [notification userInfo];
         UIEdgeInsets tableContentInset = self.tableView.contentInset;

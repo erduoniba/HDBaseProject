@@ -14,20 +14,20 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - HDBaseProject (1.1.8):
+  - HDBaseProject (1.1.9):
     - AFNetworking
-    - HDBaseProject/Catogorys (= 1.1.8)
-    - HDBaseProject/HDBaseViewControllers (= 1.1.8)
-    - HDBaseProject/HDGlobalMethods (= 1.1.8)
-    - HDBaseProject/HDHTTPRequest (= 1.1.8)
-    - HDBaseProject/ThirdPartyLibs (= 1.1.8)
+    - HDBaseProject/Catogorys (= 1.1.9)
+    - HDBaseProject/HDBaseViewControllers (= 1.1.9)
+    - HDBaseProject/HDGlobalMethods (= 1.1.9)
+    - HDBaseProject/HDHTTPRequest (= 1.1.9)
+    - HDBaseProject/ThirdPartyLibs (= 1.1.9)
     - MJRefresh
     - SDWebImage
-  - HDBaseProject/Catogorys (1.1.8):
+  - HDBaseProject/Catogorys (1.1.9):
     - AFNetworking
     - MJRefresh
     - SDWebImage
-  - HDBaseProject/HDBaseViewControllers (1.1.8):
+  - HDBaseProject/HDBaseViewControllers (1.1.9):
     - AFNetworking
     - HDBaseProject/Catogorys
     - HDBaseProject/HDGlobalMethods
@@ -35,23 +35,23 @@ PODS:
     - HDBaseProject/ThirdPartyLibs
     - MJRefresh
     - SDWebImage
-  - HDBaseProject/HDGlobalMethods (1.1.8):
+  - HDBaseProject/HDGlobalMethods (1.1.9):
     - AFNetworking
     - HDBaseProject/Catogorys
     - MJRefresh
     - SDWebImage
-  - HDBaseProject/HDHTTPRequest (1.1.8):
+  - HDBaseProject/HDHTTPRequest (1.1.9):
     - AFNetworking
     - MJRefresh
     - SDWebImage
-  - HDBaseProject/ThirdPartyLibs (1.1.8):
+  - HDBaseProject/ThirdPartyLibs (1.1.9):
     - AFNetworking
     - MJRefresh
     - SDWebImage
-  - MJRefresh (3.1.12)
-  - SDWebImage (4.1.0):
-    - SDWebImage/Core (= 4.1.0)
-  - SDWebImage/Core (4.1.0)
+  - MJRefresh (3.1.15.1)
+  - SDWebImage (4.2.2):
+    - SDWebImage/Core (= 4.2.2)
+  - SDWebImage/Core (4.2.2)
 
 DEPENDENCIES:
   - HDBaseProject (from `../`)
@@ -62,9 +62,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  HDBaseProject: a30b978d98ff92b42275223cbff906f0ea709d4a
-  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
-  SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
+  HDBaseProject: 63ac4cf264f9f5d30395e55a1f983bc202f606b2
+  MJRefresh: 5f8552bc25ca8751c010f621c1098dbdaacbccd6
+  SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
 
 PODFILE CHECKSUM: 81d544c2adc40cadf17c0cec89764cf79d15d7fe
 
