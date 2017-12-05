@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UITableView (Extension)
+@interface UITableView (HDExtension)
 
 /**
  *  获取表格中下一个索引

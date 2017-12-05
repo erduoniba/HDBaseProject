@@ -30,7 +30,7 @@
 #import "UIImage+HDExtension.h"
 #import "UIImageView+HDExtension.h"
 #import "UILabel+HDExtension.h"
-#import "UITableView+Extension.h"
+#import "UITableView+HDExtension.h"
 #import "UITextField+HDExtension.h"
 #import "UITextView+HDExtension.h"
 #import "UIView+HDExtension.h"

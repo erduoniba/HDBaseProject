@@ -6,9 +6,10 @@
 //  Copyright (c) 2014年 Harry. All rights reserved.
 //
 
-#import "UITableView+Extension.h"
+#import "UITableView+HDExtension.h"
 
-@implementation UITableView (Extension)
+@implementation UITableView (HDExtension)
+
 -(NSIndexPath *)nextIndexPath:(NSIndexPath *)indexPath
 {
     if ([self numberOfRowsInSection:indexPath.section] > (indexPath.row + 1)){

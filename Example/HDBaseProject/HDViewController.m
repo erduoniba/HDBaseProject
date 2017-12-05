@@ -10,7 +10,8 @@
 
 #import "HDViewViewController2.h"
 
-#import <HDBaseProject/HDBaseProject.h>
+//#import <HDBaseProject/HDBaseProject.h>
+@import HDBaseProject;
 
 @interface HDViewController ()
 {
@@ -120,22 +121,22 @@
 //    unichar charr = [string characterAtIndex:2];
 //    NSString *ccc = [string substringWithRange:NSMakeRange(4, 4)];
 
-    NSString *sss = [NSString stringWithFormat:@"asda"];
-    NSString *ss = @"asda";
-    NSString *s1 = [NSString stringWithString:@"asda"];
-
-    NSMutableString *mString = [NSMutableString stringWithString:@"abc"];
-    [mString appendString:@"d"];
-//    [mString appendString:nil];
-
-    [mString appendFormat:@"%@", @"f"];
-    [mString appendFormat:@"%@", nil];
-
-    [mString setString:@"xxxx"];
-    [mString setString:nil];
-
-    [mString insertString:@"ooo" atIndex:10];
-    [mString insertString:nil atIndex:0];
+//    NSString *sss = [NSString stringWithFormat:@"asda"];
+//    NSString *ss = @"asda";
+//    NSString *s1 = [NSString stringWithString:@"asda"];
+//
+//    NSMutableString *mString = [NSMutableString stringWithString:@"abc"];
+//    [mString appendString:@"d"];
+////    [mString appendString:nil];
+//
+//    [mString appendFormat:@"%@", @"f"];
+//    [mString appendFormat:@"%@", nil];
+//
+//    [mString setString:@"xxxx"];
+//    [mString setString:nil];
+//
+//    [mString insertString:@"ooo" atIndex:10];
+//    [mString insertString:nil atIndex:0];
 
 
 

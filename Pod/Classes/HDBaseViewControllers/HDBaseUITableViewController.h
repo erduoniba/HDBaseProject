@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "HDBaseViewController.h"
-#import "UITableView+Extension.h"
+#import "UITableView+HDExtension.h"
 
 @interface HDBaseUITableViewController : HDBaseViewController<UITableViewDelegate,UITableViewDataSource>
 

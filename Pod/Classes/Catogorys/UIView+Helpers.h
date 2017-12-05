@@ -92,7 +92,7 @@ andReferenceIsSuperView:(BOOL)isReferenceSuperView;
 - (void)setFrameOriginY:(CGFloat)y;
 - (void)setFrameOriginX:(CGFloat)x;
 - (void)setFrameSizeWidth:(CGFloat)width;
-- (void)setFrameSizeHeigJKht:(CGFloat)height;
+- (void)setFrameSizeHeight:(CGFloat)height;
 
 //Positioning Relative to View
 - (void)setFrameOriginYBelowView:(UIView *)view;
