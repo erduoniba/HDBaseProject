@@ -46,7 +46,6 @@
 }
 -(UITableViewCell *)nextTableViewCellIndexPath: (NSIndexPath *)currentIndexPath {
     return [self nextOrPreTableViewCellIndexPath:currentIndexPath flag:1];
-    
 }
 
 
@@ -70,7 +69,6 @@
         return cellWillShow;
     }
     return nil;
-    
 }
 
 -(UITableViewCell *)nextOrPreTableViewCell: (UITableViewCell *)currentCell flag:(NSInteger)flag{
@@ -93,7 +91,6 @@
         return cellWillShow;
     }
     return nil;
-    
 }
 
 

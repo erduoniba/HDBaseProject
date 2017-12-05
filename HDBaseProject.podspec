@@ -1,11 +1,12 @@
 Pod::Spec.new do |s|
     s.name             = "HDBaseProject"
-    s.version          = "1.2.0"
+    s.version          = "1.2.1"
     s.summary          = "快速搭建项目:支持AFNetworking3.1.0请求，支持自定义下拉gif动画，开源请求类"
     s.description      =
 
 s.description      = <<-DESC
     '新建项目中常用的基础类，项目有一定量的时候，都是代码的复制和粘贴，但是在后台的粘贴中或许有好的代码更正，这个时候我们往往没有时间去维护以前的老代码，不经意间会出现代码不同步的问题'
+    1.2.1：优化代码，细微的调整；
     1.2.0：添加了常用的Category，提高项目开发速度；
     1.1.9：兼容SDWebImage4.0；
 DESC
@@ -14,17 +15,12 @@ DESC
     s.license          = 'MIT'
     s.author           = { "Harry" => "328418417@qq.com" }
     s.source           = { :git => "https://github.com/erduoniba/HDBaseProject.git", :tag => s.version }
-
     s.platform     = :ios, '8.0'
-
     s.requires_arc = true
 
     #s.source_files = 'Pod/Classes/**/*'
     s.public_header_files = 'Pod/Classes/HDBaseProject.h'
     s.source_files = 'Pod/Classes/HDBaseProject.h'
-    #s.resource_bundles = {
-    #'HDBaseProject' => ['Pod/Assets/*.png']
-    #}
 
     #按照不同的模块对文件目录进行整理
     s.subspec 'Catogorys' do |catogory|
@@ -39,8 +35,6 @@ DESC
         vc.ios.dependency 'HDBaseProject/ThirdPartyLibs'
         vc.ios.dependency 'HDBaseProject/Catogorys'
         vc.ios.dependency 'HDBaseProject/HDHTTPRequest'
-        #vc.dependency 'HDBaseProject/Catogorys'  错误
-        #vc.ios.dependency 'Pod/Classes/Catogorys' 错误
     end
 
     s.subspec 'HDGlobalMethods' do |method|
@@ -52,7 +46,6 @@ DESC
     s.subspec 'HDHTTPRequest' do |http|
         http.source_files = 'Pod/Classes/HDHTTPRequest/*'
         http.public_header_files = 'Pod/Classes/HDHTTPRequest/*.h'
-        #http.ios.dependency 'HDBaseProject/HDHTTPRequest'
     end
 
     s.subspec 'ThirdPartyLibs' do |lib|
