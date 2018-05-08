@@ -10,7 +10,13 @@
 #import <objc/runtime.h>
 
 #import <AVFoundation/AVFoundation.h>
-#import <SDWebImage/SDImageCache.h>
+
+#if __has_include(<SDWebImage/SDImageCache.h>)
+    #import <SDWebImage/SDImageCache.h>
+#else
+    #import "SDImageCache.h"
+#endif
+
 
 @interface UIImageView (_HDExtension)
 
