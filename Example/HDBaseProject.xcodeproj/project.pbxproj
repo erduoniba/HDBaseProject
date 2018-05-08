@@ -38,9 +38,13 @@
 		95E59DBD1BD354820088FC72 /* HDBaseProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E59DBC1BD354820088FC72 /* HDBaseProject.framework */; };
 		C97B939969CB401EAE7B88D4 /* Pods_HDBaseProject_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F925636AFC0075361FBFB07B /* Pods_HDBaseProject_Tests.framework */; };
 		D918BE271DD1D84400CEE966 /* .swift-version in Resources */ = {isa = PBXBuildFile; fileRef = D918BE261DD1D84400CEE966 /* .swift-version */; };
+		D96A8A4820A1445500E278E7 /* HDRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D96A8A4120A1445500E278E7 /* HDRequestManager.m */; };
+		D96A8A4920A1445500E278E7 /* HDHomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D96A8A4320A1445500E278E7 /* HDHomeViewModel.m */; };
+		D96A8A4A20A1445500E278E7 /* HDBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D96A8A4420A1445500E278E7 /* HDBaseViewModel.m */; };
 		D97203A51FCD5C6200681FFF /* mu.caf in Resources */ = {isa = PBXBuildFile; fileRef = D97203A41FCD5C6100681FFF /* mu.caf */; };
 		D97203C01FCEC58A00681FFF /* l2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D97203BF1FCEC58A00681FFF /* l2.jpg */; };
 		D97203C81FCFF81D00681FFF /* service_order@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D97203C71FCFF81C00681FFF /* service_order@2x.png */; };
+		D9F0AE3020A160860078DB05 /* HDErrorDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F0AE2F20A160860078DB05 /* HDErrorDemo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,9 +109,18 @@
 		A734E62992BCB6B06581A292 /* Pods-HDBaseProject_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDBaseProject_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HDBaseProject_Tests/Pods-HDBaseProject_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		D130B696D677A3043FB2BABE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		D918BE261DD1D84400CEE966 /* .swift-version */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ".swift-version"; path = "../.swift-version"; sourceTree = "<group>"; };
+		D96A8A4020A1445500E278E7 /* HDRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDRequestManager.h; sourceTree = "<group>"; };
+		D96A8A4120A1445500E278E7 /* HDRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDRequestManager.m; sourceTree = "<group>"; };
+		D96A8A4320A1445500E278E7 /* HDHomeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDHomeViewModel.m; sourceTree = "<group>"; };
+		D96A8A4420A1445500E278E7 /* HDBaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDBaseViewModel.m; sourceTree = "<group>"; };
+		D96A8A4520A1445500E278E7 /* HDHomeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDHomeViewModel.h; sourceTree = "<group>"; };
+		D96A8A4620A1445500E278E7 /* HDBaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDBaseViewModel.h; sourceTree = "<group>"; };
+		D96A8A4720A1445500E278E7 /* HDRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDRequest.h; sourceTree = "<group>"; };
 		D97203A41FCD5C6100681FFF /* mu.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = mu.caf; sourceTree = "<group>"; };
 		D97203BF1FCEC58A00681FFF /* l2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = l2.jpg; sourceTree = "<group>"; };
 		D97203C71FCFF81C00681FFF /* service_order@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "service_order@2x.png"; sourceTree = "<group>"; };
+		D9F0AE2E20A160860078DB05 /* HDErrorDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDErrorDemo.h; sourceTree = "<group>"; };
+		D9F0AE2F20A160860078DB05 /* HDErrorDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDErrorDemo.m; sourceTree = "<group>"; };
 		F925636AFC0075361FBFB07B /* Pods_HDBaseProject_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HDBaseProject_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -199,6 +212,7 @@
 		6003F593195388D20070C39A /* Example for HDBaseProject */ = {
 			isa = PBXGroup;
 			children = (
+				D96A8A3E20A1445500E278E7 /* HDRequest */,
 				6003F59C195388D20070C39A /* HDAppDelegate.h */,
 				6003F59D195388D20070C39A /* HDAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -272,6 +286,38 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D96A8A3E20A1445500E278E7 /* HDRequest */ = {
+			isa = PBXGroup;
+			children = (
+				D96A8A4720A1445500E278E7 /* HDRequest.h */,
+				D9F0AE2E20A160860078DB05 /* HDErrorDemo.h */,
+				D9F0AE2F20A160860078DB05 /* HDErrorDemo.m */,
+				D96A8A3F20A1445500E278E7 /* HDCentralRequest */,
+				D96A8A4220A1445500E278E7 /* HDDispersedRequest */,
+			);
+			path = HDRequest;
+			sourceTree = "<group>";
+		};
+		D96A8A3F20A1445500E278E7 /* HDCentralRequest */ = {
+			isa = PBXGroup;
+			children = (
+				D96A8A4020A1445500E278E7 /* HDRequestManager.h */,
+				D96A8A4120A1445500E278E7 /* HDRequestManager.m */,
+			);
+			path = HDCentralRequest;
+			sourceTree = "<group>";
+		};
+		D96A8A4220A1445500E278E7 /* HDDispersedRequest */ = {
+			isa = PBXGroup;
+			children = (
+				D96A8A4620A1445500E278E7 /* HDBaseViewModel.h */,
+				D96A8A4420A1445500E278E7 /* HDBaseViewModel.m */,
+				D96A8A4520A1445500E278E7 /* HDHomeViewModel.h */,
+				D96A8A4320A1445500E278E7 /* HDHomeViewModel.m */,
+			);
+			path = HDDispersedRequest;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -284,7 +330,6 @@
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
 				B16D3E784D65341B910E4179 /* [CP] Embed Pods Frameworks */,
-				23D61D53BBF727427F31787F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -304,7 +349,6 @@
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
 				F0FBC1FFF3BAEDB732237044 /* [CP] Embed Pods Frameworks */,
-				7BC23E918C76B01120ECF81C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -327,7 +371,7 @@
 				ORGANIZATIONNAME = Harry;
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
-						DevelopmentTeam = RAD48JXJA8;
+						DevelopmentTeam = B9FH944VTE;
 						ProvisioningStyle = Manual;
 					};
 					6003F5AD195388D20070C39A = {
@@ -402,36 +446,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		23D61D53BBF727427F31787F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HDBaseProject_Example/Pods-HDBaseProject_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7BC23E918C76B01120ECF81C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HDBaseProject_Tests/Pods-HDBaseProject_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B16D3E784D65341B910E4179 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -442,6 +456,7 @@
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/HDBaseProject/HDBaseProject.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -449,6 +464,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HDBaseProject.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +500,7 @@
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/HDBaseProject/HDBaseProject.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -491,6 +508,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HDBaseProject.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,9 +524,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* HDAppDelegate.m in Sources */,
+				D96A8A4920A1445500E278E7 /* HDHomeViewModel.m in Sources */,
 				6003F5A7195388D20070C39A /* HDViewController.m in Sources */,
+				D9F0AE3020A160860078DB05 /* HDErrorDemo.m in Sources */,
+				D96A8A4820A1445500E278E7 /* HDRequestManager.m in Sources */,
 				049ABAB91BCF7E040010D821 /* HDViewViewController2.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				D96A8A4A20A1445500E278E7 /* HDBaseViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

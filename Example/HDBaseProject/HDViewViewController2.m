@@ -59,6 +59,9 @@
         if (self.dataArr.count > 14) {
             [self closeMoreRefreshView];
         }
+
+        [self showReminderViewWihtType:rand()%3];
+        self.tableView.hidden = YES;
     });
 }
 

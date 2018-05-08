@@ -8,13 +8,10 @@
 
 #import "HDAppDelegate.h"
 
-#import "HDHTTPSessionRequest.h"
-#import "HDBaseViewController.h"
-#import "NSString+HDExtension.h"
+#import <HDBaseProject/HDBaseProject.h>
 
-//易源接口:为了验证用户身份，以及确保参数不被中间人篡改，需要传递调用者的数字签名。
-#define SHOWAPI_SIGN    @"698d51a19d8a121ce581499d7b701668"
-#define SHOWAPI_APPID   @"100"
+#import "HDRequestManager.h"
+#import "HDHomeViewModel.h"
 
 @implementation HDAppDelegate
 
@@ -22,19 +19,6 @@
 {
     [HDBaseViewController setBackgroundColor:[UIColor whiteColor]];
     [HDBaseViewController setBackImageName:@"back"];
-    
-    NSString *time = [self getDateString:[NSDate date] withFormat:@"yyyyMMddHHmmss"];
-    
-    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    [dic setObject:SHOWAPI_SIGN     forKey:@"showapi_sign"];
-    [dic setObject:SHOWAPI_APPID    forKey:@"showapi_appid"];
-    [dic setObject:time             forKey:@"showapi_timestamp"];   //时间戳最好不要放在默认参数里面
-    [dic setObject:@(20)            forKey:@"num"];
-
-//    https://route.showapi.com
-    HDHTTPSessionRequest *rq = [HDHTTPSessionRequest shareInstance];
-    rq.configuration.baseURL = @"https://route.showapi.com";
-    [rq setDefaultParamters:dic];
 
     NSString *originUrl = @"http://www.example.com?name=勇神战五渣";
     NSString *urlencode = [originUrl hd_urlEncode];
@@ -47,21 +31,31 @@
 
     NSLog(@"\n originUrl:%@\n urlencode:%@\n urldencode:%@\n utf8encode:%@\n utf8decode:%@\n base64String:%@\n originString:%@", originUrl, urlencode, urldencode, utf8encode, utf8decode, base64String, originString);
 
-    return YES;
-}
+    if (rand() % 2 == 0) {
+        // 集约型api请求方式
+        [[HDRequestManager sharedInstance] laughterListPageIndex:1 pageSize:3 cache:^(id  _Nullable responseObject) {
+            DLog(@"cache: %@", responseObject);
+        } success:^(NSURLSessionTask * _Nullable httpbase, id  _Nullable responseObject) {
+            DLog(@"success: %@", responseObject);
+        } failure:^(NSURLSessionTask * _Nullable httpbase, id  _Nullable responseObject) {
+            DLog(@"failure: %@", responseObject);
+        }];
+    }
+    else {
+        // 分散型api请求方式
+        HDHomeViewModel *homeVM = [HDHomeViewModel new];
+        homeVM.pageSize = 3;
+        homeVM.pageIndex = 1;
+        [homeVM requestCache:^(id  _Nullable responseObject) {
+            DLog(@"cache2: %@", responseObject);
+        } success:^(NSURLSessionTask * _Nullable httpbase, id  _Nullable responseObject) {
+            DLog(@"success2: %@", responseObject);
+        } failure:^(NSURLSessionTask * _Nullable httpbase, id  _Nullable responseObject) {
+            DLog(@"failure2: %@", responseObject);
+        }];
+    }
 
-- (NSString *)getDateString:(NSDate *)date withFormat:(NSString*)format
-{
-    NSTimeZone *tzGMT = [NSTimeZone timeZoneWithName:@"GMT+8:00"];
-    [NSTimeZone setDefaultTimeZone:tzGMT];
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setTimeZone:tzGMT];
-    [dateFormatter setDateFormat:format];
-    
-    NSString *destDateString = [dateFormatter stringFromDate:date];
-    
-    return destDateString;
+    return YES;
 }
 
 

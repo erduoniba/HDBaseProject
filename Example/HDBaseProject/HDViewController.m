@@ -11,7 +11,6 @@
 #import "HDViewViewController2.h"
 
 #import <HDBaseProject/HDBaseProject.h>
-//@import HDBaseProject;
 
 @interface HDViewController ()
 {
