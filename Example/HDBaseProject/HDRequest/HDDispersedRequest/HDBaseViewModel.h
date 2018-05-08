@@ -35,7 +35,7 @@
 
  @return 请求的参数，默认返回通用的参数
  */
-- (NSDictionary *)hdRequestParamters;
+- (NSDictionary *_Nonnull)hdRequestParamters;
 
 
 /**
@@ -43,14 +43,14 @@
 
  @return 缓存数据的惟一标示
  */
-- (NSString *)hdRequestIdentifier;
+- (NSString *_Nonnull)hdRequestIdentifier;
 
 /**
  请求的一些配置，子类初始化的时候会做统一的配置，子类需要特殊需要实现该协议
 
  @param configuration 请求的一些配置
  */
-- (void)hdRequestConfiguration:(HDRequestManagerConfig *)configuration;
+- (void)hdRequestConfiguration:(HDRequestManagerConfig *_Nonnull)configuration;
 
 @end
 
@@ -59,9 +59,9 @@
  */
 @interface HDBaseViewModel : NSObject <HDBaseViewModelProtocol>
 
-@property (nonatomic, strong) NSString *baseURL;
+@property (nonatomic, strong) NSString * _Nonnull baseURL;
 
-@property (nonatomic, strong, readonly) HDRequestManagerConfig *configuration;
+@property (nonatomic, strong, readonly) HDRequestManagerConfig * _Nonnull configuration;
 
 - (void)requestCache:(HDRequestManagerCache _Nullable )cache
              success:(HDRequestManagerSuccess _Nullable )success
