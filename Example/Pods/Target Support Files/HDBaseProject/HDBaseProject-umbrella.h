@@ -42,6 +42,7 @@
 #import "UIView+Helpers.h"
 #import "UIView+JKCustomBorder.h"
 #import "HDCustomCache.h"
+#import "HDFPSLabel.h"
 #import "HDFrameworkBundleImage.h"
 #import "HDGlobalMethods.h"
 #import "HDGlobalVariable.h"

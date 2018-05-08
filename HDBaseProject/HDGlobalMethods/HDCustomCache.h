@@ -10,12 +10,9 @@
 
 @interface HDCustomCache : NSObject
 
-+ (void)saveCache:(NSString *)keyword byDictionary:(NSDictionary *)dictionary;
 + (void)saveCache:(NSString *)keyword byObject:(NSObject *)object;
-+ (void)saveCache:(NSString *)keyword byArray:(NSArray *)array;
 + (void)saveCache:(NSString *)keyword byData:(NSData *)data;
 
-+ (NSMutableArray *)getArrayCache:(NSString *)keyword;
 + (NSData *)getCache:(NSString *)keyword;
 + (NSObject *)getObjectCache:(NSString *)keyword;
 

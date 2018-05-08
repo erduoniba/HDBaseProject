@@ -55,6 +55,9 @@
         }];
     }
 
+    NSString *encrypt = [HDGlobalMethods hd_aes128Encrypt:@"hello" key:@"hd"];
+    NSString *decrypt = [HDGlobalMethods hd_aes128Decrypt:encrypt key:@"hd"];
+
     return YES;
 }
 

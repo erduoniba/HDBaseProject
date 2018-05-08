@@ -30,15 +30,12 @@
 + (CGSize)getSizeWithString:(NSString *)string font:(UIFont *)font constrainedToSize:(CGSize)size;
 
 
-
-/**
- *  md5加密
- *
- *  @param key 需要进行加密的key
- *
- *  @return md5加密后的数据
- */
-+ (NSString *)md5Encrypt:(NSString *)key;
+#pragma mark - 数据加密
+//md5非对称加密
++ (NSString *)hd_md5Encrypt:(NSString *)key;
+//aes对称加密
++ (NSString *)hd_aes128Encrypt:(NSString *)plainText key:(NSString *)key;
++ (NSString *)hd_aes128Decrypt:(NSString *)encryptText key:(NSString *)key;
 
 
 /**

@@ -12,6 +12,7 @@
 
 #import "UIColor+HDExtension.h"
 #import <CommonCrypto/CommonDigest.h>
+#import <CommonCrypto/CommonCryptor.h>
 
 #import <MediaPlayer/MediaPlayer.h>
 
@@ -161,14 +162,7 @@ static NSBundle *gsBundle = nil;
 }
 
 
-/**
- *  md5加密
- *
- *  @param key 需要进行加密的key
- *
- *  @return md5加密后的数据
- */
-+ (NSString *)md5Encrypt:(NSString *)key {
++ (NSString *)hd_md5Encrypt:(NSString *)key {
     const char *str = [key UTF8String];
     if (str == NULL) {
         str = "";
@@ -182,6 +176,123 @@ static NSBundle *gsBundle = nil;
     }
     
     return ret;
+}
+
++ (NSString *)hd_aes128Encrypt:(NSString *)plainText key:(NSString *)key {
+    char keyPtr[kCCKeySizeAES128+1];
+    memset(keyPtr, 0, sizeof(keyPtr));
+    [key getCString:keyPtr maxLength:sizeof(keyPtr) encoding:NSUTF8StringEncoding];
+
+    NSData* data = [plainText dataUsingEncoding:NSUTF8StringEncoding];
+    NSUInteger dataLength = [data length];
+
+    size_t bufferSize = dataLength + kCCBlockSizeAES128;
+    void *buffer = malloc(bufferSize);
+    size_t numBytesEncrypted = 0;
+    CCCryptorStatus cryptStatus = CCCrypt(kCCEncrypt,
+                                          kCCAlgorithmAES128,
+                                          kCCOptionPKCS7Padding|kCCOptionECBMode,
+                                          keyPtr,
+                                          kCCBlockSizeAES128,
+                                          NULL,
+                                          [data bytes],
+                                          dataLength,
+                                          buffer,
+                                          bufferSize,
+                                          &numBytesEncrypted);
+    if (cryptStatus == kCCSuccess) {
+        NSData *resultData = [NSData dataWithBytesNoCopy:buffer length:numBytesEncrypted];
+        return [self hexStringForData:resultData];
+    }
+    free(buffer);
+    return nil;
+}
+
++ (NSString *)hd_aes128Decrypt:(NSString *)encryptText key:(NSString *)key {
+    DLog(@"encryptText = %@, %@",encryptText, key);
+    char keyPtr[kCCKeySizeAES128 + 1];
+    memset(keyPtr, 0, sizeof(keyPtr));
+    [key getCString:keyPtr maxLength:sizeof(keyPtr) encoding:NSUTF8StringEncoding];
+
+    NSData *data = [self dataForHexString:encryptText];
+    NSUInteger dataLength = [data length];
+    size_t bufferSize = dataLength + kCCBlockSizeAES128;
+    void *buffer = malloc(bufferSize);
+
+    size_t numBytesCrypted = 0;
+    CCCryptorStatus cryptStatus = CCCrypt(kCCDecrypt,
+                                          kCCAlgorithmAES128,
+                                          kCCOptionPKCS7Padding|kCCOptionECBMode,
+                                          keyPtr,
+                                          kCCBlockSizeAES128,
+                                          NULL,
+                                          [data bytes],
+                                          dataLength,
+                                          buffer,
+                                          bufferSize,
+                                          &numBytesCrypted);
+    if (cryptStatus == kCCSuccess) {
+        NSData *resultData = [NSData dataWithBytesNoCopy:buffer length:numBytesCrypted];
+        return [[NSString alloc] initWithData:resultData encoding:NSUTF8StringEncoding];
+    }
+    free(buffer);
+    return nil;
+}
+
+//NSData 转换成 16进制小写字符串
++ (NSString *)hexStringForData:(NSData *)data {
+    if (data == nil) {
+        return nil;
+    }
+    NSMutableString* hexString = [NSMutableString string];
+    const unsigned char *p = [data bytes];
+    for (int i=0; i < [data length]; i++) {
+        [hexString appendFormat:@"%02x", *p++];
+    }
+    return hexString;
+}
+
+//16进制小写字符串 转换成 NSData
++ (NSData *)dataForHexString:(NSString *)hexString {
+    if (hexString == nil) {
+        return nil;
+    }
+    const char* ch = [[hexString lowercaseString] cStringUsingEncoding:NSUTF8StringEncoding];
+    NSMutableData* data = [NSMutableData data];
+    while (*ch) {
+        if (*ch == ' ') {
+            continue;
+        }
+        char byte = 0;
+
+        if ('0' <= *ch && *ch <= '9') {
+            byte = *ch - '0';
+        }
+
+        else if ('a' <= *ch && *ch <= 'f') {
+            byte = *ch - 'a' + 10;
+        }
+
+        else if ('A' <= *ch && *ch <= 'F') {
+            byte = *ch - 'A' + 10;
+        }
+        ch++;
+        byte = byte << 4;
+        if (*ch) {
+            if ('0' <= *ch && *ch <= '9') {
+                byte += *ch - '0';
+            } else if ('a' <= *ch && *ch <= 'f') {
+                byte += *ch - 'a' + 10;
+            }
+            else if('A' <= *ch && *ch <= 'F')
+            {
+                byte += *ch - 'A' + 10;
+            }
+            ch++;
+        }
+        [data appendBytes:&byte length:1];
+    }
+    return data;
 }
 
 
