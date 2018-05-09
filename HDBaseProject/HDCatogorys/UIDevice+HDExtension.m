@@ -95,7 +95,7 @@
     return 44;
 }
 
-+ (CGFloat)ms_tabBarBottomHeight {
++ (CGFloat)hd_tabBarBottomHeight {
     if ([UIScreen mainScreen].bounds.size.width == 375 && [UIScreen mainScreen].bounds.size.height == 812) {
         return 34;
     }

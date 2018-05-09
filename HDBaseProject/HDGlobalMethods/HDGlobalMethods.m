@@ -10,7 +10,12 @@
 
 #import "HDGlobalVariable.h"
 
-#import "UIColor+HDExtension.h"
+#if __has_include(<HDBaseProject/UIColor+HDExtension.h>)
+    #import <HDBaseProject/UIColor+HDExtension.h>
+#else
+    #import "UIColor+HDExtension.h"
+#endif
+
 #import <CommonCrypto/CommonDigest.h>
 #import <CommonCrypto/CommonCryptor.h>
 
