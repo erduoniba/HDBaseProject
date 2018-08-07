@@ -109,7 +109,7 @@ static NSString *backImageName;
 {
     UIImage * img = [UIImage imageNamed:backImageName];
     
-    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, img.size.width+10, img.size.height)];
+    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, img.size.width, img.size.height)];
     
     [button setImage:img forState:UIControlStateNormal];
     
