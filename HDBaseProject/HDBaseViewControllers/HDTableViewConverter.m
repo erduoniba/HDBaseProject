@@ -84,15 +84,15 @@
     }
     //retain 所有参数，防止参数被释放dealloc
     [invocation retainArguments];
-    
+
     //消息调用
     [invocation invoke];
-    
+
     //获得返回值类型
     const char *returnType = sinature.methodReturnType;
     //声明返回值变量
     id returnValue;
-    
+
     if( !strcmp(returnType, @encode(void)) ){
         //如果没有返回值，也就是消息声明为void，那么returnValue=nil
         returnValue =  nil;
@@ -107,13 +107,13 @@
         //如果返回值为普通类型NSInteger、BOOL、CGFloat
         //返回值长度
         NSUInteger length = [sinature methodReturnLength];
-        
+
         //根据长度申请内存
         void *buffer = (void *)malloc(length);
-        
+
         //为变量赋值
         [invocation getReturnValue:buffer];
-        
+
         if( !strcmp(returnType, @encode(BOOL)) ) {
             returnValue = [NSNumber numberWithBool:*((BOOL*)buffer)];
         }
@@ -124,7 +124,7 @@
             returnValue = [NSNumber numberWithFloat:*((CGFloat*)buffer)];
         }
     }
-    
+
     return returnValue;
 }
 
@@ -134,10 +134,10 @@
         if ([_tableViewCarrier respondsToSelector:selector]) {
             return [self invocationWithSelector:selector params:params];
         }
-        
+
         return nil;
     }
-    
+
     if ([self.selectorBlocks.allKeys containsObject:func]) {
         resultBlock block = [self.selectorBlocks objectForKey:func];
         return block(params);
@@ -167,7 +167,7 @@
     if (backCell) {
         return backCell;
     }
-    
+
     HDBaseCellViewModel *cellModel = _dataArr[indexPath.row];
     HDBaseUITableViewCell *cell = [tableView cellForIndexPath:indexPath cellClass:cellModel.cellClass];
     cell.indexPath = indexPath;
@@ -186,6 +186,10 @@
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
     return [[self converterFunction:NSStringFromSelector(_cmd) params:@[tableView, indexPath]] boolValue];
+}
+
+- (nullable NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [self converterFunction:NSStringFromSelector(_cmd) params:@[tableView, indexPath]];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath{
