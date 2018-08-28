@@ -44,6 +44,8 @@
  */
 + (void)setBackImageName:(NSString *)backImageName;
 
++ (void)setBackImageEdgeInsets:(UIEdgeInsets)imageEdgeInsets;
+
 /**
  *  广义级别的通知,当我们需要和另一个VC进行交互时候,可以执行此协议相关的方法!
  */

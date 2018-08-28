@@ -25,6 +25,7 @@
 
 static UIColor *backgroundColor;
 static NSString *backImageName;
+static UIEdgeInsets backImageEdgeInsets;
 
 + (void)setBackgroundColor:(UIColor *)color{
     backgroundColor = color;
@@ -33,6 +34,10 @@ static NSString *backImageName;
 + (void)setBackImageName:(NSString *)imageName{
     backImageName = imageName;
     [HDBaseUIWebViewController setBackImageName:imageName];
+}
+
++ (void)setBackImageEdgeInsets:(UIEdgeInsets)imageEdgeInsets {
+    backImageEdgeInsets = imageEdgeInsets;
 }
 
 - (void)viewDidLoad {
@@ -112,7 +117,7 @@ static NSString *backImageName;
     UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, img.size.width, img.size.height)];
     
     [button setImage:img forState:UIControlStateNormal];
-    
+    [button setImageEdgeInsets:backImageEdgeInsets];
     [button setAutoresizingMask:(UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight)];
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     
