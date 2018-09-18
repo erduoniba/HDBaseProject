@@ -18,6 +18,7 @@
 @interface HDBaseUITableViewController ()
 {
     UITableViewStyle _uitableViewStyle;
+    NSInteger   _initPageIndex;
 }
 
 /**
@@ -50,11 +51,17 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         _dataArr = [NSMutableArray arrayWithCapacity:10];
-        _pageIndex = 0;
+        _initPageIndex = 0;
+        _pageIndex = _initPageIndex;
         _pageSize = kPageSize;
         _addKeyBoardObserverFlag = NO;
     }
     return self;
+}
+
+- (void)setInitPageIndex:(NSInteger)initPageIndex {
+    _initPageIndex = initPageIndex;
+    _pageIndex = initPageIndex;
 }
 
 - (void)viewDidLoad
@@ -275,7 +282,7 @@
 
 - (void)refresh{
     //子类实现
-    _pageIndex = 0;
+    _pageIndex = _initPageIndex;
     [self requestData];
 }
 
