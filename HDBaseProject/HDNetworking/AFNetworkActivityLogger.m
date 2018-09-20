@@ -167,6 +167,7 @@ static void * AFNetworkRequestStartDate = &AFNetworkRequestStartDate;
     if ([request HTTPBody]) {
         body = [[NSString alloc] initWithData:[request HTTPBody] encoding:NSUTF8StringEncoding];
     }
+    NSArray *bodys = [body componentsSeparatedByString:@"&"];
 
     NSTimeInterval elapsedTime = [[NSDate date] timeIntervalSinceDate:objc_getAssociatedObject(notification.object, AFNetworkRequestStartDate)];
 
@@ -176,7 +177,7 @@ static void * AFNetworkRequestStartDate = &AFNetworkRequestStartDate;
             case AFLoggerLevelInfo:
             case AFLoggerLevelWarn:
             case AFLoggerLevelError:
-                HDNetLog(@"\n\n==================================================================================\n[请求失败] 请求方式：%@ \n请求的url：'%@' \n请求头参数：%@ \n请求体参数：%@ \n请求错误码：(%ld) \n请求耗时：[%.04f s]\n错误详情：[错误码：%d]、[错误描述：%@] \n==================================================================================\n\n", [request HTTPMethod], [[response URL] absoluteString], [request allHTTPHeaderFields], body, (long)responseStatusCode, elapsedTime, error.code, error.localizedDescription);
+                HDNetLog(@"\n\n==================================================================================\n[请求失败] 请求方式：%@ \n请求的url：'%@' \n请求头参数：%@ \n请求体参数：%@ \n请求错误码：(%ld) \n请求耗时：[%.04f s]\n错误详情：[错误码：%d]、[错误描述：%@] \n==================================================================================\n\n", [request HTTPMethod], [[response URL] absoluteString], [request allHTTPHeaderFields], bodys, (long)responseStatusCode, elapsedTime, error.code, error.localizedDescription);
             default:
                 break;
         }
@@ -185,10 +186,10 @@ static void * AFNetworkRequestStartDate = &AFNetworkRequestStartDate;
             case AFLoggerLevelDebug:
             case AFLoggerLevelWarn:
             case AFLoggerLevelError:
-                HDNetLog(@"\n\n==================================================================================\n[请求成功] 请求方式：%@ \n请求的url：'%@' \n请求头参数：%@ \n请求体参数：%@ \n请求错误码：(%ld) \n请求耗时：[%.04f s] \n请求结果：%@ \n==================================================================================\n\n", [request HTTPMethod], [[response URL] absoluteString], [request allHTTPHeaderFields], body, (long)responseStatusCode, elapsedTime, responseObject);
+                HDNetLog(@"\n\n==================================================================================\n[请求成功] 请求方式：%@ \n请求的url：'%@' \n请求头参数：%@ \n请求体参数：%@ \n请求错误码：(%ld) \n请求耗时：[%.04f s] \n请求结果：%@ \n==================================================================================\n\n", [request HTTPMethod], [[response URL] absoluteString], [request allHTTPHeaderFields], bodys, (long)responseStatusCode, elapsedTime, responseObject);
                 break;
             case AFLoggerLevelInfo:
-                HDNetLog(@"\n\n==================================================================================\n[请求成功] 请求方式：%@ \n请求的url：'%@' \n请求头参数：%@ \n请求体参数：%@ \n请求错误码：(%ld) \n请求耗时：[%.04f s] \n请求结果：%@ \n==================================================================================\n\n", [request HTTPMethod], [[response URL] absoluteString], [request allHTTPHeaderFields], body, (long)responseStatusCode, elapsedTime, responseObject);
+                HDNetLog(@"\n\n==================================================================================\n[请求成功] 请求方式：%@ \n请求的url：'%@' \n请求头参数：%@ \n请求体参数：%@ \n请求错误码：(%ld) \n请求耗时：[%.04f s] \n请求结果：%@ \n==================================================================================\n\n", [request HTTPMethod], [[response URL] absoluteString], [request allHTTPHeaderFields], bodys, (long)responseStatusCode, elapsedTime, responseObject);
                 break;
             default:
                 break;

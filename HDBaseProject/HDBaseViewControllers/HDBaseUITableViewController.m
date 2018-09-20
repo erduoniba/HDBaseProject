@@ -67,7 +67,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     [self.view addSubview:self.tableView];
 }
 
@@ -75,25 +75,25 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+
     if (_addKeyBoardObserverFlag) {
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(keyboardWillShow:)
                                                      name:UIKeyboardWillShowNotification
                                                    object:nil];
-        
+
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(keyboardWillHide:)
                                                      name:UIKeyboardWillHideNotification
                                                    object:nil];
     }
-    
+
 }
 
 -(void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    
+
     if (_addKeyBoardObserverFlag) {
         [[NSNotificationCenter defaultCenter] removeObserver:self
                                                         name:UIKeyboardWillShowNotification
@@ -116,11 +116,11 @@
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [weakSelf refresh];
     }];
-    
+
     if (arrowImage) {
         [(MJRefreshNormalHeader *)self.tableView.mj_header arrowView].image = arrowImage;
     }
-    
+
     // 马上进入刷新状态
     [self.tableView.mj_header beginRefreshing];
 }
@@ -133,59 +133,56 @@
         self.tableView.mj_header = [MJRefreshGifHeader headerWithRefreshingBlock:^{
             [weakSelf refresh];
         }];
-        
+
         [(MJRefreshGifHeader *)self.tableView.mj_header setImages:idleArrowImages forState:MJRefreshStateIdle];
         [(MJRefreshGifHeader *)self.tableView.mj_header setImages:pullingArrowImages forState:MJRefreshStatePulling];
         [(MJRefreshGifHeader *)self.tableView.mj_header setImages:pullingArrowImages forState:MJRefreshStateRefreshing];
     }
-        
+
     // 马上进入刷新状态
-//    [self.tableView.mj_header beginRefreshing];
+    //    [self.tableView.mj_header beginRefreshing];
 }
 
 -(void)addLoadMoreView{
     // 添加默认的上拉刷新
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadMoreData方法）
     MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMore)];
-    
+
     // 设置文字
     [footer setTitle:@"" forState:MJRefreshStateIdle];
-    
+
     // 设置footer
     self.tableView.mj_footer = footer;
 }
 
 
 - (void)beginRefreshing{
-	[self.tableView.mj_header beginRefreshing];
+    [self.tableView.mj_header beginRefreshing];
 }
 
 /**
  *  刷新结束 关闭动画
  */
 -(void)refreshEnd{
-    
-    // 拿到当前的下拉刷新控件，结束刷新状态
-    [self.tableView.mj_header endRefreshing];
-    
+    if (_pageIndex == _initPageIndex) {
+        // 拿到当前的下拉刷新控件，结束刷新状态
+        [self.tableView.mj_header endRefreshing];
+    }
     // 拿到当前的上拉刷新控件，结束刷新状态
     [self.tableView.mj_footer endRefreshing];
-    
+
     if (![self hasMore]) {
         // 拿到当前的上拉刷新控件，变为没有更多数据的状态
         [self.tableView.mj_footer endRefreshingWithNoMoreData];
     }
-    
-	[self.tableView reloadData];
-
 }
 
 -(BOOL)hasMore{
-	int count = (int)self.totalCount/_pageSize;
-	if(_totalCount%_pageSize > 0)
-		count++;
-	BOOL bHasMore = (_pageIndex >= count);
-	return bHasMore;
+    int count = (int)self.totalCount/_pageSize;
+    if(_totalCount%_pageSize > 0)
+        count++;
+    BOOL bHasMore = (_pageIndex >= count);
+    return bHasMore;
 }
 
 -(UIView *)tableviewHead {
@@ -212,27 +209,27 @@
 //iOS8上 cell分割线置顶
 -(void)viewDidLayoutSubviews
 {
-	[super viewDidLayoutSubviews];
-	
-	if ([self.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
-		[self.tableView setSeparatorInset:UIEdgeInsetsZero];
-	}
-	
-	if ([self.tableView respondsToSelector:@selector(setLayoutMargins:)]) {
-		[self.tableView setLayoutMargins:UIEdgeInsetsZero];
-	}
+    [super viewDidLayoutSubviews];
+
+    if ([self.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+        [self.tableView setSeparatorInset:UIEdgeInsetsZero];
+    }
+
+    if ([self.tableView respondsToSelector:@selector(setLayoutMargins:)]) {
+        [self.tableView setLayoutMargins:UIEdgeInsetsZero];
+    }
 }
 
 //分割线不留空
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
-		[cell setSeparatorInset:UIEdgeInsetsZero];
-	}
-	
-	if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
-		[cell setLayoutMargins:UIEdgeInsetsZero];
-	}
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+        [cell setSeparatorInset:UIEdgeInsetsZero];
+    }
+
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
 }
 
 
@@ -257,7 +254,7 @@
     if (!cell) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"HarryUITableViewCellID"];
     }
-    
+
     return cell;
 }
 
