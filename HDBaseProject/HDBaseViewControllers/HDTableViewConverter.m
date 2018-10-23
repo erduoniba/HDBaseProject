@@ -259,4 +259,8 @@
     [self converterFunction:NSStringFromSelector(_cmd) params:@[tableView, indexPath]];
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self converterFunction:NSStringFromSelector(_cmd) params:@[scrollView]];
+}
+
 @end
