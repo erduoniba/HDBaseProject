@@ -71,6 +71,7 @@ blue:((float)(hexValue & 0xFF))/255.0 alpha:1]
 
 - (void)customReminder:(NSString *)reminder {
     _reminderLabel.text = reminder;
+    [self refreshReminderView];
 }
 
 - (void)customReminderImage:(UIImage *)image {
@@ -81,11 +82,11 @@ blue:((float)(hexValue & 0xFF))/255.0 alpha:1]
 - (void)refreshReminderView {
     if (_reminderImageView.image) {
         _reminderImageView.frame = CGRectMake(0, 20, 100, 100);
-        [_reminderImageView centerAlignHorizontalForSuperView];
     }
     else {
-        _reminderImageView.frame = CGRectMake(0, 0, 0, 0);
+        _reminderImageView.frame = CGRectMake(0, 0, 100, 0);
     }
+    [_reminderImageView centerAlignHorizontalForSuperView];
     _reminderLabel.frame = CGRectMake(30, _reminderImageView.frameMaxY + 20, self.frame.size.width - 60, 40);
     _reminderBgView.frameSizeHeight = _reminderImageView.frameSizeHeight + _reminderLabel.frameSizeHeight + 40;
     [_reminderBgView centerAlignForSuperview];
