@@ -371,7 +371,7 @@
 				ORGANIZATIONNAME = Harry;
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
-						DevelopmentTeam = B9FH944VTE;
+						DevelopmentTeam = HQ353LFGTA;
 						ProvisioningStyle = Manual;
 					};
 					6003F5AD195388D20070C39A = {
@@ -675,7 +675,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = B9FH944VTE;
+				DEVELOPMENT_TEAM = HQ353LFGTA;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HDBaseProject/HDBaseProject-Prefix.pch";
@@ -685,10 +685,10 @@
 				MACH_O_TYPE = mh_execute;
 				MODULE_NAME = ExampleApp;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.harry.HDBaseProject-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "d96e7a87-72df-4670-b8aa-4a1558bd705b";
-				PROVISIONING_PROFILE_SPECIFIER = wildcard_dev;
+				PROVISIONING_PROFILE_SPECIFIER = "com.harry.*";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -710,7 +710,7 @@
 				LIBRARY_SEARCH_PATHS = "";
 				MACH_O_TYPE = mh_execute;
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.harry.HDBaseProject-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "91e06419-8bea-4535-a090-66b7f6bdda48";
 				PROVISIONING_PROFILE_SPECIFIER = "XC Ad Hoc: *";
