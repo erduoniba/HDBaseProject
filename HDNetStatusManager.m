@@ -17,6 +17,11 @@
  */
 @property (nonatomic, assign) NSInteger delayCallbackCount;
 
+/**
+ 是否已经在监听中
+ */
+@property (nonatomic, assign) BOOL isStartMonitoring;
+
 @end
 
 @implementation HDNetStatusManager
@@ -37,24 +42,33 @@
         _delayCallbackTime = 0.5;
         _delayCallbackCount = 0;
         _maxDelayCallbackCount = 5;
+        _isStartMonitoring = NO;
     }
     return self;
 }
 
+- (AFNetworkReachabilityStatus)networkReachabilityStatus {
+    return [AFNetworkReachabilityManager sharedManager].networkReachabilityStatus;
+}
+
 - (void)startMonitoring {
+    if (_isStartMonitoring) {
+        return;
+    }
     AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
     __weak typeof(self) weakSelf = self;
     [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-        typeof(self) self = weakSelf;
+        __strong typeof(self) self = weakSelf;
         [self disposeNetworkStatusChange:status];
-        NSLog(@"%0.2f", [[NSDate date] timeIntervalSince1970]);
     }];
     [manager startMonitoring];
+    _isStartMonitoring = YES;
 }
 
 - (void)stopMonitoring {
     AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
-    [manager stopMonitoring];
+    [manager stopMonitoring];;
+    _isStartMonitoring = NO;
 }
 
 - (void)disposeNetworkStatusChange:(AFNetworkReachabilityStatus)status {
@@ -68,7 +82,7 @@
 - (void)networkStatusChangeCallback:(NSNumber *)statusN {
     AFNetworkReachabilityStatus status = statusN.integerValue;
     _delayCallbackCount = 0;
-    _currenntStauts = status;
+    _networkReachabilityStatus = status;
     for (NSObject *observer in self.networkObserverMapTable.keyEnumerator.allObjects) {
         HDNetworkStatus networkStatus = [self.networkObserverMapTable objectForKey:observer];
         networkStatus(self, status);
@@ -80,7 +94,7 @@
     if (!observer || !networkStatus) {
         return;
     }
-    networkStatus(self, self.currenntStauts);
+    networkStatus(self, self.networkReachabilityStatus);
     [_networkObserverMapTable setObject:[networkStatus copy] forKey:observer];
 }
 

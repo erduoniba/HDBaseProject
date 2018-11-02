@@ -16,15 +16,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef void (^ HDNetworkStatus)(HDNetStatusManager *manager, AFNetworkReachabilityStatus status);
 
-/**
- 网络监听类，基于AFNetworkReachabilityManager，只需要在app初始化startMonitoring一次即可，然后addNetworkChangeObserver:networkStatus:添加观察即可
- */
 @interface HDNetStatusManager : NSObject
 
 /**
  当前网络状态
  */
-@property (nonatomic, assign) AFNetworkReachabilityStatus currenntStauts;
+@property (nonatomic, assign) AFNetworkReachabilityStatus networkReachabilityStatus;
 
 /**
  延时多久再将网络状态回调出去，默认是0.5秒之后回调
