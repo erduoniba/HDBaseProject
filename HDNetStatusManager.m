@@ -48,7 +48,8 @@
 }
 
 - (AFNetworkReachabilityStatus)networkReachabilityStatus {
-    return [AFNetworkReachabilityManager sharedManager].networkReachabilityStatus;
+    _networkReachabilityStatus = [AFNetworkReachabilityManager sharedManager].networkReachabilityStatus;
+    return _networkReachabilityStatus;
 }
 
 - (void)startMonitoring {
