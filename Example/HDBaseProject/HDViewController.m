@@ -28,6 +28,11 @@
     
     self.title = @"asd";
     self.view.backgroundColor = [UIColor grayColor];
+    
+    UIColor *c1 = [UIColor colorWithHexAlphaString:@"0x11333333"];
+    UIColor *c2 = [UIColor colorWithHexAlphaString:@"0x333333"];
+    UIColor *c3 = [UIColor colorWithHexAlphaString:@"#11333333"];
+    UIColor *c4 = [UIColor colorWithHexAlphaString:@"#333333"];
 
     UIButton *bt = [UIButton buttonWithType:UIButtonTypeCustom];
     bt.frame = CGRectMake(100, 100, 200, 200);
@@ -136,9 +141,6 @@
 //
 //    [mString insertString:@"ooo" atIndex:10];
 //    [mString insertString:nil atIndex:0];
-
-
-
 }
 
 - (void)actionTap:(UIButton *)bt {

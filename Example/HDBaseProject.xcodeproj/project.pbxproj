@@ -688,7 +688,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.harry.HDBaseProject-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "d96e7a87-72df-4670-b8aa-4a1558bd705b";
-				PROVISIONING_PROFILE_SPECIFIER = "com.harry.*";
+				PROVISIONING_PROFILE_SPECIFIER = denglibingWildcardID;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;

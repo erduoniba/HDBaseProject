@@ -37,6 +37,7 @@ CGFloat hd_colorComponentFrom(NSString *string, NSUInteger start, NSUInteger len
 + (UIColor *)hd_colorWithHex:(UInt32)hex{
     return [UIColor hd_colorWithHex:hex andAlpha:1];
 }
+
 + (UIColor *)hd_colorWithHex:(UInt32)hex andAlpha:(CGFloat)alpha{
     return [UIColor colorWithRed:((hex >> 16) & 0xFF)/255.0
                            green:((hex >> 8) & 0xFF)/255.0
@@ -81,6 +82,32 @@ CGFloat hd_colorComponentFrom(NSString *string, NSUInteger start, NSUInteger len
             return nil;
     }
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+}
+
++ (UIColor *)colorWithHexAlphaString:(NSString *)hexString {
+    NSString *valueString = hexString;
+    valueString = [valueString stringByReplacingOccurrencesOfString:@"#" withString:@""];
+    if ([valueString hasPrefix:@"0x"]){
+        valueString = [hexString substringFromIndex:2];
+    }
+    if (valueString.length != 8 && valueString.length != 6){
+        return [UIColor clearColor];
+    }
+    
+    unsigned color = 0;
+    unsigned alpha = 255;
+    if (valueString.length == 6){
+        NSScanner *scanner = [NSScanner scannerWithString:valueString];
+        [scanner scanHexInt:&color];
+    }
+    else{
+        NSScanner *scanner = [NSScanner scannerWithString:[valueString substringToIndex:2]];
+        [scanner scanHexInt:&alpha];
+        scanner = [NSScanner scannerWithString:[valueString substringFromIndex:2]];
+        [scanner scanHexInt:&color];
+    }
+    
+    return [UIColor hd_colorWithHex:color andAlpha:alpha/255.0f];
 }
 
 - (NSString *)hd_HEXString{

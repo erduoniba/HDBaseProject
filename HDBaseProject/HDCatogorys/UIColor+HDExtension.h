@@ -37,6 +37,14 @@
 + (UIColor *)hd_colorWithHexString:(NSString *)hexString;
 
 /**
+ 颜色转换
+ 
+ @param hexString 支持ARGB/RGB格式，例如#DF1342/0xDF1342，或者#FFDF1342/0xFFDF1342
+ @return 颜色
+ */
++ (UIColor *)colorWithHexAlphaString:(NSString *)hexString;
+
+/**
  Generated hexadecimal string through color
 
  @return color correspondence hexString (@"#666666")

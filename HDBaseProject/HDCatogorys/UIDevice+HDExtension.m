@@ -84,8 +84,15 @@
     return (NSUInteger)result;
 }
 
++ (BOOL)hd_isIPhoneXIOrLater {
+    return (CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(375, 812)) ||
+            CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(812, 375)) ||
+            CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(414, 896)) ||
+            CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(896, 414)));
+}
+
 + (CGFloat)hd_statusHeight {
-    if ([UIScreen mainScreen].bounds.size.width == 375 && [UIScreen mainScreen].bounds.size.height == 812) {
+    if ([self hd_isIPhoneXIOrLater]) {
         return 44;
     }
     return 20;
@@ -96,7 +103,7 @@
 }
 
 + (CGFloat)hd_tabBarBottomHeight {
-    if ([UIScreen mainScreen].bounds.size.width == 375 && [UIScreen mainScreen].bounds.size.height == 812) {
+    if ([self hd_isIPhoneXIOrLater]) {
         return 34;
     }
     return 0;
