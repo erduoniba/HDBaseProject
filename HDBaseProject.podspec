@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
         catogory.public_header_files = 'HDBaseProject/HDCatogorys/*.h'
         catogory.source_files = 'HDBaseProject/HDCatogorys/*.{h,m}'
         
-        catogory.dependency 'SDWebImage'
+        catogory.dependency 'SDWebImage', '4.2.1'
     end
 
     s.subspec 'HDGlobalMethods' do |method|
@@ -43,8 +43,8 @@ Pod::Spec.new do |s|
         http.source_files = 'HDBaseProject/HDNetworking/*.{h,m}'
         http.public_header_files = 'HDBaseProject/HDNetworking/*.h'
 
-        http.dependency 'AFNetworking'
-        http.dependency 'PINCache'
+        http.dependency 'AFNetworking', '3.2.1'
+        http.dependency 'PINCache', '2.3'
     end
 
     s.subspec 'ThirdPartyLibs' do |lib|
@@ -62,8 +62,8 @@ Pod::Spec.new do |s|
         base.dependency 'HDBaseProject/HDCatogorys'
         base.dependency 'HDBaseProject/HDNetworking'
 
-        base.dependency 'SDWebImage'
-        base.dependency 'MJRefresh'
+        base.dependency 'SDWebImage', '4.2.1'
+        base.dependency 'MJRefresh', '3.2.0'
     end
 end
 
