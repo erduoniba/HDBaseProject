@@ -146,6 +146,17 @@ static NSString *const hd_dateFormatString = @"yyyy/MM/dd HH:mm:ss";
     fileLogger.doNotReuseLogFiles = YES;            // 每次启动生成新的log日志文件
     fileLogger.logFileManager.maximumNumberOfLogFiles = 50; // 最多允许创建30个文件
     [DDLog addLogger:fileLogger];
+    
+    // 日志等级控制说明
+    /*
+     1、
+     static const int ddLogLevel = DDLogLevelInfo;
+     设置 ddLogLevel 的时候，该类使用 DDLogError、DDLogWarn、DDLogInfo 会打印出来，使用DDLogDebug、DDLogVerbose不会
+     
+     2、不同的类有不同的日志等级，需要在不同的类中调用，可以在pch设置一个合适的值
+     static const int ddLogLevel = DDLogLevelInfo;
+     来控制
+     */
 }
 
 @end

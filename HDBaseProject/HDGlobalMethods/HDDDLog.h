@@ -17,6 +17,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @interface HDDDLog : NSObject
 
+/**
+ 配置自定义DDLog信息
+
+ @param logFolderName log日志存放的文件夹名称（文件存放在沙盒中/DDLogs/logFolderName/）
+ */
 + (void)configurationDDLog:(NSString *)logFolderName;
 
 @end
