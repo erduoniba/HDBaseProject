@@ -12,6 +12,8 @@
 
 #import <HDBaseProject/HDBaseProject.h>
 
+static const int ddLogLevel = DDLogLevelInfo;
+
 @interface HDViewController ()
 {
     UILabel *lb;
@@ -25,6 +27,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    DDLogWarn(@"DDLogWarn");
     
     self.title = @"asd";
     self.view.backgroundColor = [UIColor grayColor];

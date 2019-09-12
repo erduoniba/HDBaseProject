@@ -34,7 +34,7 @@
 
 #import <objc/runtime.h>
 
-static const int ddLogLevel = DDLogLevelDebug;
+static const DDLogLevel ddLogLevel = DDLogLevelDebug;
 
 //#define HDNetLog(format,...) printf("%s",[[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String])
 

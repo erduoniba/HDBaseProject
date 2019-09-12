@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import <CocoaLumberjack/CocoaLumberjack.h>
+
 NS_ASSUME_NONNULL_BEGIN
 
 /**
@@ -23,6 +25,14 @@ NS_ASSUME_NONNULL_BEGIN
  @param logFolderName log日志存放的文件夹名称（文件存放在沙盒中/DDLogs/logFolderName/）
  */
 + (void)configurationDDLog:(NSString *)logFolderName;
+
+/**
+ 配置自定义DDLog信息
+
+ @param logFolderName log日志存放的文件夹名称（文件存放在沙盒中/DDLogs/logFolderName/）
+ @param logFilePrefix log日志名的前缀（默认是bundleid）(完整文件命名：logFilePrefix_YYYYMMdd_HHMMss.log)
+ */
++ (void)configurationDDLog:(NSString *)logFolderName logFilePrefix:(NSString *)logFilePrefix;
 
 @end
 

@@ -15,8 +15,8 @@
 
 @interface SDWebImageCodersManager ()
 
-@property (strong, nonatomic, nonnull) NSMutableArray<SDWebImageCoder>* mutableCoders;
-@property (strong, nonatomic, nullable) dispatch_queue_t mutableCodersAccessQueue;
+@property (nonatomic, strong, nonnull) NSMutableArray<SDWebImageCoder>* mutableCoders;
+@property (SDDispatchQueueSetterSementics, nonatomic, nullable) dispatch_queue_t mutableCodersAccessQueue;
 
 @end
 
@@ -41,6 +41,10 @@
         _mutableCodersAccessQueue = dispatch_queue_create("com.hackemist.SDWebImageCodersManager", DISPATCH_QUEUE_CONCURRENT);
     }
     return self;
+}
+
+- (void)dealloc {
+    SDDispatchQueueRelease(_mutableCodersAccessQueue);
 }
 
 #pragma mark - Coder IO operations

@@ -58,6 +58,9 @@
     NSString *encrypt = [HDGlobalMethods hd_aes128Encrypt:@"hello" key:@"hd"];
     NSString *decrypt = [HDGlobalMethods hd_aes128Decrypt:encrypt key:@"hd"];
     NSLog(@"decrypt %@", decrypt);
+    
+    // 设置log日志的文件夹名称
+    [HDDDLog configurationDDLog:@"hdlogs" logFilePrefix:@"xx"];
 
     return YES;
 }

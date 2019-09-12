@@ -8,7 +8,6 @@
 
 #import "HDDDLog.h"
 
-#import <CocoaLumberjack/CocoaLumberjack.h>
 #import <libkern/OSAtomic.h>
 
 static NSString *const hd_dateFormatString = @"yyyy/MM/dd HH:mm:ss";
@@ -88,6 +87,8 @@ static NSString *const hd_dateFormatString = @"yyyy/MM/dd HH:mm:ss";
  */
 @interface HDCustomFileManager : DDLogFileManagerDefault
 
+@property (nonatomic, strong) NSString *logFilePrefix;
+
 @end
 
 @implementation HDCustomFileManager
@@ -95,9 +96,11 @@ static NSString *const hd_dateFormatString = @"yyyy/MM/dd HH:mm:ss";
 // 需要重载该方法来实现自定义log名称
 // 默认路径在沙盒的Library/Caches/Logs/目录下, 文件名为bundleid+空格+日期.log
 -(NSString *)newLogFileName {
-    NSString *appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleIdentifier"];
+    if (_logFilePrefix.length == 0) {
+        _logFilePrefix = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleIdentifier"];
+    }
     NSString *timeStamp = [self getTimestamp];
-    NSString *logFileName = [NSString stringWithFormat:@"%@_%@.log", appName, timeStamp];
+    NSString *logFileName = [NSString stringWithFormat:@"%@_%@.log", _logFilePrefix, timeStamp];
     NSLog(@"=================================================\n logFileName : %@\n=================================================", logFileName);
     return logFileName;
 }
@@ -122,6 +125,11 @@ static NSString *const hd_dateFormatString = @"yyyy/MM/dd HH:mm:ss";
 @implementation HDDDLog
 
 + (void)configurationDDLog:(NSString *)logFolderName {
+    NSString *appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleIdentifier"];
+    [self configurationDDLog:logFolderName logFilePrefix:appName];
+}
+
++ (void)configurationDDLog:(NSString *)logFolderName logFilePrefix:(NSString *)logFilePrefix {
     // DDTTYLogger，你的日志语句将被发送到Xcode控制台
     [DDLog addLogger:[DDTTYLogger sharedInstance]]; // TTY = Xcode 控制台
     
@@ -140,6 +148,7 @@ static NSString *const hd_dateFormatString = @"yyyy/MM/dd HH:mm:ss";
     
     // 自定义log文件名称
     HDCustomFileManager *fileManager = [[HDCustomFileManager alloc] initWithLogsDirectory:customLogPath];
+    fileManager.logFilePrefix = logFilePrefix;
     DDFileLogger *fileLogger = [[DDFileLogger alloc] initWithLogFileManager:fileManager]; // 本地文件日志
     fileLogger.rollingFrequency = 3600 * 24;    // 每24小时创建一个新文件
     fileLogger.maximumFileSize = 1024 * 1024 * 1;   // 文件最大是1M

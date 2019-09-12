@@ -14,6 +14,7 @@
 
 #import "HDGlobalVariable.h"
 #import "HDGlobalMethods.h"
+#import "HDDDLog.h"
 
 #import "HDNetworking.h"
 
