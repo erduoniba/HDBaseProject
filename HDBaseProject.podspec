@@ -45,6 +45,7 @@ Pod::Spec.new do |s|
 
         http.dependency 'AFNetworking', '3.2.1'
         http.dependency 'PINCache', '2.3'
+        base.dependency 'HDBaseProject/HDGlobalMethods'
     end
 
     s.subspec 'ThirdPartyLibs' do |lib|

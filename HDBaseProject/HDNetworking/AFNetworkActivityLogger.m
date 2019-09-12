@@ -27,11 +27,16 @@
 #import "AFNetworking.h"
 #endif
 
+#import <CocoaLumberjack/CocoaLumberjack.h>
+
 #import "AFNetworkActivityLogger.h"
+#import "HDDDLog.h"
 
 #import <objc/runtime.h>
 
-#define HDNetLog(format,...) printf("%s",[[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String])
+static const int ddLogLevel = DDLogLevelVerbose;
+
+//#define HDNetLog(format,...) printf("%s",[[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String])
 
 static NSURLRequest * AFNetworkRequestFromNotification(NSNotification *notification) {
     NSURLRequest *request = nil;
@@ -177,7 +182,7 @@ static void * AFNetworkRequestStartDate = &AFNetworkRequestStartDate;
             case AFLoggerLevelInfo:
             case AFLoggerLevelWarn:
             case AFLoggerLevelError:
-                HDNetLog(@"\n\n==================================================================================\n[请求失败] 请求方式：%@ \n请求的url：'%@' \n请求头参数：%@ \n请求体参数：%@ \n请求错误码：(%ld) \n请求耗时：[%.04f s]\n错误详情：[错误码：%d]、[错误描述：%@] \n==================================================================================\n\n", [request HTTPMethod], [[response URL] absoluteString], [request allHTTPHeaderFields], bodys, (long)responseStatusCode, elapsedTime, error.code, error.localizedDescription);
+                DDLogVerbose(@"\n\n==================================================================================\n[请求失败] 请求方式：%@ \n请求的url：'%@' \n请求头参数：%@ \n请求体参数：%@ \n请求错误码：(%ld) \n请求耗时：[%.04f s]\n错误详情：[错误码：%d]、[错误描述：%@] \n==================================================================================\n\n", [request HTTPMethod], [[response URL] absoluteString], [request allHTTPHeaderFields], bodys, (long)responseStatusCode, elapsedTime, error.code, error.localizedDescription);
             default:
                 break;
         }
@@ -186,10 +191,10 @@ static void * AFNetworkRequestStartDate = &AFNetworkRequestStartDate;
             case AFLoggerLevelDebug:
             case AFLoggerLevelWarn:
             case AFLoggerLevelError:
-                HDNetLog(@"\n\n==================================================================================\n[请求成功] 请求方式：%@ \n请求的url：'%@' \n请求头参数：%@ \n请求体参数：%@ \n请求错误码：(%ld) \n请求耗时：[%.04f s] \n请求结果：%@ \n==================================================================================\n\n", [request HTTPMethod], [[response URL] absoluteString], [request allHTTPHeaderFields], bodys, (long)responseStatusCode, elapsedTime, responseObject);
+                DDLogVerbose(@"\n\n==================================================================================\n[请求成功] 请求方式：%@ \n请求的url：'%@' \n请求头参数：%@ \n请求体参数：%@ \n请求错误码：(%ld) \n请求耗时：[%.04f s] \n请求结果：%@ \n==================================================================================\n\n", [request HTTPMethod], [[response URL] absoluteString], [request allHTTPHeaderFields], bodys, (long)responseStatusCode, elapsedTime, responseObject);
                 break;
             case AFLoggerLevelInfo:
-                HDNetLog(@"\n\n==================================================================================\n[请求成功] 请求方式：%@ \n请求的url：'%@' \n请求头参数：%@ \n请求体参数：%@ \n请求错误码：(%ld) \n请求耗时：[%.04f s] \n请求结果：%@ \n==================================================================================\n\n", [request HTTPMethod], [[response URL] absoluteString], [request allHTTPHeaderFields], bodys, (long)responseStatusCode, elapsedTime, responseObject);
+                DDLogVerbose(@"\n\n==================================================================================\n[请求成功] 请求方式：%@ \n请求的url：'%@' \n请求头参数：%@ \n请求体参数：%@ \n请求错误码：(%ld) \n请求耗时：[%.04f s] \n请求结果：%@ \n==================================================================================\n\n", [request HTTPMethod], [[response URL] absoluteString], [request allHTTPHeaderFields], bodys, (long)responseStatusCode, elapsedTime, responseObject);
                 break;
             default:
                 break;
