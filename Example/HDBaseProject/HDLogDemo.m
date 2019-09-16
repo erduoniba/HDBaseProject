@@ -12,9 +12,12 @@
 
 + (void)hdlogDemo {
     // 设置log日志的文件夹名称
-    [HDDDLog configurationDDLog:@"hdlogs" logFilePrefix:@"xx"];
+    NSString *userId = @"hd";
+    [HDDDLog configurationDDLog:@"hdlogs" logFilePrefix:userId];
     // 设置自定义模块标示
-    [HDDDLog registeModules:@[@"HDTest", @"HDTest2"]];
+    [HDDDLog registeModules:@[@"HDTest1", @"HDTest2"]];
+    // 设置自定义文件输出
+    [HDDDLog registeFiles:@[@"HDTest1", @"HDTest2"] contexts:@[@(HDLogContextTest1), @(HDLogContextTest2)]];
 }
 
 @end

@@ -24,6 +24,9 @@
 // 自定义模块作为前缀宏定义
 #define HDLogModule(flag, frmt, ...) LOG_MAYBE(LOG_ASYNC_ENABLED, LOG_LEVEL_DEF, (DDLogFlag)flag, 0, nil, __PRETTY_FUNCTION__, frmt, ##__VA_ARGS__)
 
+// 自定义Log生成独立文件
+#define HDFileModule(flag, log_context, frmt, ...) LOG_MAYBE(LOG_ASYNC_ENABLED, LOG_LEVEL_DEF, (DDLogFlag)flag, log_context, nil, __PRETTY_FUNCTION__, frmt, ##__VA_ARGS__)
+
 NS_ASSUME_NONNULL_BEGIN
 
 /**
@@ -54,6 +57,28 @@ NS_ASSUME_NONNULL_BEGIN
  @param modules 模块前缀，日志打印会带上该模块名称
  */
 + (void)registeModules:(NSArray <NSString *>*)modules;
+
++ (void)registeFiles:(NSArray <NSString *>*)files contexts:(NSArray <NSNumber *> *)contexts;
+
+@end
+
+
+/**
+ 自定义log文件名称
+ https://codeday.me/bug/20190624/1281511.html
+ */
+@interface HDCustomFileManager : DDLogFileManagerDefault
+
+@property (nonatomic, strong) NSString *logFilePrefix;
+
+@end
+
+
+/**
+ 日志分文件保存
+ https://www.twblogs.net/a/5bcbadd32b71776a052bf945
+ */
+@interface HDCustomWhiteFormatter: DDContextWhitelistFilterLogFormatter
 
 @end
 

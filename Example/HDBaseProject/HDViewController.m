@@ -29,6 +29,8 @@
     DDLogWarn(@"DDLogWarn");
     HDLogTest(@"tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt");
     HDLogTest2(@"tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt22");
+    HDLogFileTest1(@"xxxxxxxxxxxxxxxx");
+    HDLogFileTest2(@"xxxxxxxxxxxxxxxx22");
     
     self.title = @"asd";
     self.view.backgroundColor = [UIColor grayColor];
