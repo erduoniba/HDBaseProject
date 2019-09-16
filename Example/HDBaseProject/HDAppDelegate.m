@@ -13,6 +13,8 @@
 #import "HDRequestManager.h"
 #import "HDHomeViewModel.h"
 
+#import "HDLogDemo.h"
+
 @implementation HDAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -59,8 +61,7 @@
     NSString *decrypt = [HDGlobalMethods hd_aes128Decrypt:encrypt key:@"hd"];
     NSLog(@"decrypt %@", decrypt);
     
-    // 设置log日志的文件夹名称
-    [HDDDLog configurationDDLog:@"hdlogs" logFilePrefix:@"xx"];
+    [HDLogDemo hdlogDemo];
 
     return YES;
 }

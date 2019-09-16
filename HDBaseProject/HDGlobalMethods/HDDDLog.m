@@ -25,6 +25,30 @@ static NSString *const hd_dateFormatString = @"yyyy/MM/dd HH:mm:ss";
     NSDateFormatter *threadUnsafeDateFormatter;
 }
 
++ (NSMutableDictionary *)formatDictionary {
+    static NSMutableDictionary *dic = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        dic = [NSMutableDictionary dictionaryWithDictionary:@{@"0":@"HD Error",
+                                                              @"1":@"HD Warning",
+                                                              @"2":@"HD Info",
+                                                              @"3":@"HD Debug",
+                                                              @"4":@"HD Verbose"
+                                                              }];
+    });
+    return dic;
+}
+
++ (void)registeModules:(NSArray <NSString *>*)modules range:(NSRange)range {
+    NSAssert(modules.count == range.length, @"range is not matching to modules");
+    NSAssert(range.location > 4, @"range location must more than 4");
+    NSAssert(range.location+range.length <= 35, @"range over 35");
+    NSMutableDictionary *dic = [self formatDictionary];
+    [modules enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [dic setValue:obj forKey:[NSString stringWithFormat:@"%lu",range.location+idx]];
+    }];
+}
+
 - (NSString *)stringFromDate:(NSDate *)date {
     int32_t loggerCount = [atomicLoggerCounter value];
     if (loggerCount <= 1) {
@@ -52,13 +76,11 @@ static NSString *const hd_dateFormatString = @"yyyy/MM/dd HH:mm:ss";
 
 
 - (NSString *)formatLogMessage:(DDLogMessage *)logMessage {
-    NSString *logLevel;
-    switch (logMessage->_flag) {
-        case DDLogFlagError    : logLevel = @"E"; break;
-        case DDLogFlagWarning  : logLevel = @"W"; break;
-        case DDLogFlagInfo     : logLevel = @"I"; break;
-        case DDLogFlagDebug    : logLevel = @"D"; break;
-        default                : logLevel = @"V"; break;
+    int n = (int) log2(logMessage->_flag);
+    NSString *key = [NSString stringWithFormat:@"%d", n];
+    NSString *logLevel = [[self.class formatDictionary] objectForKey:key];
+    if (!logLevel) {
+        logLevel = @"Unknow";
     }
     
     NSString *dateAndTime = [self stringFromDate:(logMessage.timestamp)]; // 日期和时间
@@ -66,8 +88,8 @@ static NSString *const hd_dateFormatString = @"yyyy/MM/dd HH:mm:ss";
     NSString *logFunction = logMessage -> _function; // 方法名
     NSUInteger logLine = logMessage -> _line;        // 行号
     NSString *logMsg = logMessage->_message;         // 日志消息
-    // 日志格式：日期和时间 文件名 方法名 : 行数 <日志等级> 日志消息
-    return [NSString stringWithFormat:@"%@ %@ %@ : %lu <%@> %@", dateAndTime, logFileName, logFunction, logLine, logLevel, logMsg];
+    // 日志格式：<日志等级> 日期和时间 文件名 方法名 : 行数 日志消息
+    return [NSString stringWithFormat:@"<%@> %@ %@ %@ : %lu %@", logLevel, dateAndTime, logFileName, logFunction, logLine, logMsg];
 }
 
 - (void)didAddToLogger:(id <DDLogger>)logger {
@@ -130,10 +152,10 @@ static NSString *const hd_dateFormatString = @"yyyy/MM/dd HH:mm:ss";
 }
 
 + (void)configurationDDLog:(NSString *)logFolderName logFilePrefix:(NSString *)logFilePrefix {
-    // DDTTYLogger，你的日志语句将被发送到Xcode控制台
-    [DDLog addLogger:[DDTTYLogger sharedInstance]]; // TTY = Xcode 控制台
+    // DDTTYLogger，你的日志语句将被发送到Xcode控制台 TTY = Xcode 控制台
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
     
-    // 自定义的log格式
+    // 自定义的log格式 日志格式：<日志等级> 日期和时间 文件名 方法名 : 行数 日志消息
     HDCustomFormatter *customFormatter = [[HDCustomFormatter alloc] init];
     [DDTTYLogger sharedInstance].logFormatter = customFormatter;
     
@@ -153,19 +175,12 @@ static NSString *const hd_dateFormatString = @"yyyy/MM/dd HH:mm:ss";
     fileLogger.rollingFrequency = 3600 * 24;    // 每24小时创建一个新文件
     fileLogger.maximumFileSize = 1024 * 1024 * 1;   // 文件最大是1M
     fileLogger.doNotReuseLogFiles = YES;            // 每次启动生成新的log日志文件
-    fileLogger.logFileManager.maximumNumberOfLogFiles = 50; // 最多允许创建30个文件
+    fileLogger.logFileManager.maximumNumberOfLogFiles = 50; // 最多允许创建50个文件
     [DDLog addLogger:fileLogger];
-    
-    // 日志等级控制说明
-    /*
-     1、
-     static const int ddLogLevel = DDLogLevelInfo;
-     设置 ddLogLevel 的时候，该类使用 DDLogError、DDLogWarn、DDLogInfo 会打印出来，使用DDLogDebug、DDLogVerbose不会
-     
-     2、不同的类有不同的日志等级，需要在不同的类中调用，可以在pch设置一个合适的值
-     static const int ddLogLevel = DDLogLevelInfo;
-     来控制
-     */
+}
+
++ (void)registeModules:(NSArray <NSString *>*)modules {
+    [HDCustomFormatter registeModules:modules range:NSMakeRange(10, modules.count)];
 }
 
 @end

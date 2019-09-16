@@ -10,9 +10,7 @@
 
 #import "HDViewViewController2.h"
 
-#import <HDBaseProject/HDBaseProject.h>
-
-static const int ddLogLevel = DDLogLevelInfo;
+#import "HDLogDemo.h"
 
 @interface HDViewController ()
 {
@@ -29,6 +27,8 @@ static const int ddLogLevel = DDLogLevelInfo;
 	// Do any additional setup after loading the view, typically from a nib.
     
     DDLogWarn(@"DDLogWarn");
+    HDLogTest(@"tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt");
+    HDLogTest2(@"tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt22");
     
     self.title = @"asd";
     self.view.backgroundColor = [UIColor grayColor];

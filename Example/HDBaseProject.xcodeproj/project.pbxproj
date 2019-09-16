@@ -36,6 +36,7 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		95E59DBD1BD354820088FC72 /* HDBaseProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E59DBC1BD354820088FC72 /* HDBaseProject.framework */; };
+		AD77A1ED232F34F700DA75EC /* HDLogDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = AD77A1EC232F34F700DA75EC /* HDLogDemo.m */; };
 		C97B939969CB401EAE7B88D4 /* Pods_HDBaseProject_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F925636AFC0075361FBFB07B /* Pods_HDBaseProject_Tests.framework */; };
 		D918BE271DD1D84400CEE966 /* .swift-version in Resources */ = {isa = PBXBuildFile; fileRef = D918BE261DD1D84400CEE966 /* .swift-version */; };
 		D96A8A4820A1445500E278E7 /* HDRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D96A8A4120A1445500E278E7 /* HDRequestManager.m */; };
@@ -107,6 +108,8 @@
 		9180871DBEAFA90F17F97A8A /* Pods-HDBaseProject_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDBaseProject_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HDBaseProject_Example/Pods-HDBaseProject_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		95E59DBC1BD354820088FC72 /* HDBaseProject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HDBaseProject.framework; path = "Pods/../build/Debug-iphoneos/HDBaseProject.framework"; sourceTree = "<group>"; };
 		A734E62992BCB6B06581A292 /* Pods-HDBaseProject_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDBaseProject_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HDBaseProject_Tests/Pods-HDBaseProject_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		AD77A1EB232F34F700DA75EC /* HDLogDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HDLogDemo.h; sourceTree = "<group>"; };
+		AD77A1EC232F34F700DA75EC /* HDLogDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HDLogDemo.m; sourceTree = "<group>"; };
 		D130B696D677A3043FB2BABE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		D918BE261DD1D84400CEE966 /* .swift-version */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ".swift-version"; path = "../.swift-version"; sourceTree = "<group>"; };
 		D96A8A4020A1445500E278E7 /* HDRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDRequestManager.h; sourceTree = "<group>"; };
@@ -220,6 +223,8 @@
 				6003F5A6195388D20070C39A /* HDViewController.m */,
 				049ABAB71BCF7E040010D821 /* HDViewViewController2.h */,
 				049ABAB81BCF7E040010D821 /* HDViewViewController2.m */,
+				AD77A1EB232F34F700DA75EC /* HDLogDemo.h */,
+				AD77A1EC232F34F700DA75EC /* HDLogDemo.m */,
 				049ABAEF1BCF9E3D0010D821 /* back@2x.png */,
 				D97203A41FCD5C6100681FFF /* mu.caf */,
 				049ABAF01BCF9E3D0010D821 /* back@3x.png */,
@@ -384,6 +389,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -535,6 +541,7 @@
 				049ABAB91BCF7E040010D821 /* HDViewViewController2.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				D96A8A4A20A1445500E278E7 /* HDBaseViewModel.m in Sources */,
+				AD77A1ED232F34F700DA75EC /* HDLogDemo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
