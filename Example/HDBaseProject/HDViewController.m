@@ -97,6 +97,7 @@
     lb.numberOfLines = 0;
     lb.textColor = [UIColor whiteColor];
     lb.text = @"美居是美的集团面向消费者的官方应用，同时也是基于M-Smart系统推出的智能家电管理应用。通过美居，可以实现五大核心功能：1、家电管理：可将美的旗下全品类智能家电产品连接，各品类产品体验入口均一致，实现产品的智能管控一体化";
+    lb.text = @"京东（股票代码：JD），中国自营式电商企业，创始人刘强东担任京东集团董事局主席兼首席执行官 [1]  。旗下设有京东商城、京东金融、拍拍网、京东智能、O2O及海外事业部等。2013年正式获得虚拟运营商牌照。2014年5月在美国纳斯达克证券交易所正式挂牌上市。 2016年6月与沃尔玛达成深度战略合作，1号店并入京东。";
     [lb hd_setColumnSpace:5];
     NSAttributedString *attString = [lb hd_setRowSpace:10];
     CGSize size = [lb hd_suggestSizeForAttributedString:attString width:lb.frame.size.width];

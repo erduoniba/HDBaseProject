@@ -173,6 +173,10 @@ static void * AFNetworkRequestStartDate = &AFNetworkRequestStartDate;
         body = [[NSString alloc] initWithData:[request HTTPBody] encoding:NSUTF8StringEncoding];
     }
     NSArray *bodys = [body componentsSeparatedByString:@"&"];
+    NSString *bodyString =  [self hd_urlDecode:[bodys description]];
+    
+    NSDictionary *allHTTPHeaderFields = [request allHTTPHeaderFields];
+    NSString *allHTTPHeaderFieldString =  [self hd_urlDecode:[allHTTPHeaderFields description]];
 
     NSTimeInterval elapsedTime = [[NSDate date] timeIntervalSinceDate:objc_getAssociatedObject(notification.object, AFNetworkRequestStartDate)];
 
@@ -182,7 +186,7 @@ static void * AFNetworkRequestStartDate = &AFNetworkRequestStartDate;
             case AFLoggerLevelInfo:
             case AFLoggerLevelWarn:
             case AFLoggerLevelError:
-                DDLogDebug(@"\n\n==================================================================================\n[请求失败] 请求方式：%@ \n请求的url：'%@' \n请求头参数：%@ \n请求体参数：%@ \n请求错误码：(%ld) \n请求耗时：[%.04f s]\n错误详情：[错误码：%d]、[错误描述：%@] \n==================================================================================\n\n", [request HTTPMethod], [[response URL] absoluteString], [request allHTTPHeaderFields], bodys, (long)responseStatusCode, elapsedTime, error.code, error.localizedDescription);
+                DDLogDebug(@"\n\n==================================================================================\n[请求失败] 请求方式：%@ \n请求的url：'%@' \n请求头参数：%@ \n请求体参数：%@ \n请求错误码：(%ld) \n请求耗时：[%.02f ms]\n错误详情：[错误码：%d]、[错误描述：%@] \n==================================================================================\n\n", [request HTTPMethod], [[response URL] absoluteString], allHTTPHeaderFieldString, bodyString, (long)responseStatusCode, elapsedTime * 1000, error.code, error.localizedDescription);
             default:
                 break;
         }
@@ -191,15 +195,28 @@ static void * AFNetworkRequestStartDate = &AFNetworkRequestStartDate;
             case AFLoggerLevelDebug:
             case AFLoggerLevelWarn:
             case AFLoggerLevelError:
-                DDLogDebug(@"\n\n==================================================================================\n[请求成功] 请求方式：%@ \n请求的url：'%@' \n请求头参数：%@ \n请求体参数：%@ \n请求错误码：(%ld) \n请求耗时：[%.04f s] \n请求结果：%@ \n==================================================================================\n\n", [request HTTPMethod], [[response URL] absoluteString], [request allHTTPHeaderFields], bodys, (long)responseStatusCode, elapsedTime, responseObject);
+                DDLogDebug(@"\n\n==================================================================================\n[请求成功] 请求方式：%@ \n请求的url：'%@' \n请求头参数：%@ \n请求体参数：%@ \n请求错误码：(%ld) \n请求耗时：[%.02f ms] \n请求结果：%@ \n==================================================================================\n\n", [request HTTPMethod], [[response URL] absoluteString], allHTTPHeaderFieldString, bodyString, (long)responseStatusCode, elapsedTime * 1000, responseObject);
                 break;
             case AFLoggerLevelInfo:
-                DDLogDebug(@"\n\n==================================================================================\n[请求成功] 请求方式：%@ \n请求的url：'%@' \n请求头参数：%@ \n请求体参数：%@ \n请求错误码：(%ld) \n请求耗时：[%.04f s] \n请求结果：%@ \n==================================================================================\n\n", [request HTTPMethod], [[response URL] absoluteString], [request allHTTPHeaderFields], bodys, (long)responseStatusCode, elapsedTime, responseObject);
+                DDLogDebug(@"\n\n==================================================================================\n[请求成功] 请求方式：%@ \n请求的url：'%@' \n请求头参数：%@ \n请求体参数：%@ \n请求错误码：(%ld) \n请求耗时：[%.02f ms] \n请求结果：%@ \n==================================================================================\n\n", [request HTTPMethod], [[response URL] absoluteString], allHTTPHeaderFieldString, bodyString, (long)responseStatusCode, elapsedTime * 1000, responseObject);
                 break;
             default:
                 break;
         }
     }
+}
+
+
+
+//URLDecode
+- (NSString *)hd_urlDecode:(NSString *)string
+{
+    NSString *decodedString = (__bridge_transfer NSString *)
+    CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL,
+                                                            (__bridge CFStringRef)string,
+                                                            CFSTR(""),
+                                                            CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
+    return decodedString;
 }
 
 @end

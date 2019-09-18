@@ -77,6 +77,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  日志分文件保存
  https://www.twblogs.net/a/5bcbadd32b71776a052bf945
+ https://medium.com/@jongwonwoo/logging-to-multiple-files-d1305d83223c#.nheqx8hfn
  */
 @interface HDCustomWhiteFormatter: DDContextWhitelistFilterLogFormatter
 
