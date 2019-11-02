@@ -73,4 +73,15 @@
                       outputURL:(NSURL*)outputURL
                    blockHandler:(void (^)(AVAssetExportSession*))handler;
 
++ (NSString *)sha1:(NSString *)input;
+
+
+//传2个字符串以及样式 返回一个NSMutableAttributedString
++ (NSMutableAttributedString *)hd_getNewColorStr:(NSString *)headStr
+                                        headFont:(UIFont *)headFont
+                                       headColor:(UIColor *)headColor
+                                         lastStr:(NSString *)lastStr
+                                        lastFont:(UIFont *)lastFont
+                                       lastColor:(UIColor *)lastColor;
+
 @end

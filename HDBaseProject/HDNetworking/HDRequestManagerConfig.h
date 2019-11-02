@@ -88,4 +88,10 @@ typedef NS_ENUM(NSUInteger, HDRequestCachePolicy) {
  */
 @property (nonatomic, strong) Class HDError;
 
+
+/**
+ 接口成功的code字段,默认是200，方便统一管理
+*/
+@property (nonatomic, assign) NSInteger successCode;
+
 @end

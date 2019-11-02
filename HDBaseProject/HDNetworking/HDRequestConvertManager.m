@@ -42,6 +42,8 @@ NSString * const HDDNetworkCacheKeys = @"HDDNetworkCacheKeys";
  */
 @property (nonatomic, strong) NSMutableDictionary <NSString *, NSMutableSet <NSString *>*>*cacheKeys;
 
+@property (nonatomic, strong) NSArray <NSString *> *exceptCacheKeys;
+
 @end
 
 
@@ -162,9 +164,11 @@ NSString * const HDDNetworkCacheKeys = @"HDDNetworkCacheKeys";
     //PINCache缓存存数据
     void (^ saveCacheRespose)(id responseObject) = ^(id responseObject) {
         if (configuration.resultCacheDuration > 0) {
-            [self setCacheInvalidTimeWithCacheKey:cacheKey resultCacheDuration:configuration.resultCacheDuration];
-            [self.cache setObject:responseObject forKey:cacheKey];
-            [self addCacheKey:cacheKey atRequestUrl:requestUrl];
+            if ([self.configuration.HDError hdRequestSuccess:responseObject]) {
+                [self setCacheInvalidTimeWithCacheKey:cacheKey resultCacheDuration:configuration.resultCacheDuration];
+                [self.cache setObject:responseObject forKey:cacheKey];
+                [self addCacheKey:cacheKey atRequestUrl:requestUrl];
+            }
         }
     };
 
@@ -397,9 +401,19 @@ NSString * const HDDNetworkCacheKeys = @"HDDNetworkCacheKeys";
 
 -(NSString *)serializeParams:(NSDictionary *)params {
     NSMutableArray *parts = [NSMutableArray array];
-    [params enumerateKeysAndObjectsUsingBlock:^(id key, id<NSObject> obj, BOOL *stop) {
-        NSString *part = [NSString stringWithFormat: @"%@=%@", key, obj];
-        [parts addObject: part];
+    __weak typeof(self) weakSelf = self;
+    [params enumerateKeysAndObjectsUsingBlock:^(NSString *key, id<NSObject> obj, BOOL *stop) {
+        __block BOOL shouldCache = YES;
+        [weakSelf.exceptCacheKeys enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([key isEqualToString:obj]) {
+                shouldCache = NO;
+                *stop = YES;
+            }
+        }];
+        if (shouldCache) {
+            NSString *part = [NSString stringWithFormat: @"%@=%@", key, obj];
+            [parts addObject: part];
+        }
     }];
     if (parts.count > 0) {
         NSString *queryString = [parts componentsJoinedByString:@"&"];
@@ -473,5 +487,8 @@ NSString * const HDDNetworkCacheKeys = @"HDDNetworkCacheKeys";
     [self.cache removeObjectForKey:cacheKey];
 }
 
+- (void)exceptCacheKeys:(NSArray *)exceptCacheKeys {
+    _exceptCacheKeys = [NSArray arrayWithArray:exceptCacheKeys];
+}
 
 @end

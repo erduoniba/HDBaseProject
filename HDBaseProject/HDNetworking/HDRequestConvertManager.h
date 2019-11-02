@@ -18,6 +18,8 @@
 @class HDError;
 #import "AFNetworkActivityLogger.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  网络请求方法
 
@@ -164,4 +166,11 @@ typedef void(^HDRequestManagerProgress)(NSProgress * _Nullable progress);
  */
 - (void)clearAllCache;
 
+
+/// 缓存key默认使用ur和parameters参数，需要过滤一些parameters参数不作为缓存key
+/// @param exceptCacheKeys 不需要加入到缓存key的 parameters参数
+- (void)exceptCacheKeys:(NSArray *)exceptCacheKeys;
+
 @end
+
+NS_ASSUME_NONNULL_END

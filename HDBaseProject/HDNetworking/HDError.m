@@ -39,4 +39,13 @@ static inline NSDictionary* errorMessageMap() {
     return hdError;
 }
 
++ (BOOL)hdRequestSuccess:(NSDictionary *)responseObject {
+    if ([responseObject isKindOfClass:NSDictionary.class]) {
+        if ([responseObject[@"code"] integerValue] == 200) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
 @end

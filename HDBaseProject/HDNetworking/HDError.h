@@ -17,6 +17,8 @@
 + (HDError *)hdErrorNetNotReachable;
 + (HDError *)hdErrorHttpError:(NSError *)error;
 
++ (BOOL)hdRequestSuccess:(NSDictionary *)responseObject;
+
 /**
  错误编码，最好是根据这个值给用户 友善 的提示
  */

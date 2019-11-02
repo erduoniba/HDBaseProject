@@ -480,4 +480,30 @@ static NSBundle *gsBundle = nil;
      }];
 }
 
++ (NSString *)sha1:(NSString *)input {
+    NSData *data = [input dataUsingEncoding:NSUTF8StringEncoding];
+    uint8_t digest[CC_SHA1_DIGEST_LENGTH];
+    CC_SHA1(data.bytes, (unsigned int)data.length, digest);
+    NSMutableString *output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
+    for(int i=0; i<CC_SHA1_DIGEST_LENGTH; i++) {
+        [output appendFormat:@"%02x", digest[i]];
+    }
+    return output;
+}
+
+//传2个字符串以及样式 返回一个NSMutableAttributedString
++ (NSMutableAttributedString *)hd_getNewColorStr:(NSString *)headStr
+                                        headFont:(UIFont *)headFont
+                                       headColor:(UIColor *)headColor
+                                         lastStr:(NSString *)lastStr
+                                        lastFont:(UIFont *)lastFont
+                                       lastColor:(UIColor *)lastColor {
+    NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@%@",headStr,lastStr]];
+    [str addAttribute:NSForegroundColorAttributeName value:headColor range:NSMakeRange(0,headStr.length)];
+    [str addAttribute:NSForegroundColorAttributeName value:lastColor range:NSMakeRange(headStr.length, lastStr.length)];
+    [str addAttribute:NSFontAttributeName value:headFont range:NSMakeRange(0,headStr.length)];
+    [str addAttribute:NSFontAttributeName value:lastFont range:NSMakeRange(headStr.length, lastStr.length)];
+    return str;
+}
+
 @end
