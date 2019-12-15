@@ -92,7 +92,7 @@ static const void *HDTextFieldInputLimitMaxLength = &HDTextFieldInputLimitMaxLen
 #pragma mark -
 #pragma mark - UITextField+PlaceHolder
 - (void)hd_setPlaceHolderColor:(UIColor *)color {
-    [self setValue:color forKeyPath:@"_placeholderLabel.textColor"];
+    self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.text attributes:@{NSForegroundColorAttributeName:color}];
 }
 
 @end
