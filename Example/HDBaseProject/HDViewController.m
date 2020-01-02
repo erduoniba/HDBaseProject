@@ -148,6 +148,30 @@
 //
 //    [mString insertString:@"ooo" atIndex:10];
 //    [mString insertString:nil atIndex:0];
+    
+    
+//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+////        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+////        [self.view addSubview:view];
+//
+//        [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;;
+//    });
+    
+    
+    
+}
+
+- (void)injected {
+    lb.text = @"jj22j";
+}
+
+- (void)injected2 {
+    lb.text = @"jjj222";
+}
+
+- (void)backgroundAction {
+    HDBaseViewController *vc = HDBaseViewController.new;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)actionTap:(UIButton *)bt {
@@ -158,6 +182,9 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         lb.textColor = [UIColor whiteColor];
     });
+    
+    [self backgroundAction];
+    
 }
 
 - (IBAction)nextAction:(id)sender {
