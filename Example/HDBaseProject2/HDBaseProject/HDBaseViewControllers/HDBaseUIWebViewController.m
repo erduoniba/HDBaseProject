@@ -148,7 +148,6 @@ static NSString *backImageName;
     }
 }
 
-
 - (void)dealloc {
     
 }
