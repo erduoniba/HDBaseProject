@@ -150,7 +150,7 @@ static NSString *backImageName;
 
 
 - (void)dealloc {
-    NSLog(@"new");
+    NSLog(@"new dealloc");
 }
 
 @end
