@@ -458,7 +458,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HDBaseProject_Example/Pods-HDBaseProject_Example-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-HDBaseProject_Example/Pods-HDBaseProject_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/HDBaseProject/HDBaseProject.framework",
@@ -477,7 +477,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HDBaseProject_Example/Pods-HDBaseProject_Example-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HDBaseProject_Example/Pods-HDBaseProject_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CCD5A9430F8A6F57BAD00EAE /* [CP] Check Pods Manifest.lock */ = {
@@ -504,7 +504,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HDBaseProject_Tests/Pods-HDBaseProject_Tests-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-HDBaseProject_Tests/Pods-HDBaseProject_Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/HDBaseProject/HDBaseProject.framework",
@@ -523,7 +523,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HDBaseProject_Tests/Pods-HDBaseProject_Tests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HDBaseProject_Tests/Pods-HDBaseProject_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

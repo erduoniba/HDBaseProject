@@ -163,10 +163,12 @@
 
 - (void)injected {
     lb.text = @"jj22j";
+    NSLog(@"injected");
 }
 
 - (void)injected2 {
     lb.text = @"jjj222";
+    NSLog(@"injected2");
 }
 
 - (void)backgroundAction {
