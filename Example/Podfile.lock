@@ -47,7 +47,7 @@ PODS:
   - SDWebImage/Core (4.2.1)
 
 DEPENDENCIES:
-  - HDBaseProject (from `HDBaseProject2/`)
+  - HDBaseProject (from `../`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -59,16 +59,16 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   HDBaseProject:
-    :path: HDBaseProject2/
+    :path: "../"
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
-  HDBaseProject: 1dfa82e96cf13da749fc4b3d6374afb4bea84427
+  HDBaseProject: 7f32746c5681665e00b36f771b4b9f44d5c96b83
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   PINCache: ce36ed282031b92fc7733ffe831f474ff80fddc2
   SDWebImage: 1fa4c9edf525b744f002db89f3f5a38b3cd4c541
 
-PODFILE CHECKSUM: 1ab2645ac304b092e7e41d6429e9a7dc3714c3b2
+PODFILE CHECKSUM: 81d544c2adc40cadf17c0cec89764cf79d15d7fe
 
 COCOAPODS: 1.5.3

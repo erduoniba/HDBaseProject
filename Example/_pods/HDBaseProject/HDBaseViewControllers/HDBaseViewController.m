@@ -286,13 +286,6 @@ static UIEdgeInsets backImageEdgeInsets;
     NSLog(@"I've been injected: %@", self);
     NSLog(@"I've been injected2: %@", self);
     NSLog(@"I've been injected2: %@", self);
-    
-}
-
-+ (void)injected {
-    NSLog(@"I've been injected: %@", self);
-    NSLog(@"I've been injected2: %@", self);
-    NSLog(@"I've been injected2: %@", self);
 }
 
 @end

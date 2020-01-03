@@ -16,13 +16,13 @@
     "ios": "8.0"
   },
   "requires_arc": true,
-  "public_header_files": "HDBaseProject/HDBaseProject.h",
-  "source_files": "HDBaseProject/HDBaseProject.h",
+  "public_header_files": "Example/_pods/HDBaseProject/HDBaseProject.h",
+  "source_files": "Example/_pods/HDBaseProject//HDBaseProject.h",
   "subspecs": [
     {
       "name": "HDCatogorys",
-      "public_header_files": "HDBaseProject/HDCatogorys/*.h",
-      "source_files": "HDBaseProject/HDCatogorys/*.{h,m}",
+      "public_header_files": "Example/_pods/HDBaseProject/HDCatogorys/*.h",
+      "source_files": "Example/_pods/HDBaseProject/HDCatogorys/*.{h,m}",
       "dependencies": {
         "SDWebImage": [
           "4.2.1"
@@ -31,8 +31,8 @@
     },
     {
       "name": "HDGlobalMethods",
-      "public_header_files": "HDBaseProject/HDGlobalMethods/*.h",
-      "source_files": "HDBaseProject/HDGlobalMethods/*.{h,m}",
+      "public_header_files": "Example/_pods/HDBaseProject/HDGlobalMethods/*.h",
+      "source_files": "Example/_pods/HDBaseProject/HDGlobalMethods/*.{h,m}",
       "dependencies": {
         "CocoaLumberjack": [
           "3.5.3"
@@ -44,8 +44,8 @@
     },
     {
       "name": "HDNetworking",
-      "source_files": "HDBaseProject/HDNetworking/*.{h,m}",
-      "public_header_files": "HDBaseProject/HDNetworking/*.h",
+      "source_files": "Example/_pods/HDBaseProject/HDNetworking/*.{h,m}",
+      "public_header_files": "Example/_pods/HDBaseProject/HDNetworking/*.h",
       "dependencies": {
         "AFNetworking": [
           "3.2.1"
@@ -60,14 +60,14 @@
     },
     {
       "name": "ThirdPartyLibs",
-      "public_header_files": "HDBaseProject/ThirdPartyLibs/**/*.h",
-      "source_files": "HDBaseProject/ThirdPartyLibs/**/*.{h,m}"
+      "public_header_files": "Example/_pods/HDBaseProject/ThirdPartyLibs/**/*.h",
+      "source_files": "Example/_pods/HDBaseProject/ThirdPartyLibs/**/*.{h,m}"
     },
     {
       "name": "HDBaseViewControllers",
-      "public_header_files": "HDBaseProject/HDBaseViewControllers/*.h",
-      "source_files": "HDBaseProject/HDBaseViewControllers/*.{h,m}",
-      "resources": "HDBaseProject/HDBaseViewControllers/HDBaseProject.bundle",
+      "public_header_files": "Example/_pods/HDBaseProject/HDBaseViewControllers/*.h",
+      "source_files": "Example/_pods/HDBaseProject/HDBaseViewControllers/*.{h,m}",
+      "resources": "Example/_pods/HDBaseProject/HDBaseViewControllers/HDBaseProject.bundle",
       "dependencies": {
         "HDBaseProject/HDGlobalMethods": [
 

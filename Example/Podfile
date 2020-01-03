@@ -5,10 +5,10 @@ use_frameworks!
 platform:ios, '8.0'
 
 target 'HDBaseProject_Example' do
-    pod 'HDBaseProject', :path => "HDBaseProject2/"
+    pod 'HDBaseProject', :path => "../"
 end
 
 target 'HDBaseProject_Tests' do
-    pod 'HDBaseProject', :path => "HDBaseProject2/"
+    pod 'HDBaseProject', :path => "../"
 end
 
