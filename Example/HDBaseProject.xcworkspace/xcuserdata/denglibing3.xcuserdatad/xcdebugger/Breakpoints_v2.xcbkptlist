@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "CC72CACD-E3F5-4B14-8213-47CD6C939A15"
    type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "6A4E4387-2544-4A91-84D1-8FA6C3DFDBC8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -22,17 +24,65 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "A0EE1FCD-A530-44F2-8607-915871815C1E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../HDBaseProject/HDGlobalMethods/HDDDLog.m"
-            timestampString = "590316365.679985"
+            filePath = "HDBaseProject/HDViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "254"
-            endingLineNumber = "254"
-            landmarkName = "+configurationDDLogFile:context:"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
+            landmarkName = "-injected"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5C9D1371-8FE6-44CE-BC65-46FB73D392F3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HDBaseProject/HDAppDelegate.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "-injected"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5C9D1371-8FE6-44CE-BC65-46FB73D392F3 - 57397d6be098a86"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[HDAppDelegate injected]"
+                  moduleName = "HDBaseProject_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/denglibing3/HDProject/HarryProject/iOS/HDBaseProject/Example/HDBaseProject/HDAppDelegate.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  uuid = "5C9D1371-8FE6-44CE-BC65-46FB73D392F3 - 8c69b76bb1e3e711"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[HDAppDelegate injected]"
+                  moduleName = "eval101.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/denglibing3/HDProject/HarryProject/iOS/HDBaseProject/Example/HDBaseProject/HDAppDelegate.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "23">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
