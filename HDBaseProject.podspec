@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
     s.requires_arc = true
 
     s.public_header_files = 'Example/_pods/HDBaseProject/HDBaseProject.h'
-    s.source_files = 'Example/_pods/HDBaseProject//HDBaseProject.h'
+    s.source_files = 'Example/_pods/HDBaseProject/HDBaseProject.h'
 
     #按照不同的模块对文件目录进行整理
     s.subspec 'HDCatogorys' do |catogory|
