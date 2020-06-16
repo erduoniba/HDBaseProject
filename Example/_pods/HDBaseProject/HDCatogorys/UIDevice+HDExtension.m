@@ -7,6 +7,8 @@
 
 #import "UIDevice+HDExtension.h"
 
+#import "HDGlobalVariable.h"
+
 #include <sys/types.h>
 #include <sys/sysctl.h>
 
@@ -84,29 +86,67 @@
     return (NSUInteger)result;
 }
 
-+ (BOOL)hd_isIPhoneXIOrLater {
-    return (CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(375, 812)) ||
-            CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(812, 375)) ||
-            CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(414, 896)) ||
-            CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(896, 414)));
++ (CGFloat)hd_statusHeight {
+    CGFloat statusHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+    if ([self hd_safeAreaDevice]) {
+        if (statusHeight > 44) {
+            //打电话或者开启热点的时候，statusHeight的高度是40
+            statusHeight = 44;
+        }
+    }
+    else {
+        if (statusHeight > 20) {
+            //打电话或者开启热点的时候，statusHeight的高度是40
+            statusHeight = 20;
+        }
+    }
+    return statusHeight;
 }
 
-+ (CGFloat)hd_statusHeight {
-    if ([self hd_isIPhoneXIOrLater]) {
++ (CGFloat)hd_navgationBarHeight:(UINavigationController *)navigationController {
+    CGFloat navgationBarHeight = navigationController.navigationBar.frame.size.height;
+    return navgationBarHeight;
+}
+
++ (CGFloat)hd_safeAreaTopHeight {
+    if ([self hd_safeAreaDevice]) {
         return 44;
     }
-    return 20;
+    return 0;
 }
 
-+ (CGFloat)hd_navgationBarHeight {
-    return 44;
-}
-
-+ (CGFloat)hd_tabBarBottomHeight {
-    if ([self hd_isIPhoneXIOrLater]) {
++ (CGFloat)hd_safeAreaBottomHeight {
+    if ([self hd_safeAreaDevice]) {
         return 34;
     }
     return 0;
+}
+
++ (CGFloat)hd_statusAndNavigationBarHeight:(UINavigationController *)navigationController {
+    CGFloat statusHeight = [self hd_statusHeight];
+    CGFloat navgationBarHeight = navigationController.navigationBar.frame.size.height;
+    return statusHeight + navgationBarHeight;
+}
+
+//是否是刘海设备
++ (BOOL)hd_safeAreaDevice {
+    if ( ([UIScreen mainScreen].bounds.size.width == 375 && [UIScreen mainScreen].bounds.size.height == 812) ||
+        ([UIScreen mainScreen].bounds.size.width == 414 && [UIScreen mainScreen].bounds.size.height == 896) ) {
+        return YES;
+    }
+    if ( ([UIScreen mainScreen].bounds.size.width == 812 && [UIScreen mainScreen].bounds.size.height == 375) ||
+        ([UIScreen mainScreen].bounds.size.width == 896 && [UIScreen mainScreen].bounds.size.height == 414) ) {
+        return YES;
+    }
+    return NO;
+}
+
++ (BOOL)hd_interfaceOrientationPortrait {
+    if(([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait) ||
+       ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortraitUpsideDown)){
+        return YES;
+    }
+    return NO;
 }
 
 @end

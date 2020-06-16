@@ -50,7 +50,7 @@ DEPENDENCIES:
   - HDBaseProject (from `../`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - CocoaLumberjack
     - MJRefresh
@@ -64,11 +64,11 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
-  HDBaseProject: 7f32746c5681665e00b36f771b4b9f44d5c96b83
+  HDBaseProject: 74b3f3bd641e8db0e20690b12136c98203688497
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   PINCache: ce36ed282031b92fc7733ffe831f474ff80fddc2
   SDWebImage: 1fa4c9edf525b744f002db89f3f5a38b3cd4c541
 
 PODFILE CHECKSUM: 81d544c2adc40cadf17c0cec89764cf79d15d7fe
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.9.3

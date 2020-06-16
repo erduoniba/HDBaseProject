@@ -17,7 +17,7 @@
   },
   "requires_arc": true,
   "public_header_files": "Example/_pods/HDBaseProject/HDBaseProject.h",
-  "source_files": "Example/_pods/HDBaseProject//HDBaseProject.h",
+  "source_files": "Example/_pods/HDBaseProject/HDBaseProject.h",
   "subspecs": [
     {
       "name": "HDCatogorys",

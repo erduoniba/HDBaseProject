@@ -36,17 +36,32 @@
 
 
 /**
- 获取导航栏的高度，都是44px
+ 获取导航栏的高度，都是44px/竖屏是 32px
 
  @return 44px
  */
-+ (CGFloat)hd_navgationBarHeight;
++ (CGFloat)hd_navgationBarHeight:(UINavigationController *)navigationController;
 
 /**
- 获取TabBar下面的高度，根据屏幕的高度和宽度判断是否iPhoneX
+ 安全区域的顶部高度
 
+ @return iPhoneX：44px other:0px
+ */
++ (CGFloat)hd_safeAreaTopHeight;
+
+/**
+ 安全区域的底部高度
+ 
  @return iPhoneX：34px other:0px
  */
-+ (CGFloat)hd_tabBarBottomHeight;
++ (CGFloat)hd_safeAreaBottomHeight;
+
++ (CGFloat)hd_statusAndNavigationBarHeight:(UINavigationController *)navigationController;
+
+//是否是刘海设备
++ (BOOL)hd_safeAreaDevice;
+
+// 判断是否是竖屏
++ (BOOL)hd_interfaceOrientationPortrait;
 
 @end

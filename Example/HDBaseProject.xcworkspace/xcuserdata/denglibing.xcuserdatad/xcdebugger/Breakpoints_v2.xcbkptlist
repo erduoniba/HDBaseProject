@@ -29,38 +29,6 @@
             endingLineNumber = "169"
             landmarkName = "-injected2"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "67B07923-2920-464B-81F6-B9C3BA484528 - 51e57292aaac0a7c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[HDViewController injected2]"
-                  moduleName = "HDBaseProject_Example"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/denglibing/HDProject/iOSProject/SProject/HDBaseProject/Example/HDBaseProject/HDViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "169"
-                  endingLineNumber = "169"
-                  offsetFromSymbolStart = "27">
-               </Location>
-               <Location
-                  uuid = "67B07923-2920-464B-81F6-B9C3BA484528 - d8ff522fa54667eb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[HDViewController injected2]"
-                  moduleName = "eval101.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/denglibing/HDProject/iOSProject/SProject/HDBaseProject/Example/HDBaseProject/HDViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "169"
-                  endingLineNumber = "169"
-                  offsetFromSymbolStart = "27">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
