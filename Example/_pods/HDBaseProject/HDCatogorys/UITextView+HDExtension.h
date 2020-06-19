@@ -46,4 +46,9 @@
  */
 - (void)hd_setSelectedRange:(NSRange)range;
 
+
+- (NSAttributedString *)hd_setRowSpace:(CGFloat)rowSpace;
+
+- (NSMutableAttributedString *)hd_setAttributedString:(NSString *)title color:(UIColor *)color value:(NSString *)value;
+
 @end

@@ -146,4 +146,24 @@ static const char *hd_placeHolderTextView = "hd_placeHolderTextView";
     [self setSelectedTextRange:selectionRange];
 }
 
+- (NSAttributedString *)hd_setRowSpace:(CGFloat)rowSpace {
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
+    //调整行距
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.lineSpacing = rowSpace;
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [self.text length])];
+    self.attributedText = attributedString;
+    return attributedString;
+}
+
+- (NSMutableAttributedString *)hd_setAttributedString:(NSString *)title color:(UIColor *)color value:(NSString *)value {
+    NSRange range = [self.text rangeOfString:title];
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
+    [attributedString addAttribute:NSLinkAttributeName value:value range:range];
+    //字体颜色
+    [attributedString addAttribute:NSForegroundColorAttributeName value:color range:range];
+    self.attributedText = attributedString;
+    return attributedString;
+}
+
 @end
