@@ -15,6 +15,8 @@ typedef NS_ENUM(NSInteger, HDBaseTableViewCellType) {
     HDBaseTableViewCellAtLast,     //上下线都显示,按照group样式即最后一个cell,上线originx=separateLineOffset 下线originx=0
     HDBaseTableViewCellNormal,     //下线隐藏,按照plain样式,originx=separateLineOffset
     HDBaseTableViewCellSingle,     //上下线都显示，originx=0
+    HDBaseTableViewCellBottomLine, //下线都显示，originx=0
+    HDBaseTableViewCellAtMiddleShowLine, //都显示，上下线originx=separateLineOffset
 };
 
 @class HDBaseUITableViewCell;
@@ -54,8 +56,13 @@ typedef NS_ENUM(NSInteger, HDBaseTableViewCellType) {
 + (CGFloat)cellHeightWithCellData:(ObjectType)cellData;
 + (CGFloat)cellHeightWithCellData:(ObjectType)cellData boundWidth:(CGFloat)width;
 
+// 兼容横屏的高度，这个缓存横屏时cell的高度
++ (CGFloat)rotateCellHeightWithCellData:(ObjectType)cellData;
+
 - (void)setCellData:(ObjectType)MSCellData;
 - (void)setCellData:(ObjectType)MSCellData delegate:(id)delegate;
 - (void)setSeperatorLine:(NSIndexPath *)indexPath numberOfRowsInSection:(NSInteger)numberOfRowsInSection;
+
+- (CGFloat)cellHeightWithCellData:(ObjectType)cellData;
 
 @end

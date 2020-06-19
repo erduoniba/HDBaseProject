@@ -26,11 +26,19 @@
 
 @implementation HDBaseUITableViewCell
 
-+ (CGFloat)cellHeightWithCellData:(id)cellData{
++ (CGFloat)cellHeightWithCellData:(id)cellData {
     return [self cellHeightWithCellData:cellData boundWidth:[UIScreen mainScreen].bounds.size.width];
 }
 
 + (CGFloat)cellHeightWithCellData:(id)cellData boundWidth:(CGFloat)width{
+    return 44.0f;
+}
+
++ (CGFloat)rotateCellHeightWithCellData:(id)cellData {
+    return [self cellHeightWithCellData:cellData];
+}
+
+- (CGFloat)cellHeightWithCellData:(id)cellData {
     return 44.0f;
 }
 
@@ -116,10 +124,14 @@
 
         case HDBaseTableViewCellAtLast:
         case HDBaseTableViewCellSingle:
+        case HDBaseTableViewCellAtMiddleShowLine:
             _topLineView.hidden = NO;
             _bottomLineView.hidden = NO;
             break;
 
+        case HDBaseTableViewCellBottomLine:
+            _topLineView.hidden = YES;
+            _bottomLineView.hidden = NO;
         default:
             break;
     }
@@ -149,6 +161,7 @@
 
         case HDBaseTableViewCellAtMiddle:
         case HDBaseTableViewCellNormal:
+        case HDBaseTableViewCellAtMiddleShowLine:
             _topLineView.frame = CGRectMake(_separateLineOffset, 0.0, self.frame.size.width - _separateLineOffset, _sizeOnePx);
             _bottomLineView.frame = CGRectMake(_separateLineOffset, self.bounds.size.height - _sizeOnePx, self.frame.size.width - _separateLineOffset, _sizeOnePx);
             break;
@@ -161,6 +174,11 @@
         case HDBaseTableViewCellSingle:
             _topLineView.frame = CGRectMake(0.0, 0.0, self.frame.size.width, _sizeOnePx);
             _bottomLineView.frame = CGRectMake(0.0, self.bounds.size.height - _sizeOnePx, self.frame.size.width, _sizeOnePx);
+            break;
+            
+        case HDBaseTableViewCellBottomLine:
+            _topLineView.frame = CGRectMake(0.0, 0.0, self.frame.size.width, _sizeOnePx);
+            _bottomLineView.frame = CGRectMake(_separateLineOffset, self.bounds.size.height - _sizeOnePx, self.frame.size.width - _separateLineOffset, _sizeOnePx);
             break;
 
         default:

@@ -8,16 +8,14 @@
 
 #import "HDBaseViewController.h"
 
-#import "HDBaseUIWebViewController.h"
-
 #import "HDGlobalVariable.h"
 #import "HDGlobalMethods.h"
-#import "UIView+Helpers.h"
 
 @interface HDBaseViewController () <UIGestureRecognizerDelegate>
 
 @property (nonatomic, assign) BOOL isCanSideBack;
-@property (nonatomic, strong) HDReminderView *hdReminderView;
+
+@property (nonatomic, strong) UIActivityIndicatorView *aiView;
 
 @end
 
@@ -33,7 +31,6 @@ static UIEdgeInsets backImageEdgeInsets;
 
 + (void)setBackImageName:(NSString *)imageName{
     backImageName = imageName;
-    [HDBaseUIWebViewController setBackImageName:imageName];
 }
 
 + (void)setBackImageEdgeInsets:(UIEdgeInsets)imageEdgeInsets {
@@ -74,16 +71,6 @@ static UIEdgeInsets backImageEdgeInsets;
     // Dispose of any resources that can be recreated.
 }
 
-- (HDReminderView *)hdReminderView {
-    if (!_hdReminderView) {
-        _hdReminderView = [[HDReminderView alloc] initWithFrame:self.view.bounds];
-        _hdReminderView.userInteractionEnabled = YES;
-        [self.view addSubview:_hdReminderView];
-        [_hdReminderView centerAlignForSuperview];
-    }
-    return _hdReminderView;
-}
-
 -(UIWindow *)getKeyWindow {
     NSEnumerator *frontToBackWindows = [[[UIApplication sharedApplication] windows] reverseObjectEnumerator];
     for (UIWindow *window in frontToBackWindows) {
@@ -99,6 +86,13 @@ static UIEdgeInsets backImageEdgeInsets;
     return appDelegate;
 }
 
+- (UIActivityIndicatorView *)aiView {
+    if (!_aiView) {
+        _aiView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    }
+    return _aiView;
+}
+
 #pragma mark - UIGestureRecognizerDelegate
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
     if (self.navigationController.viewControllers.count <= 1 || !_isCanSideBack) {
@@ -107,6 +101,23 @@ static UIEdgeInsets backImageEdgeInsets;
     return YES;
 }
 
+- (void)setCustomTitle:(NSString *)title {
+    [self setCustomTitle:title color:UIColorHexFromRGB(0x030303)];
+}
+
+- (void)setCustomTitle:(NSString *)title color:(UIColor *)color {
+    if (title.length > 10) {
+        title = [NSString stringWithFormat:@"%@...", [title substringWithRange:NSMakeRange(0, 10)]];
+    }
+
+    UILabel *titleLabel = [HDGlobalMethods createLabel:CGRectMake(0, 0, 120, 20)
+                                                 title:title
+                                                  font:[UIFont systemFontOfSize:17]
+                                               textCol:color];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.font = [UIFont systemFontOfSize:17 weight:UIFontWeightMedium];
+    self.navigationItem.titleView = titleLabel;
+}
 
 #pragma mark - 左右自定义按钮
 - (UIBarButtonItem *)createBarBackButtonItem:(id)target
@@ -152,29 +163,48 @@ static UIEdgeInsets backImageEdgeInsets;
     UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]
                                        initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
                                        target:nil action:nil];
-    negativeSpacer.width = -10;
+    negativeSpacer.width = 0;
     self.navigationItem.leftBarButtonItems = @[negativeSpacer, backItem];
 }
 
 - (void)showLeftItemWithTitle:(NSString *)title selector:(SEL) selector{
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.titleLabel.font = [UIFont systemFontOfSize:16];
-    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    btn.titleLabel.font = [UIFont systemFontOfSize:16 weight:UIFontWeightBold];
+    [btn setTitleColor:[self themeColor] forState:UIControlStateNormal];
     [btn setTitle:title forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(leftAction) forControlEvents:UIControlEventTouchUpInside];
-    [btn setFrame:CGRectMake(0, 0, 60, 32)];
+    [btn addTarget:self action:selector forControlEvents:UIControlEventTouchUpInside];
+    [btn setFrame:CGRectMake(0, 0, 50, 32)];
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:btn];
     self.navigationItem.leftBarButtonItem = item;
+}
+
+- (void)showLeftItemWithImage:(UIImage *)image selector:(SEL) selector {
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setImage:image forState:UIControlStateNormal];
+    [btn addTarget:self action:selector forControlEvents:UIControlEventTouchUpInside];
+    [btn setFrame:CGRectMake(0, 0, 32, 32)];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    self.navigationItem.leftBarButtonItem = item;
+}
+
+- (void)showLeftActivityView {
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:self.aiView];
+    self.navigationItem.leftBarButtonItems = @[item];
+    [self.aiView startAnimating];
+}
+
+- (void)hideLeftActivityView {
+    [self.aiView stopAnimating];
 }
 
 -(void) showRightItemWithTitle:(NSString *) title selector:(SEL) selector
 {
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.titleLabel.font = [UIFont systemFontOfSize:16];
-    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    btn.titleLabel.font = [UIFont systemFontOfSize:16 weight:UIFontWeightBold];
+    [btn setTitleColor:[self themeColor] forState:UIControlStateNormal];
     [btn setTitle:title forState:UIControlStateNormal];
     [btn addTarget:self action:selector forControlEvents:UIControlEventTouchUpInside];
-    [btn setFrame:CGRectMake(0, 0, 44, 32)];
+    [btn setFrame:CGRectMake(0, 0, 50, 32)];
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:btn];
     
     self.navigationItem.rightBarButtonItem = item;
@@ -192,7 +222,6 @@ static UIEdgeInsets backImageEdgeInsets;
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:btn];
     
     self.navigationItem.rightBarButtonItem = item;
-    
 }
 
 - (void)showRightBarButtonWithImage:(UIImage *)image selector:(SEL)selector
@@ -205,22 +234,20 @@ static UIEdgeInsets backImageEdgeInsets;
     self.navigationItem.rightBarButtonItem = rightItem;
 }
 
-- (void)showRightBarButtonWithImage:(UIImage *)image hImage:(UIImage *)hImage selector:(SEL)selector
+- (UIButton *)showRightBarButtonWithImage:(UIImage *)image hImage:(UIImage *)hImage selector:(SEL)selector
 {
-    if (self.navigationItem.rightBarButtonItem == nil) {
-        UIButton *mRightBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, image.size.width, image.size.height)];
-        [mRightBtn setAutoresizesSubviews:YES];
-        [mRightBtn setAutoresizingMask:(UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight)];
-        [mRightBtn setContentEdgeInsets:UIEdgeInsetsMake(0, 0, 0, -10)];
-        [mRightBtn addTarget:self action:selector forControlEvents:UIControlEventTouchUpInside];
-        UIBarButtonItem *barRButtonItem = [[UIBarButtonItem alloc] initWithCustomView:mRightBtn];
-        [self.navigationItem setRightBarButtonItem:barRButtonItem];
-    }
-    UIButton *mRightBtn = (UIButton *)self.navigationItem.rightBarButtonItem.customView;
+    UIButton *mRightBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, image.size.width, image.size.height)];
+    [mRightBtn setAutoresizesSubviews:YES];
+    [mRightBtn setAutoresizingMask:(UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight)];
+    [mRightBtn setContentEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    [mRightBtn addTarget:self action:selector forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *barRButtonItem = [[UIBarButtonItem alloc] initWithCustomView:mRightBtn];
+    self.navigationItem.rightBarButtonItems = @[barRButtonItem];
     [mRightBtn setImage:image forState:UIControlStateNormal];
     if (hImage) {
         [mRightBtn setImage:hImage forState:UIControlStateHighlighted];
     }
+    return mRightBtn;
 }
 
 - (void)showRightItemFixedOffsetWithTitle:(NSString *)itemTitle titleColor:(UIColor *)titleColor highlightTitleColor:(UIColor *)highlightColor itemSize:(CGSize)itemSize selector:(SEL)selector
@@ -241,7 +268,25 @@ static UIEdgeInsets backImageEdgeInsets;
     fixItem.width = -20.0f;
     
     self.navigationItem.rightBarButtonItems = @[fixItem,rightItem];
+}
+
+- (NSArray <UIButton *> *)showRightBarButtonWithImage:(UIImage *)image selector:(SEL)selector
+                             image2:(UIImage *)image2 selector2:(SEL)selector2 {
+    UIButton *mRightBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, image.size.width, image.size.height)];
+    [mRightBtn setImage:image forState:UIControlStateNormal];
+    [mRightBtn addTarget:self action:selector forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *barRButtonItem = [[UIBarButtonItem alloc] initWithCustomView:mRightBtn];
+ 
+    UIButton *mRightBtn2 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, image.size.width, image.size.height)];
+    [mRightBtn2 setImage:image2 forState:UIControlStateNormal];
+    [mRightBtn2 addTarget:self action:selector2 forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *barRButtonItem2 = [[UIBarButtonItem alloc] initWithCustomView:mRightBtn2];
     
+    UIBarButtonItem *fixItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    fixItem.width = 15.0f;
+    
+    self.navigationItem.rightBarButtonItems = @[barRButtonItem2, fixItem, barRButtonItem];
+    return @[mRightBtn, mRightBtn2];
 }
 
 - (void)leftAction{
@@ -264,28 +309,34 @@ static UIEdgeInsets backImageEdgeInsets;
     _isCanSideBack = NO;
 }
 
-
-#pragma mark - 提示相关的代码
-- (void)showReminderViewWihtType:(HDReminderType)reminderType {
-    [self.hdReminderView setReminderType:reminderType];
-    self.hdReminderView.hidden = NO;
-    [self.view bringSubviewToFront:self.hdReminderView];
+//设置下横线隐藏
+- (UIImageView *)setUnderLineHidden:(BOOL)hidden
+{
+    if (self.navigationController) {
+        UIImageView *line = [self navigationBarLine:self.navigationController.navigationBar];
+        line.hidden = hidden;
+        return line;
+    }
+    return nil;
 }
 
-- (void)showReminderViewWithText:(NSString *)text {
-    [self.hdReminderView customReminder:text];
-    self.hdReminderView.hidden = NO;
-    [self.view bringSubviewToFront:self.hdReminderView];
+- (UIImageView *)navigationBarLine:(UIView *)view{
+    // 符合条件返回控件
+    if ([view isKindOfClass:UIImageView.class] && view.bounds.size.height <= 1.0) {
+        return (UIImageView *)view;
+    }
+    // 递归查找
+    for (UIView *subview in view.subviews) {
+        UIImageView *imageView = [self navigationBarLine:subview];
+        if (imageView) {
+            return imageView;
+        }
+    }
+    return nil;
 }
 
-- (void)hideReminderView {
-    self.hdReminderView.hidden = YES;
-}
-
-- (void)injected {
-    NSLog(@"I've been injected: %@", self);
-    NSLog(@"I've been injected2: %@", self);
-    NSLog(@"I've been injected2: %@", self);
+- (UIColor *)themeColor {
+    return [UIColor whiteColor];
 }
 
 @end
