@@ -25,7 +25,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.showPageTitles = NO;
+//        self.showPageTitles = NO;
     }
     return self;
 }
@@ -99,31 +99,6 @@ static NSString *backImageName;
             [self.navigationController popViewControllerAnimated:YES];
         }
     }
-}
-
-
-
-- (void)webViewDidStartLoad:(UIWebView *)webView
-{
-    [super webViewDidStartLoad:webView];
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView
-{
-    [super webViewDidFinishLoad:webView];
-    if ([self.webView canGoBack])
-    {
-        if (_showCloseBtn) {
-           [self setNavigationItemBackAndClose];
-        }
-        else {
-            [self setNavigationItemBack];
-        }
-    }
-    else {
-        [self setNavigationItemBack];
-    }
-    
 }
 
 -(UIButton *)closeBtn {

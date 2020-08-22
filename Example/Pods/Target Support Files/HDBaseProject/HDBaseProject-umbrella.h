@@ -53,10 +53,9 @@
 #import "HDNetworking.h"
 #import "HDRequestConvertManager.h"
 #import "HDRequestManagerConfig.h"
-#import "TOActivityChrome.h"
-#import "TOActivitySafari.h"
-#import "TOWebViewController.h"
-#import "UIImage+TOWebViewControllerIcons.h"
+#import "DZNPolyActivity.h"
+#import "DZNWebView.h"
+#import "DZNWebViewController.h"
 
 FOUNDATION_EXPORT double HDBaseProjectVersionNumber;
 FOUNDATION_EXPORT const unsigned char HDBaseProjectVersionString[];

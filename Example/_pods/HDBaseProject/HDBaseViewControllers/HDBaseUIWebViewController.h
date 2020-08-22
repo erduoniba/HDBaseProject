@@ -7,19 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TOWebViewController.h"
+#import "DZNWebViewController.h"
 
-@interface TOWebViewController (HarryExtetion)
+//@interface TOWebViewController (HarryExtetion)
+//
+//- (void)webViewDidStartLoad:(UIWebView *)webView;
+//
+//- (void)webViewDidFinishLoad:(UIWebView *)webView;
+//
+//- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error;
+//
+//@end
 
-- (void)webViewDidStartLoad:(UIWebView *)webView;
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView;
-
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error;
-
-@end
-
-@interface HDBaseUIWebViewController : TOWebViewController
+@interface HDBaseUIWebViewController : DZNWebViewController
 
 @property (nonatomic,assign) BOOL showCloseBtn;
 
