@@ -60,7 +60,6 @@
             [self closeMoreRefreshView];
         }
 
-        [self showReminderViewWihtType:rand()%3];
         self.tableView.hidden = YES;
     });
 }

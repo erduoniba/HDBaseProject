@@ -182,34 +182,38 @@ NSString * const HDDNetworkCacheKeys = @"HDDNetworkCacheKeys";
                                                                           parameters:parameters
                                                                                error:nil];
     __weak typeof(self) weak_self = self;
-    __block NSURLSessionDataTask *dataTask = [self.requestManager
-                                              dataTaskWithRequest:request
-                                              completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
-                                                  __strong typeof(self) strong_self = weak_self;
-                                                  if (error) {
-                                                      HDError *hdError;
-                                                      if (strong_self.networkStatus == AFNetworkReachabilityStatusNotReachable) {
-                                                          hdError = [configuration.HDError hdErrorNetNotReachable];
-                                                      }
-                                                      else {
-                                                          hdError = [configuration.HDError hdErrorHttpError:error];
-                                                      }
-                                                      if (configuration.requestCachePolicy == HDRequestReturnLoadToCache) {
-                                                          id resposeObject = fetchCacheRespose();
-                                                          cache(resposeObject);
-                                                      }
-                                                      failure(dataTask, hdError);
-                                                  }
-                                                  else {
-                                                      if (configuration.requestCachePolicy != HDRequestReturnLoadDontCache) {
-                                                          saveCacheRespose(responseObject);
-                                                      }
-                                                      if (configuration.resposeHandle) {
-                                                          responseObject = configuration.resposeHandle(dataTask, responseObject);
-                                                      }
-                                                      success(dataTask, responseObject);
-                                                  }
-                                              }];
+    
+    __block NSURLSessionDataTask *dataTask = [self.requestManager dataTaskWithRequest:request
+                              uploadProgress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } downloadProgress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        __strong typeof(self) strong_self = weak_self;
+        if (error) {
+            HDError *hdError;
+            if (strong_self.networkStatus == AFNetworkReachabilityStatusNotReachable) {
+                hdError = [configuration.HDError hdErrorNetNotReachable];
+            }
+            else {
+                hdError = [configuration.HDError hdErrorHttpError:error];
+            }
+            if (configuration.requestCachePolicy == HDRequestReturnLoadToCache) {
+                id resposeObject = fetchCacheRespose();
+                cache(resposeObject);
+            }
+            failure(dataTask, hdError);
+        }
+        else {
+            if (configuration.requestCachePolicy != HDRequestReturnLoadDontCache) {
+                saveCacheRespose(responseObject);
+            }
+            if (configuration.resposeHandle) {
+                responseObject = configuration.resposeHandle(dataTask, responseObject);
+            }
+            success(dataTask, responseObject);
+        }
+    }];
     [dataTask resume];
     return dataTask;
 }
@@ -238,25 +242,38 @@ NSString * const HDDNetworkCacheKeys = @"HDDNetworkCacheKeys";
     parameters = [self disposeRequestParameters:parameters];
     NSString *requestUrl = [[NSURL URLWithString:URLString relativeToURL:[NSURL URLWithString:configuration.baseURL]] absoluteString];
     __weak typeof(self) weak_self = self;
+    [self.requestManager POST:requestUrl
+                   parameters:parameters
+                      headers:@{}
+                     progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+    
     NSURLSessionDataTask *dataTask = [self.requestManager POST:requestUrl
                                                     parameters:parameters
+                                                       headers:@{}
                                      constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-                                         block(formData);
-                                     } progress:^(NSProgress * _Nonnull uploadProgress) {
-                                         progress(uploadProgress);
-                                     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                                         success(task, responseObject);
-                                     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                                         __strong typeof(self) strong_self = weak_self;
-                                         HDError *hdError;
-                                         if (strong_self.networkStatus == AFNetworkReachabilityStatusNotReachable) {
-                                             hdError = [configuration.HDError hdErrorNetNotReachable];
-                                         }
-                                         else {
-                                             hdError = [configuration.HDError hdErrorHttpError:error];
-                                         }
-                                         failure(task, hdError);
-                                     }];
+        block(formData);
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        progress(uploadProgress);
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        success(task, responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        __strong typeof(self) strong_self = weak_self;
+        HDError *hdError;
+        if (strong_self.networkStatus == AFNetworkReachabilityStatusNotReachable) {
+            hdError = [configuration.HDError hdErrorNetNotReachable];
+        }
+        else {
+            hdError = [configuration.HDError hdErrorHttpError:error];
+        }
+        failure(task, hdError);
+    }];
+    
     [dataTask resume];
     return dataTask;
 }
@@ -311,7 +328,7 @@ NSString * const HDDNetworkCacheKeys = @"HDDNetworkCacheKeys";
 }
 
 - (void)cancelAllRequest {
-    [self.requestManager invalidateSessionCancelingTasks:YES];
+    [self.requestManager invalidateSessionCancelingTasks:YES resetSession:YES];
 }
 
 /**
