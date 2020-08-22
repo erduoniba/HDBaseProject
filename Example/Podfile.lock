@@ -64,7 +64,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: d9fdf484a3c723ec3c558a41cc5754c7e845ee77
   CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
-  HDBaseProject: 3942b16e968dbf2f3f9311405099f5fed26c8ac3
+  HDBaseProject: 0569feb25c2abde6d580c096501bb737eed2072b
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   PINCache: ce36ed282031b92fc7733ffe831f474ff80fddc2
   SDWebImage: 1fa4c9edf525b744f002db89f3f5a38b3cd4c541

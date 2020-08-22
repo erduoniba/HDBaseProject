@@ -61,7 +61,8 @@
     {
       "name": "ThirdPartyLibs",
       "public_header_files": "Example/_pods/HDBaseProject/ThirdPartyLibs/**/*.h",
-      "source_files": "Example/_pods/HDBaseProject/ThirdPartyLibs/**/*.{h,m}"
+      "source_files": "Example/_pods/HDBaseProject/ThirdPartyLibs/**/*.{h,m}",
+      "resources": "Example/_pods/HDBaseProject/ThirdPartyLibs/DZNWebViewController/DZNWebViewController.bundle"
     },
     {
       "name": "HDBaseViewControllers",
