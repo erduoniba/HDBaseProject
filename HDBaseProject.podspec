@@ -51,6 +51,7 @@ Pod::Spec.new do |s|
     s.subspec 'ThirdPartyLibs' do |lib|
         lib.public_header_files = 'Example/_pods/HDBaseProject/ThirdPartyLibs/**/*.h'
         lib.source_files = 'Example/_pods/HDBaseProject/ThirdPartyLibs/**/*.{h,m}'
+        lib.resource = 'Example/_pods/HDBaseProject/ThirdPartyLibs/DZNWebViewController/DZNWebViewController.bundle'
     end
 
     s.subspec 'HDBaseViewControllers' do |base|
