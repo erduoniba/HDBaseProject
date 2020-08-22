@@ -133,14 +133,14 @@ static char DZNWebViewControllerKVOContext = 0;
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-	[super viewWillDisappear:animated];
+    [super viewWillDisappear:animated];
     
     [self clearProgressViewAnimated:animated];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
-	[super viewDidDisappear:animated];
+    [super viewDidDisappear:animated];
     
     [self.webView stopLoading];
 }
@@ -158,6 +158,9 @@ static char DZNWebViewControllerKVOContext = 0;
         UIProgressView *progressView = [[UIProgressView alloc] initWithFrame:frame];
         progressView.trackTintColor = [UIColor clearColor];
         progressView.alpha = 0.0f;
+        if (_tintColor) {
+            progressView.tintColor = _tintColor;
+        }
         
         [self.navigationBar addSubview:progressView];
         
@@ -173,6 +176,9 @@ static char DZNWebViewControllerKVOContext = 0;
         _backwardBarItem = [[UIBarButtonItem alloc] initWithImage:[self backwardButtonImage] landscapeImagePhone:nil style:0 target:self action:@selector(goBackward:)];
         _backwardBarItem.accessibilityLabel = NSLocalizedStringFromTable(@"Backward", @"DZNWebViewController", @"Accessibility label button title");
         _backwardBarItem.enabled = NO;
+        if (_tintColor) {
+            _backwardBarItem.tintColor = _tintColor;
+        }
     }
     return _backwardBarItem;
 }
@@ -185,6 +191,9 @@ static char DZNWebViewControllerKVOContext = 0;
         _forwardBarItem.landscapeImagePhone = nil;
         _forwardBarItem.accessibilityLabel = NSLocalizedStringFromTable(@"Forward", @"DZNWebViewController", @"Accessibility label button title");
         _forwardBarItem.enabled = NO;
+        if (_tintColor) {
+            _forwardBarItem.tintColor = _tintColor;
+        }
     }
     return _forwardBarItem;
 }
@@ -195,6 +204,9 @@ static char DZNWebViewControllerKVOContext = 0;
     {
         _stateBarItem = [[UIBarButtonItem alloc] initWithImage:nil landscapeImagePhone:nil style:0 target:nil action:nil];
         [self updateStateBarItem];
+        if (_tintColor) {
+            _stateBarItem.tintColor = _tintColor;
+        }
     }
     return _stateBarItem;
 }
@@ -206,6 +218,9 @@ static char DZNWebViewControllerKVOContext = 0;
         _actionBarItem = [[UIBarButtonItem alloc] initWithImage:[self actionButtonImage] landscapeImagePhone:nil style:0 target:self action:@selector(presentActivityController:)];
         _actionBarItem.accessibilityLabel = NSLocalizedStringFromTable(@"Share", @"DZNWebViewController", @"Accessibility label button title");
         _actionBarItem.enabled = NO;
+        if (_tintColor) {
+            _actionBarItem.tintColor = _tintColor;
+        }
     }
     return _actionBarItem;
 }
