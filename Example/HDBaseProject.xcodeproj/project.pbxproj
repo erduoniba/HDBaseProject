@@ -691,7 +691,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HDBaseProject/HDBaseProject-Prefix.pch";
 				INFOPLIST_FILE = "HDBaseProject/HDBaseProject-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LIBRARY_SEARCH_PATHS = "";
 				MACH_O_TYPE = mh_execute;
 				MODULE_NAME = ExampleApp;
@@ -717,7 +717,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HDBaseProject/HDBaseProject-Prefix.pch";
 				INFOPLIST_FILE = "HDBaseProject/HDBaseProject-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LIBRARY_SEARCH_PATHS = "";
 				MACH_O_TYPE = mh_execute;
 				MODULE_NAME = ExampleApp;

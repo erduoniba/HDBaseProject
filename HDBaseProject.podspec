@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = "HDBaseProject"
-    s.version          = "1.3.3"
+    s.version          = "1.3.4"
     s.summary          = "快速搭建项目:支持AFNetworking3.1.0请求，支持自定义下拉gif动画，开源请求类"
     s.description      = <<-DESC
     '新建项目中常用的基础类，项目有一定量的时候，都是代码的复制和粘贴，但是在后台的粘贴中或许有好的代码更正，这个时候我们往往没有时间去维护以前的老代码，不经意间会出现代码不同步的问题'
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
     s.license          = 'MIT'
     s.author           = { "Harry" => "328418417@qq.com" }
     s.source           = { :git => "https://github.com/erduoniba/HDBaseProject.git", :tag => s.version }
-    s.platform     = :ios, '8.0'
+    s.platform     = :ios, '9.0'
     s.requires_arc = true
 
     s.public_header_files = 'Example/_pods/HDBaseProject/HDBaseProject.h'
@@ -43,7 +43,7 @@ Pod::Spec.new do |s|
         http.source_files = 'Example/_pods/HDBaseProject/HDNetworking/*.{h,m}'
         http.public_header_files = 'Example/_pods/HDBaseProject/HDNetworking/*.h'
 
-        http.dependency 'AFNetworking', '3.2.1'
+        http.dependency 'AFNetworking', '4.0'
         http.dependency 'PINCache', '2.3'
         http.dependency 'HDBaseProject/HDGlobalMethods'
     end
