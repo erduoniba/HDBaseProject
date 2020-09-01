@@ -1,24 +1,24 @@
 //
-//  BaseUIWebViewController.h
+//  BaseWebViewController.h
 //  SecondHouseBroker
 //
 //  Created by Harry on 15-8-3.
 //  Copyright (c) 2015年 Harry. All rights reserved.
 //
 
-#import "HDBaseUIWebViewController.h"
+#import "HDBaseWebViewController.h"
 
 #import "HDGlobalMethods.h"
 #import "HDGlobalVariable.h"
 
-@interface HDBaseUIWebViewController ()
+@interface HDBaseWebViewController ()
 
 @property (nonatomic,strong)UIButton *defaultBackButton;//默认的返回按钮
 @property (nonatomic,strong)UIButton *closeBtn;//关闭按钮
 
 @end
 
-@implementation HDBaseUIWebViewController
+@implementation HDBaseWebViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

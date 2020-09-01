@@ -1,5 +1,5 @@
 //
-//  BaseUIWebViewController.h
+//  BaseWebViewController.h
 //  SecondHouseBroker
 //
 //  Created by Harry on 15-8-3.
@@ -9,17 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DZNWebViewController.h"
 
-//@interface TOWebViewController (HarryExtetion)
-//
-//- (void)webViewDidStartLoad:(UIWebView *)webView;
-//
-//- (void)webViewDidFinishLoad:(UIWebView *)webView;
-//
-//- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error;
-//
-//@end
-
-@interface HDBaseUIWebViewController : DZNWebViewController
+@interface HDBaseWebViewController : DZNWebViewController
 
 @property (nonatomic,assign) BOOL showCloseBtn;
 

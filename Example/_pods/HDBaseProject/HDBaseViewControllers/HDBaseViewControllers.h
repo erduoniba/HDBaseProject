@@ -15,7 +15,7 @@
 #import "HDBaseRepositoryProtcol.h"
 #import "HDBaseUITableViewCell.h"
 #import "HDBaseUITableViewController.h"
-#import "HDBaseUIWebViewController.h"
+#import "HDBaseWebViewController.h"
 #import "HDBaseViewController.h"
 #import "HDBaseViewControllers.h"
 #import "HDTableViewConverter.h"
