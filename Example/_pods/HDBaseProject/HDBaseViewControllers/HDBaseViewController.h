@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "HDReminderView.h"
+
 @class AppDelegate;
 
 @protocol HarryViewControllerDelegate <NSObject>
@@ -103,5 +105,10 @@
 - (UIImageView *)setUnderLineHidden:(BOOL)hidden;
 
 - (UIColor *)themeColor;
+
+#pragma mark - 提示相关的代码
+- (void)showReminderViewWihtType:(HDReminderType)reminderType;
+- (void)showReminderViewWithText:(NSString *)text;
+- (void)hideReminderView;
 
 @end

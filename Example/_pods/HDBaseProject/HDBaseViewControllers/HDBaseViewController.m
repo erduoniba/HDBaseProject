@@ -10,12 +10,14 @@
 
 #import "HDGlobalVariable.h"
 #import "HDGlobalMethods.h"
+#import "UIView+Helpers.h"
 
 @interface HDBaseViewController () <UIGestureRecognizerDelegate>
 
 @property (nonatomic, assign) BOOL isCanSideBack;
 
 @property (nonatomic, strong) UIActivityIndicatorView *aiView;
+@property (nonatomic, strong) HDReminderView *hdReminderView;
 
 @end
 
@@ -69,6 +71,16 @@ static UIEdgeInsets backImageEdgeInsets;
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (HDReminderView *)hdReminderView {
+    if (!_hdReminderView) {
+        _hdReminderView = [[HDReminderView alloc] initWithFrame:self.view.bounds];
+        _hdReminderView.userInteractionEnabled = YES;
+        [self.view addSubview:_hdReminderView];
+        [_hdReminderView centerAlignForSuperview];
+    }
+    return _hdReminderView;
 }
 
 -(UIWindow *)getKeyWindow {
@@ -337,6 +349,23 @@ static UIEdgeInsets backImageEdgeInsets;
 
 - (UIColor *)themeColor {
     return [UIColor whiteColor];
+}
+
+#pragma mark - 提示相关的代码
+- (void)showReminderViewWihtType:(HDReminderType)reminderType {
+    [self.hdReminderView setReminderType:reminderType];
+    self.hdReminderView.hidden = NO;
+    [self.view bringSubviewToFront:self.hdReminderView];
+}
+
+- (void)showReminderViewWithText:(NSString *)text {
+    [self.hdReminderView customReminder:text];
+    self.hdReminderView.hidden = NO;
+    [self.view bringSubviewToFront:self.hdReminderView];
+}
+
+- (void)hideReminderView {
+    self.hdReminderView.hidden = YES;
 }
 
 @end
