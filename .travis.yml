@@ -1,8 +1,18 @@
 # references:
 # * http://www.objc.io/issue-6/travis-ci.html
 # * https://github.com/supermarin/xcpretty#usage
+# * https://docs.travis-ci.com/user/languages/objective-c/
 
 language: objective-c
+osx_image: xcode11.4
+# path to your xcodeproj folder
+# xcode_workspace: Example/HDBaseProject.xcworkspace
+# xcode_scheme: HDBaseProject-Example
+# xcode_destination: platform=iOS Simulator,OS=11.3,name=iPhone X
+# podfile: path/to/Podfile
+# install: make get-deps
+
+
 # cache: cocoapods
 # podfile: Example/Podfile
 # before_install:
