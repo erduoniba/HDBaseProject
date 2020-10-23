@@ -12,7 +12,7 @@
 
 @implementation HDBaseCellViewModel
 
-+ (instancetype) modelFromClass:(Class)cellClass cellModel:(id)cellModel delegate:(id)delegate height:(NSInteger)height {
++ (instancetype) modelFromClass:(Class)cellClass cellModel:(id)cellModel delegate:(id)delegate height:(CGFloat)height {
     HDBaseCellViewModel *model = [[self alloc] init];
     model.cellClass = cellClass;
     model.delegate = delegate;
@@ -22,7 +22,7 @@
     return model;
 }
 
-+ (instancetype) modelFromStaticCell:(UITableViewCell *)cell cellModel:(id)cellModel delegate:(id)delegate height:(NSInteger)height{
++ (instancetype) modelFromStaticCell:(UITableViewCell *)cell cellModel:(id)cellModel delegate:(id)delegate height:(CGFloat)height{
     HDBaseCellViewModel *model = [[self alloc] init];
     model.staticCell = cell;
     model.cellModel = cellModel;
