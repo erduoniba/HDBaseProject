@@ -130,15 +130,17 @@
 
 //是否是刘海设备
 + (BOOL)hd_safeAreaDevice {
-    if ( ([UIScreen mainScreen].bounds.size.width == 375 && [UIScreen mainScreen].bounds.size.height == 812) ||
-        ([UIScreen mainScreen].bounds.size.width == 414 && [UIScreen mainScreen].bounds.size.height == 896) ) {
-        return YES;
+    BOOL result = NO;
+    if (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPhone) {
+        return result;
     }
-    if ( ([UIScreen mainScreen].bounds.size.width == 812 && [UIScreen mainScreen].bounds.size.height == 375) ||
-        ([UIScreen mainScreen].bounds.size.width == 896 && [UIScreen mainScreen].bounds.size.height == 414) ) {
-        return YES;
+    if (@available(iOS 11.0, *)) {
+        UIWindow *mainWindow = [[[UIApplication sharedApplication] delegate] window];
+        if (mainWindow.safeAreaInsets.bottom > 0.0) {
+            result = YES;
+        }
     }
-    return NO;
+    return result;
 }
 
 + (BOOL)hd_interfaceOrientationPortrait {
