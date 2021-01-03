@@ -155,7 +155,9 @@ NSString * const HDDNetworkCacheKeys = @"HDDNetworkCacheKeys";
     if (configuration.requestCachePolicy == HDRequestReturnCacheDontLoad ||
         configuration.requestCachePolicy == HDRequestReturnCacheAndLoadToCache) {
         id resposeObject = fetchCacheRespose();
-        cache(resposeObject);
+        if (cache) {
+            cache(resposeObject);
+        }
         if (configuration.requestCachePolicy == HDRequestReturnCacheDontLoad) {
             return nil;
         }
@@ -200,7 +202,9 @@ NSString * const HDDNetworkCacheKeys = @"HDDNetworkCacheKeys";
             }
             if (configuration.requestCachePolicy == HDRequestReturnLoadToCache) {
                 id resposeObject = fetchCacheRespose();
-                cache(resposeObject);
+                if (cache) {
+                    cache(resposeObject);
+                }
             }
             failure(dataTask, hdError);
         }
