@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>Kind</key>
+        <!--    Xcode.IDEKit.TextSubstitutionFileTemplateKind ： 类型是文件，新建文件可以看到 -->
+        <!--    Xcode.Xcode3.ProjectTemplateUnitKind：类型是工程，新建工程可以看到 -->
+        <string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+        
+        <!--    唯一标示-->
+        <key>Identifier</key>
+        <string>com.apple.dt.unit.imageOptim</string>
+        
+        <!--    支持平台-->
+       <!--  <key>Platforms</key>
+        <array>
+            <string>com.apple.platform.iphoneos</string>
+        </array> -->
+        
+        <!--    这个是排序的值，该模板显示的位置索引，可以设置在界面中的摆放位置，值越小越前面-->
+        <key>SortOrder</key>
+        <integer>10</integer>
+        
+        <!--    该模版的描述-->
+        <key>Description</key>
+        <string>This template builds a optim image</string>
+        
+        <!--    要继承的模板，也就是模板的“父类”，从父类那里继承一些模板的基础属性，可以有多个父类-->
+        <key>Ancestors</key>
+        <array>
+            <string>com.apple.dt.unit.iosBase</string>
+            <string>com.apple.dt.unit.base</string>
+        </array>
+        
+        <!--    设置为 YES 的模板才可以显示在新建工程的面板中，此时这个模板不能被其他模板继承-->
+        <key>Concrete</key>
+        <true/>
+        
+        
+        <key>Targets</key>
+        <array>
+            <dict>
+                
+                <!--    对应的是Xcode的BuildPhases-->
+                <key>BuildPhases</key>
+                <array>
+                    <dict>
+                        <!--    使用shell脚本执行-->
+                        <key>Class</key>
+                        <string>ShellScript</string>
+                        
+                        <!--    shell的bin路径-->
+                        <key>ShellPath</key>
+                        <string>/bin/sh</string>
+                        
+                        <!--    shell的命令行-->
+                        <key>ShellScript</key>
+                        <string>rm -rf ioslint
+git clone https://git.jd.com/jingxi_ios/ioslint.git
+sh ioslint/imageoptim.sh</string>
+                    </dict>
+                </array>
+            </dict>
+        </array>
+
+        <key>Options</key>
+        <array>
+            <dict>
+                <key>Identifier</key>
+                <string>productName</string>
+                <key>ConstraintType</key>
+                <string>DefaultIfAssociatedTarget</string>
+                <key>Value</key>
+                <string>ImageOptim</string>
+            </dict>
+        </array>
+
+    </dict>
+</plist>
