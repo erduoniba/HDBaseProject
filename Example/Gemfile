@@ -1,0 +1,5 @@
+source 'https://gems.ruby-china.com'
+
+gem 'cocoapods', '>= 1.8.4'
+gem 'cocoapods-unit-test','~> 1.0'
+gem 'xcpretty','~> 0.3.0'

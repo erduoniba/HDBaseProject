@@ -22,7 +22,7 @@
     [HDBaseViewController setBackgroundColor:[UIColor whiteColor]];
     [HDBaseViewController setBackImageName:@"back"];
 
-    NSString *originUrl = @"http://www.example.com?name=勇神战五渣";
+    NSString *originUrl = @"http://www.example.com?name=京东";
     NSString *urlencode = [originUrl hd_urlEncode];
     NSString *urldencode = [urlencode hd_urlDecode];
     NSString *utf8encode = [originUrl hd_utf8Encode];
@@ -32,6 +32,7 @@
     NSString *originString = [base64String hd_base64Decode];
 
     NSLog(@"\n originUrl:%@\n urlencode:%@\n urldencode:%@\n utf8encode:%@\n utf8decode:%@\n base64String:%@\n originString:%@", originUrl, urlencode, urldencode, utf8encode, utf8decode, base64String, originString);
+    NSLog(@"[originUrl isEqualToString:urldencode] : %d", [originUrl isEqualToString:urldencode]);
 
     if (rand() % 2 == 0) {
         // 集约型api请求方式

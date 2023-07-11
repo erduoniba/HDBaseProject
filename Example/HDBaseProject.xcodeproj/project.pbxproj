@@ -37,6 +37,7 @@
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		95E59DBD1BD354820088FC72 /* HDBaseProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E59DBC1BD354820088FC72 /* HDBaseProject.framework */; };
 		AD77A1ED232F34F700DA75EC /* HDLogDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = AD77A1EC232F34F700DA75EC /* HDLogDemo.m */; };
+		ADC265362624209E00A4C444 /* HDMockDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC265352624209E00A4C444 /* HDMockDemo.m */; };
 		C97B939969CB401EAE7B88D4 /* Pods_HDBaseProject_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F925636AFC0075361FBFB07B /* Pods_HDBaseProject_Tests.framework */; };
 		D918BE271DD1D84400CEE966 /* .swift-version in Resources */ = {isa = PBXBuildFile; fileRef = D918BE261DD1D84400CEE966 /* .swift-version */; };
 		D96A8A4820A1445500E278E7 /* HDRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D96A8A4120A1445500E278E7 /* HDRequestManager.m */; };
@@ -110,6 +111,8 @@
 		A734E62992BCB6B06581A292 /* Pods-HDBaseProject_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDBaseProject_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HDBaseProject_Tests/Pods-HDBaseProject_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		AD77A1EB232F34F700DA75EC /* HDLogDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HDLogDemo.h; sourceTree = "<group>"; };
 		AD77A1EC232F34F700DA75EC /* HDLogDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HDLogDemo.m; sourceTree = "<group>"; };
+		ADC265342624209E00A4C444 /* HDMockDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HDMockDemo.h; sourceTree = "<group>"; };
+		ADC265352624209E00A4C444 /* HDMockDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HDMockDemo.m; sourceTree = "<group>"; };
 		D130B696D677A3043FB2BABE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		D918BE261DD1D84400CEE966 /* .swift-version */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ".swift-version"; path = "../.swift-version"; sourceTree = "<group>"; };
 		D96A8A4020A1445500E278E7 /* HDRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDRequestManager.h; sourceTree = "<group>"; };
@@ -234,6 +237,8 @@
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				04DBBC9D1BD0C36700B25004 /* Launch Screen.storyboard */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				ADC265342624209E00A4C444 /* HDMockDemo.h */,
+				ADC265352624209E00A4C444 /* HDMockDemo.m */,
 			);
 			name = "Example for HDBaseProject";
 			path = HDBaseProject;
@@ -511,6 +516,7 @@
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/OCMock/OCMock.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -520,6 +526,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OCMock.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -539,6 +546,7 @@
 				D9F0AE3020A160860078DB05 /* HDErrorDemo.m in Sources */,
 				D96A8A4820A1445500E278E7 /* HDRequestManager.m in Sources */,
 				049ABAB91BCF7E040010D821 /* HDViewViewController2.m in Sources */,
+				ADC265362624209E00A4C444 /* HDMockDemo.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				D96A8A4A20A1445500E278E7 /* HDBaseViewModel.m in Sources */,
 				AD77A1ED232F34F700DA75EC /* HDLogDemo.m in Sources */,
@@ -684,10 +692,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_CODE_COVERAGE = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = HQ353LFGTA;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HDBaseProject/HDBaseProject-Prefix.pch";
 				INFOPLIST_FILE = "HDBaseProject/HDBaseProject-Info.plist";
@@ -710,10 +721,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_CODE_COVERAGE = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = RAD48JXJA8;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HDBaseProject/HDBaseProject-Prefix.pch";
 				INFOPLIST_FILE = "HDBaseProject/HDBaseProject-Info.plist";
@@ -734,11 +748,14 @@
 			baseConfigurationReference = 4BDB9B3A26AE83E667559BFB /* Pods-HDBaseProject_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_CODE_COVERAGE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
+				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -758,11 +775,14 @@
 			baseConfigurationReference = A734E62992BCB6B06581A292 /* Pods-HDBaseProject_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_CODE_COVERAGE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
+				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";

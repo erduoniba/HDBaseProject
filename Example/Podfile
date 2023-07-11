@@ -10,5 +10,5 @@ end
 
 target 'HDBaseProject_Tests' do
     pod 'HDBaseProject', :path => "../"
+    pod 'OCMock'
 end
-

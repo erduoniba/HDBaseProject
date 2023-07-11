@@ -47,42 +47,10 @@
             filePath = "HDBaseProject/HDAppDelegate.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "-injected"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "5C9D1371-8FE6-44CE-BC65-46FB73D392F3 - 57397d6be098a86"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[HDAppDelegate injected]"
-                  moduleName = "HDBaseProject_Example"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/denglibing3/HDProject/HarryProject/iOS/HDBaseProject/Example/HDBaseProject/HDAppDelegate.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
-                  offsetFromSymbolStart = "23">
-               </Location>
-               <Location
-                  uuid = "5C9D1371-8FE6-44CE-BC65-46FB73D392F3 - 8c69b76bb1e3e711"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[HDAppDelegate injected]"
-                  moduleName = "eval101.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/denglibing3/HDProject/HarryProject/iOS/HDBaseProject/Example/HDBaseProject/HDAppDelegate.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
-                  offsetFromSymbolStart = "23">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

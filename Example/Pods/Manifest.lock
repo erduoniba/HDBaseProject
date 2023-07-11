@@ -41,6 +41,7 @@ PODS:
     - PINCache (= 2.3)
   - HDBaseProject/ThirdPartyLibs (1.3.4)
   - MJRefresh (3.2.0)
+  - OCMock (3.7.1)
   - PINCache (2.3)
   - SDWebImage (4.2.1):
     - SDWebImage/Core (= 4.2.1)
@@ -48,12 +49,14 @@ PODS:
 
 DEPENDENCIES:
   - HDBaseProject (from `../`)
+  - OCMock
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - CocoaLumberjack
     - MJRefresh
+    - OCMock
     - PINCache
     - SDWebImage
 
@@ -66,9 +69,10 @@ SPEC CHECKSUMS:
   CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
   HDBaseProject: 0569feb25c2abde6d580c096501bb737eed2072b
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
+  OCMock: 75fbeaa46a9b11f8c182bbb1d1f7e9a35ccc9955
   PINCache: ce36ed282031b92fc7733ffe831f474ff80fddc2
   SDWebImage: 1fa4c9edf525b744f002db89f3f5a38b3cd4c541
 
-PODFILE CHECKSUM: 7eae3807205c22c853d559568d64d29fd376c6a7
+PODFILE CHECKSUM: 687512b9a6490398d8da92d2e63af48ef27186ae
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1
